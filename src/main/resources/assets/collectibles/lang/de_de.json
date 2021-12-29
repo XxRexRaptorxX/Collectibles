@@ -1,0 +1,31 @@
+﻿{
+    "itemGroup.collectibles_tab": "Collectibles",
+    "message.collectibles.collectible": "Collectible",
+    "message.collectibles.set_coins": "Set: Münzen",
+    "message.collectibles.set_fragments": "Set: Fragmente",
+    "message.collectibles.lootbag_jei_desc": "Enthält wertvolle Schätze! Rechts-klick um den Loot Beutel zu öffnen",
+    "message.collectibles.lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Beutetasche geöffnen wird!",
+    "message.collectibles.open_bag": "Rechts klick zum öffnen",
+
+    "item.collectibles.loot_bag": "Beutetasche",
+
+    "item.collectibles.gold_coin": "Gold Münze",
+    "item.collectibles.silver_coin": "Silber Münze",
+    "item.collectibles.platinum_coin": "Platin Münze",
+    "item.collectibles.copper_coin": "Kupfer Münze",
+    "item.collectibles.bronze_coin": "Bronze Münze",
+    "item.collectibles.iron_coin": "Eisen Münze",
+    "item.collectibles.stone_coin": "Stein Münze",
+    "item.collectibles.netherite_coin": "Netherit Münze",
+    "item.collectibles.brass_coin": "Messing Münze",
+
+    "item.collectibles.diamond_fragment": "Diamant Fragment",
+    "item.collectibles.emerald_fragment": "Smaragd Fragment",
+    "item.collectibles.amethyst_fragment": "Amethyst Fragment",
+    "item.collectibles.ruby_fragment": "Rubin Fragment",
+    "item.collectibles.sapphire_fragment": "Saphir Fragment",
+    "item.collectibles.topaz_fragment": "Topas Fragment",
+    "item.collectibles.crystal_fragment": "Kristall Fragment",
+    "item.collectibles.hematite_fragment": "Hämatit Fragment",
+    "item.collectibles.tourmaline_fragment": "Turmalin Fragment"
+}

@@ -1,0 +1,31 @@
+{
+    "itemGroup.collectibles_tab": "Collectibles",
+    "message.collectibles.collectible": "Collectible",
+    "message.collectibles.set_coins": "Set: Coins",
+    "message.collectibles.set_fragments": "Set: Fragments",
+    "message.collectibles.lootbag_jei_desc": "Contains valuable treasures! Right-click to open the Loot bag",
+    "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a loot bag!",
+    "message.collectibles.open_bag": "Right-click to open",
+
+    "item.collectibles.loot_bag": "Loot Bag",
+
+    "item.collectibles.gold_coin": "Gold Coin",
+    "item.collectibles.silver_coin": "Silver Coin",
+    "item.collectibles.platinum_coin": "Platinum Coin",
+    "item.collectibles.copper_coin": "Copper Coin",
+    "item.collectibles.bronze_coin": "Bronze Coin",
+    "item.collectibles.iron_coin": "Iron Coin",
+    "item.collectibles.stone_coin": "Stone Coin",
+    "item.collectibles.netherite_coin": "Netherite Coin",
+    "item.collectibles.brass_coin": "Brass Coin",
+
+    "item.collectibles.diamond_fragment": "Diamond Fragment",
+    "item.collectibles.emerald_fragment": "Emerald Fragment",
+    "item.collectibles.amethyst_fragment": "Amethyst Fragment",
+    "item.collectibles.ruby_fragment": "Ruby Fragment",
+    "item.collectibles.sapphire_fragment": "Sapphire Fragment",
+    "item.collectibles.topaz_fragment": "Topaz Fragment",
+    "item.collectibles.crystal_fragment": "Crystal Fragment",
+    "item.collectibles.hematite_fragment": "Hematite Fragment",
+    "item.collectibles.tourmaline_fragment": "Tourmaline Fragment"
+}

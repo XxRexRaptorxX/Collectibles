@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "collectibles:diamond_fragment"
+    },
+    {
+      "item": "collectibles:emerald_fragment"
+    },
+    {
+      "item": "collectibles:sapphire_fragment"
+    },
+    {
+      "item": "collectibles:ruby_fragment"
+    },
+    {
+      "item": "collectibles:topaz_fragment"
+    },
+    {
+      "item": "collectibles:crystal_fragment"
+    },
+    {
+      "item": "collectibles:amethyst_fragment"
+    },
+    {
+      "item": "collectibles:tourmaline_fragment"
+    },
+    {
+      "item": "collectibles:hematite_fragment"
+    }
+  ],
+  "result": {
+    "item": "collectibles:loot_bag"
+  }
+}
