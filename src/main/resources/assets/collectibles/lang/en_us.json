@@ -3,11 +3,12 @@
     "message.collectibles.collectible": "Collectible",
     "message.collectibles.set_coins": "Set: Coins",
     "message.collectibles.set_fragments": "Set: Fragments",
+    "message.collectibles.set_books": "Set: Books",
     "message.collectibles.lootbag_jei_desc": "Contains valuable treasures! Right-click to open the Loot bag",
     "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a loot bag!",
     "message.collectibles.open_bag": "Right-click to open",
 
-    "item.collectibles.loot_bag": "Loot Bag",
+    "item.collectibles.loot_bag": "Collectible Loot Bag",
 
     "item.collectibles.gold_coin": "Gold Coin",
     "item.collectibles.silver_coin": "Silver Coin",
@@ -27,5 +28,15 @@
     "item.collectibles.topaz_fragment": "Topaz Fragment",
     "item.collectibles.crystal_fragment": "Crystal Fragment",
     "item.collectibles.hematite_fragment": "Hematite Fragment",
-    "item.collectibles.tourmaline_fragment": "Tourmaline Fragment"
+    "item.collectibles.tourmaline_fragment": "Tourmaline Fragment",
+
+    "item.collectibles.necronomicon_book": "Necronomicon",
+    "item.collectibles.rexs_book": "Rex's Diary",
+    "item.collectibles.notchs_book": "Notch's Diary",
+    "item.collectibles.herobrines_book": "Herobrine's Horcrux",
+    "item.collectibles.grimoire_book": "Grimoire",
+    "item.collectibles.old_book": "Old Book",
+    "item.collectibles.cursed_book": "Cursed Book",
+    "item.collectibles.monster_book": "Monster Book of Monsters",
+    "item.collectibles.knowledge_book": "Knowledge Book"
 }

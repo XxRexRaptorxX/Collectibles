@@ -26,6 +26,7 @@ public class ModItems {
     public static final RegistryObject<ItemCollectible> BRASS_COIN = ITEMS.register("brass_coin", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> IRON_COIN = ITEMS.register("iron_coin", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> STONE_COIN = ITEMS.register("stone_coin", ItemCollectible::new);
+
     public static final RegistryObject<ItemCollectible> DIAMOND_FRAGMENT = ITEMS.register("diamond_fragment", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> EMERALD_FRAGMENT = ITEMS.register("emerald_fragment", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> AMETHYST_FRAGMENT = ITEMS.register("amethyst_fragment", ItemCollectible::new);
@@ -35,6 +36,17 @@ public class ModItems {
     public static final RegistryObject<ItemCollectible> CRYSTAL_FRAGMENT = ITEMS.register("crystal_fragment", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> HEMATITE_FRAGMENT = ITEMS.register("hematite_fragment", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> TOURMALINE_FRAGMENT = ITEMS.register("tourmaline_fragment", ItemCollectible::new);
+
+    public static final RegistryObject<ItemCollectible> OLD_BOOK = ITEMS.register("old_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> NECRONOMICON_BOOK = ITEMS.register("necronomicon_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> KNOWLEDGE_BOOK = ITEMS.register("knowledge_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> NOTCHS_BOOK = ITEMS.register("notchs_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> REXS_BOOK = ITEMS.register("rexs_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> MONSTER_BOOK = ITEMS.register("monster_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> GRIMOIRE_BOOK = ITEMS.register("grimoire_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> CURSED_BOOK = ITEMS.register("cursed_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> HEROBRINES_BOOK = ITEMS.register("herobrines_book", ItemCollectible::new);
+
     public static final RegistryObject<ItemLootbag> LOOT_BAG = ITEMS.register("loot_bag", ItemLootbag::new);
 
 

@@ -93,23 +93,23 @@ public class CollectibleHelper {
 
     public static Integer getCollectibleNumber(ItemStack collectible) {
         Item item = collectible.getItem();
-        if        (item == ModItems.GOLD_COIN.get() || item == ModItems.DIAMOND_FRAGMENT.get()) {
+        if        (item == ModItems.GOLD_COIN.get() || item == ModItems.DIAMOND_FRAGMENT.get() || item == ModItems.OLD_BOOK.get()) {
             return 1;
-        } else if (item == ModItems.SILVER_COIN.get() || item == ModItems.EMERALD_FRAGMENT.get()) {
+        } else if (item == ModItems.SILVER_COIN.get() || item == ModItems.EMERALD_FRAGMENT.get() || item == ModItems.NECRONOMICON_BOOK.get()) {
             return 2;
-        } else if (item == ModItems.PLATINUM_COIN.get() || item == ModItems.AMETHYST_FRAGMENT.get()) {
+        } else if (item == ModItems.PLATINUM_COIN.get() || item == ModItems.AMETHYST_FRAGMENT.get() || item == ModItems.KNOWLEDGE_BOOK.get()) {
             return 3;
-        } else if (item == ModItems.NETHERITE_COIN.get() || item == ModItems.RUBY_FRAGMENT.get()) {
+        } else if (item == ModItems.NETHERITE_COIN.get() || item == ModItems.RUBY_FRAGMENT.get() || item == ModItems.NOTCHS_BOOK.get()) {
             return 4;
-        } else if (item == ModItems.COPPER_COIN.get() || item == ModItems.SAPPHIRE_FRAGMENT.get()) {
+        } else if (item == ModItems.COPPER_COIN.get() || item == ModItems.SAPPHIRE_FRAGMENT.get() || item == ModItems.REXS_BOOK.get()) {
             return 5;
-        } else if (item == ModItems.BRONZE_COIN.get() || item == ModItems.TOPAZ_FRAGMENT.get()) {
+        } else if (item == ModItems.BRONZE_COIN.get() || item == ModItems.TOPAZ_FRAGMENT.get() || item == ModItems.MONSTER_BOOK.get()) {
             return 6;
-        } else if (item == ModItems.BRASS_COIN.get() || item == ModItems.CRYSTAL_FRAGMENT.get()) {
+        } else if (item == ModItems.BRASS_COIN.get() || item == ModItems.CRYSTAL_FRAGMENT.get() || item == ModItems.GRIMOIRE_BOOK.get()) {
             return 7;
-        } else if (item == ModItems.IRON_COIN.get() || item == ModItems.HEMATITE_FRAGMENT.get()) {
+        } else if (item == ModItems.IRON_COIN.get() || item == ModItems.HEMATITE_FRAGMENT.get() || item == ModItems.CURSED_BOOK.get()) {
             return 8;
-        } else if (item == ModItems.STONE_COIN.get() || item == ModItems.TOURMALINE_FRAGMENT.get()) {
+        } else if (item == ModItems.STONE_COIN.get() || item == ModItems.TOURMALINE_FRAGMENT.get() || item == ModItems.HEROBRINES_BOOK.get()) {
             return 9;
         } else {
             System.err.println("Unknown Collectible!");

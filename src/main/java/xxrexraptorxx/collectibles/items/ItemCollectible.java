@@ -34,6 +34,9 @@ public class ItemCollectible extends Item {
 
         } else if (this.getRegistryName().toString().contains("collectibles:") && this.getRegistryName().toString().contains("coin")) {
             list.add(new TranslatableComponent("message.collectibles.set_coins").withStyle(ChatFormatting.YELLOW));
+
+        } else if (this.getRegistryName().toString().contains("collectibles:") && this.getRegistryName().toString().contains("book")) {
+            list.add(new TranslatableComponent("message.collectibles.set_books").withStyle(ChatFormatting.YELLOW));
         }
 
         list.add(new TextComponent(ChatFormatting.YELLOW + "#" + CollectibleHelper.getCollectibleNumber(stack)));

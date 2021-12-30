@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "collectibles:rexs_book"
+    },
+    {
+      "item": "collectibles:herobrines_book"
+    },
+    {
+      "item": "collectibles:notchs_book"
+    },
+    {
+      "item": "collectibles:necronomicon_book"
+    },
+    {
+      "item": "collectibles:cursed_book"
+    },
+    {
+      "item": "collectibles:old_book"
+    },
+    {
+      "item": "collectibles:knowledge_book"
+    },
+    {
+      "item": "collectibles:grimoire_book"
+    },
+    {
+      "item": "collectibles:monster_book"
+    }
+  ],
+  "result": {
+    "item": "collectibles:loot_bag"
+  }
+}

@@ -38,6 +38,16 @@ public class Items extends ItemModelProvider {
         itemGenerated(ModItems.CRYSTAL_FRAGMENT);
         itemGenerated(ModItems.HEMATITE_FRAGMENT);
         itemGenerated(ModItems.TOURMALINE_FRAGMENT);
+
+        itemGenerated(ModItems.OLD_BOOK);
+        itemGenerated(ModItems.REXS_BOOK);
+        itemGenerated(ModItems.NOTCHS_BOOK);
+        itemGenerated(ModItems.HEROBRINES_BOOK);
+        itemGenerated(ModItems.GRIMOIRE_BOOK);
+        itemGenerated(ModItems.MONSTER_BOOK);
+        itemGenerated(ModItems.KNOWLEDGE_BOOK);
+        itemGenerated(ModItems.CURSED_BOOK);
+        itemGenerated(ModItems.NECRONOMICON_BOOK);
     }
 
 

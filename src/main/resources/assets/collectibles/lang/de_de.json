@@ -1,13 +1,14 @@
 ﻿{
     "itemGroup.collectibles_tab": "Collectibles",
-    "message.collectibles.collectible": "Collectible",
+    "message.collectibles.collectible": "Sammlerstück",
     "message.collectibles.set_coins": "Set: Münzen",
     "message.collectibles.set_fragments": "Set: Fragmente",
+    "message.collectibles.set_books": "Set: Bücher",
     "message.collectibles.lootbag_jei_desc": "Enthält wertvolle Schätze! Rechts-klick um den Loot Beutel zu öffnen",
     "message.collectibles.lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Beutetasche geöffnen wird!",
     "message.collectibles.open_bag": "Rechts klick zum öffnen",
 
-    "item.collectibles.loot_bag": "Beutetasche",
+    "item.collectibles.loot_bag": "Sammlerstück Beutetasche",
 
     "item.collectibles.gold_coin": "Gold Münze",
     "item.collectibles.silver_coin": "Silber Münze",
@@ -27,5 +28,15 @@
     "item.collectibles.topaz_fragment": "Topas Fragment",
     "item.collectibles.crystal_fragment": "Kristall Fragment",
     "item.collectibles.hematite_fragment": "Hämatit Fragment",
-    "item.collectibles.tourmaline_fragment": "Turmalin Fragment"
+    "item.collectibles.tourmaline_fragment": "Turmalin Fragment",
+
+    "item.collectibles.necronomicon_book": "Necronomicon",
+    "item.collectibles.rexs_book": "Rex's Tagebuch",
+    "item.collectibles.notchs_book": "Notch's Tagebuch",
+    "item.collectibles.herobrines_book": "Herobrine's Horcrux",
+    "item.collectibles.grimoire_book": "Grimoire",
+    "item.collectibles.old_book": "Altes Buch",
+    "item.collectibles.cursed_book": "Verfluchtes Buch",
+    "item.collectibles.monster_book": "Monster Buch der Monster",
+    "item.collectibles.knowledge_book": "Wissens Buch"
 }
