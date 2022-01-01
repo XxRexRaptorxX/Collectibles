@@ -3,6 +3,8 @@ package xxrexraptorxx.collectibles.items;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -47,9 +49,17 @@ public class ItemLootbag extends Item {
         Level level = context.getLevel();
         Player player = context.getPlayer();
 
-        if(this == ModItems.LOOT_BAG.get() && !level.isClientSide) {
-            player.addItem(CollectibleHelper.getRandomTreasure());
-            player.giveExperiencePoints(Config.LOOT_BAG_XP.get());
+        if(this == ModItems.LOOT_BAG.get()) {
+            level.playSound((Player) null, context.getClickedPos(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.0F);
+            context.getItemInHand().shrink(1);
+
+            if (!level.isClientSide) {
+                player.giveExperiencePoints(Config.LOOT_BAG_XP.get());
+
+                for (int i = 0; i < Config.LOOT_BAG_ITEM_AMOUNT.get(); i++ ) {
+                    player.addItem(CollectibleHelper.getRandomTreasure());
+                }
+            }
         }
 
         return InteractionResult.SUCCESS;
