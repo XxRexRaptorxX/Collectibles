@@ -90,7 +90,7 @@ public class Events {
                 }
 
 
-            } else if (block.getTags().contains(BlockTags.DIRT.getName()) || block.getTags().contains(Tags.Blocks.DIRT.getName()) || block.getTags().contains(BlockTags.SAND.getName())) {
+            } else if (block.getTags().contains(BlockTags.DIRT.getName()) || block.getTags().contains(BlockTags.SAND.getName())) {
                 if (random.nextInt(Config.COLLECTIBLE_RARITY.get()) == 1) {
                     level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
 

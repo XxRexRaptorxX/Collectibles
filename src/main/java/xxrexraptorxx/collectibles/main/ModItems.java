@@ -46,6 +46,17 @@ public class ModItems {
     public static final RegistryObject<ItemCollectible> GRIMOIRE_BOOK = ITEMS.register("grimoire_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> CURSED_BOOK = ITEMS.register("cursed_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> HEROBRINES_BOOK = ITEMS.register("herobrines_book", ItemCollectible::new);
+/**
+    public static final RegistryObject<ItemCollectible> ARROW_LEFTOVER = ITEMS.register("arrow_leftover", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> HOE_LEFTOVER = ITEMS.register("hoe_leftover", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> NAME_TAG_LEFTOVER = ITEMS.register("nametag_leftover", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> PICKAXE_LEFTOVER = ITEMS.register("pickaxe_leftover", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> SHOVEL_LEFTOVER = ITEMS.register("shovel_leftover", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> SPECTRAL_ARROW_LEFTOVER = ITEMS.register("spectral_leftover", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> SWORD_LEFTOVER = ITEMS.register("sword_leftover", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> TRIDENT_LEFTOVER = ITEMS.register("trident_leftover", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> _LEFTOVER = ITEMS.register("_leftover", ItemCollectible::new);
+**/
 
     public static final RegistryObject<ItemLootbag> LOOT_BAG = ITEMS.register("loot_bag", ItemLootbag::new);
 

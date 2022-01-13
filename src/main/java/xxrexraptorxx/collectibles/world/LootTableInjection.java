@@ -1,4 +1,4 @@
-package xxrexraptorxx.collectibles.utils;
+package xxrexraptorxx.collectibles.world;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
@@ -70,7 +70,7 @@ public class LootTableInjection {
                     event.getTable().addPool(getInjectPool(file));
                     injected++;
                 } catch (NullPointerException e) {
-                    System.err.println("Loottable {} is broken by some other mod. Cannot add Collectibles loot to it. " + name);
+                    System.err.println("Loottable {} is broken by some other mod. Cannot add " + References.NAME  + " loot to it. " + name);
                 }
             }
         }
