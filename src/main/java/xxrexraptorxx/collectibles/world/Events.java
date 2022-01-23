@@ -82,7 +82,7 @@ public class Events {
 
             if (block.getTags().contains(BlockTags.BASE_STONE_OVERWORLD.getName()) || block.getTags().contains(Tags.Blocks.STONE.getName())) {
 
-                if (random.nextInt(Config.COLLECTIBLE_RARITY.get()) == 1) {
+                if (random.nextInt(Config.FRAGMENT_COLLECTIBLE_RARITY.get()) == 1) {
                     level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
 
                     ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFragment());
@@ -91,7 +91,7 @@ public class Events {
 
 
             } else if (block.getTags().contains(BlockTags.DIRT.getName()) || block.getTags().contains(BlockTags.SAND.getName())) {
-                if (random.nextInt(Config.COLLECTIBLE_RARITY.get()) == 1) {
+                if (random.nextInt(Config.COIN_COLLECTIBLE_RARITY.get()) == 1) {
                     level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
 
                     ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomCoin());

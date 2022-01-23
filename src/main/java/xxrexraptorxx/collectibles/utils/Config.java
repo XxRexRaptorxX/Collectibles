@@ -17,7 +17,8 @@ public class Config {
     public static ForgeConfigSpec.IntValue LOOT_BAG_XP;
     public static ForgeConfigSpec.IntValue LOOT_BAG_ITEM_AMOUNT;
     public static ForgeConfigSpec.IntValue COLLECTIBLES_XP;
-    public static ForgeConfigSpec.IntValue COLLECTIBLE_RARITY;
+    public static ForgeConfigSpec.IntValue FRAGMENT_COLLECTIBLE_RARITY;
+    public static ForgeConfigSpec.IntValue COIN_COLLECTIBLE_RARITY;
 
     public static void init() {
         initServer();
@@ -46,7 +47,8 @@ public class Config {
         COLLECTIBLES_XP = builder.comment("How much xp a player should get when he finds a collectible").defineInRange("collectible_xp", 30, 0, 1000);
         LOOT_BAG_XP = builder.comment("How much xp a player should get when he uses a loot bag").defineInRange("loot_bag_xp", 100, 0, 1000);
         LOOT_BAG_ITEM_AMOUNT = builder.comment("How many items the loot bag gives the player ").defineInRange("loot_bag_item_amount", 1, 1, 10);
-        COLLECTIBLE_RARITY = builder.comment("How rarely should collectibles drop. higher = rarer [1:X]").defineInRange("collectibles_rarity", 300, 0, 1000);
+        COIN_COLLECTIBLE_RARITY = builder.comment("How rarely should coin collectibles drop. higher = rarer [1:X]").defineInRange("coin_collectibles_rarity", 1000, 1, 100000);
+        FRAGMENT_COLLECTIBLE_RARITY = builder.comment("How rarely should fragment collectibles drop. higher = rarer [1:X]").defineInRange("fragment_collectibles_rarity", 1000, 1, 100000);
         builder.pop();
 
         SERVER_CONFIG = builder.build();
