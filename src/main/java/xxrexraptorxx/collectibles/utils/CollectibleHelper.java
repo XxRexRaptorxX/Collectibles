@@ -1,24 +1,35 @@
 package xxrexraptorxx.collectibles.utils;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.registries.ForgeRegistries;
+import xxrexraptorxx.collectibles.main.Collectibles;
 import xxrexraptorxx.collectibles.main.ModItems;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class CollectibleHelper {
 
     public static ItemStack getRandomTreasure() {
+        ArrayList<ItemStack> rewards = new ArrayList<>();
         Random random = new Random();
-        switch (random.nextInt(3)) {
-            case 0:
-                return new ItemStack(Items.NETHERITE_INGOT);
-            case 1:
-                return new ItemStack(Items.NETHER_STAR);
-            default:
-                return new ItemStack(Items.ENCHANTED_GOLDEN_APPLE);
-        }
+
+            for (String item : Config.LOOT_BAG_REWARDS.get()) {
+                try {
+                    rewards.add(new ItemStack(ForgeRegistries.ITEMS.getValue(
+                            //                                          get the mod prefix              |        get the item registry name      |         get the item amount
+                            new ResourceLocation(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
+
+                } catch (Exception e) {
+                    Collectibles.LOGGER.error("Invalid item entry in the Collectibles 'loot_bag_rewards' config option!");
+                }
+            }
+
+
+            return rewards.get(random.nextInt(rewards.size()));
     }
 
 
