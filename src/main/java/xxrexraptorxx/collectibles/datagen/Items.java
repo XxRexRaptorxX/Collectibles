@@ -18,6 +18,7 @@ public class Items extends ItemModelProvider {
     protected void registerModels() {
 
         itemGenerated(ModItems.LOOT_BAG);
+        itemGenerated(ModItems.EPIC_LOOT_BAG);
 
         itemGenerated(ModItems.GOLD_COIN);
         itemGenerated(ModItems.SILVER_COIN);

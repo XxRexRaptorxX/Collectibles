@@ -28,8 +28,26 @@ public class CollectibleHelper {
                 }
             }
 
-
             return rewards.get(random.nextInt(rewards.size()));
+    }
+
+
+    public static ItemStack getRandomEpicTreasure() {
+        ArrayList<ItemStack> rewards = new ArrayList<>();
+        Random random = new Random();
+
+        for (String item : Config.EPIC_LOOT_BAG_REWARDS.get()) {
+            try {
+                rewards.add(new ItemStack(ForgeRegistries.ITEMS.getValue(
+                        //                                          get the mod prefix              |        get the item registry name      |         get the item amount
+                        new ResourceLocation(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
+
+            } catch (Exception e) {
+                Collectibles.LOGGER.error("Invalid item entry in the Collectibles 'epic_loot_bag_rewards' config option!");
+            }
+        }
+
+        return rewards.get(random.nextInt(rewards.size()));
     }
 
 

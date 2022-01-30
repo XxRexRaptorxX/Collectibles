@@ -6,7 +6,10 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -26,12 +29,8 @@ import java.util.List;
 
 public class ItemLootbag extends Item {
 
-    public ItemLootbag() {
-        super(new Properties()
-                .tab(CreativeTab.MOD_TAB)
-                .rarity(Rarity.EPIC)
-                .stacksTo(16)
-        );
+    public ItemLootbag(Properties properties) {
+        super(properties);
     }
 
 
@@ -43,28 +42,43 @@ public class ItemLootbag extends Item {
 
     @Override
     public boolean isFoil(ItemStack pStack) {
-        return true;
+        if (this == ModItems.EPIC_LOOT_BAG.get()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
     @Override
-    public InteractionResult useOn(UseOnContext context) {
-        Level level = context.getLevel();
-        Player player = context.getPlayer();
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
 
-        if(this == ModItems.LOOT_BAG.get()) {
-            level.playSound((Player) null, context.getClickedPos(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.0F);
-            context.getItemInHand().shrink(1);
+        if(this == ModItems.LOOT_BAG.get() || this == ModItems.EPIC_LOOT_BAG.get()) {
+            level.playSound((Player) null, player.getOnPos(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.0F);
+            stack.shrink(1);
 
             if (!level.isClientSide) {
-                player.giveExperiencePoints(Config.LOOT_BAG_XP.get());
+                if (this == ModItems.EPIC_LOOT_BAG.get()) {
+                    player.giveExperiencePoints(Config.EPIC_LOOT_BAG_XP.get());
 
-                for (int i = 0; i < Config.LOOT_BAG_ITEM_AMOUNT.get(); i++ ) {
-                    player.addItem(CollectibleHelper.getRandomTreasure());
+                    for (int i = 0; i < Config.EPIC_LOOT_BAG_ITEM_AMOUNT.get(); i++ ) {
+                        player.addItem(CollectibleHelper.getRandomEpicTreasure());
+                    }
+
+                } else {
+                    player.giveExperiencePoints(Config.LOOT_BAG_XP.get());
+
+                    for (int i = 0; i < Config.LOOT_BAG_ITEM_AMOUNT.get(); i++ ) {
+                        player.addItem(CollectibleHelper.getRandomTreasure());
+                    }
                 }
+
             }
+
+            player.awardStat(Stats.ITEM_USED.get(this));
         }
 
-        return InteractionResult.SUCCESS;
+        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }
 }

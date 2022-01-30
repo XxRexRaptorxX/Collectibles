@@ -1,12 +1,15 @@
 package xxrexraptorxx.collectibles.main;
 
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import xxrexraptorxx.collectibles.items.ItemCollectible;
 import xxrexraptorxx.collectibles.items.ItemLootbag;
+import xxrexraptorxx.collectibles.utils.CreativeTab;
 
 public class ModItems {
 
@@ -58,7 +61,8 @@ public class ModItems {
     public static final RegistryObject<ItemCollectible> _LEFTOVER = ITEMS.register("_leftover", ItemCollectible::new);
 **/
 
-    public static final RegistryObject<ItemLootbag> LOOT_BAG = ITEMS.register("loot_bag", ItemLootbag::new);
+    public static final RegistryObject<ItemLootbag> LOOT_BAG = ITEMS.register("loot_bag", () -> new ItemLootbag(new Item.Properties().rarity(Rarity.RARE).tab(CreativeTab.MOD_TAB).stacksTo(16)));
+    public static final RegistryObject<ItemLootbag> EPIC_LOOT_BAG = ITEMS.register("epic_loot_bag", () -> new ItemLootbag(new Item.Properties().rarity(Rarity.EPIC).tab(CreativeTab.MOD_TAB).stacksTo(16)));
 
 
 }
