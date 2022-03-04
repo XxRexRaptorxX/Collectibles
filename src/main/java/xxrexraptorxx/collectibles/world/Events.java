@@ -75,13 +75,12 @@ public class Events {
     public static void onBlockDestroyed(BlockEvent.BreakEvent event) {
         Random random = new Random();
         Level level = event.getPlayer().level;
-        Block block = event.getState().getBlock();
+        BlockState block = event.getState();
         BlockPos pos = event.getPos();
 
         if (!level.isClientSide) {
 
-            if (block.getTags().contains(BlockTags.BASE_STONE_OVERWORLD.getName()) || block.getTags().contains(Tags.Blocks.STONE.getName())) {
-
+            if (block.is(BlockTags.BASE_STONE_OVERWORLD) || block.is(Tags.Blocks.STONE)) {
                 if (random.nextInt(Config.FRAGMENT_COLLECTIBLE_RARITY.get()) == 1) {
                     level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
 
@@ -90,7 +89,7 @@ public class Events {
                 }
 
 
-            } else if (block.getTags().contains(BlockTags.DIRT.getName()) || block.getTags().contains(BlockTags.SAND.getName())) {
+            } else if (block.is(BlockTags.DIRT) || block.is(BlockTags.SAND)) {
                 if (random.nextInt(Config.COIN_COLLECTIBLE_RARITY.get()) == 1) {
                     level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
 
@@ -100,6 +99,5 @@ public class Events {
             }
         }
     }
-
 
 }
