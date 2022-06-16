@@ -1,6 +1,5 @@
 package xxrexraptorxx.collectibles.main;
 
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

@@ -1,5 +1,5 @@
 package xxrexraptorxx.collectibles.integration;
-
+/**
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
@@ -38,4 +38,4 @@ public class JEIIntegration implements IModPlugin {
         registry.addIngredientInfo(new ItemStack(ModItems.LOOT_BAG.get()), VanillaTypes.ITEM, new TranslatableComponent("message.collectibles.lootbag_jei_desc"));
 
     }
-}
+}**/

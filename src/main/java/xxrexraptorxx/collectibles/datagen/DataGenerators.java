@@ -18,7 +18,7 @@ public class DataGenerators {
             //
         }
         if (event.includeClient()) {
-            generator.addProvider(new Items(generator, helper));
+            //generator.addProvider(new Items(generator, helper));    TODO
         }
     }
 }

@@ -5,6 +5,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,21 +57,21 @@ public class Config {
         COLLECTIBLES_XP = builder.comment("How much xp a player should get when he finds a collectible").defineInRange("collectible_xp", 30, 0, 1000);
         EPIC_LOOT_BAG_XP = builder.comment("How much xp a player should get when he uses a loot bag").defineInRange("epic_loot_bag_xp", 100, 0, 1000);
         EPIC_LOOT_BAG_REWARDS = builder.comment("A list with all epic loot bag rewards [amount*modid:item]").define("epic_loot_bag_rewards", new ArrayList<>(Arrays.asList(
-                "1*" + Items.NETHERITE_INGOT.getRegistryName().toString(),
-                "1*" + Items.NETHER_STAR.getRegistryName().toString(),
-                "1*" + Items.END_CRYSTAL.getRegistryName().toString(),
-                "1*" + Items.ELYTRA.getRegistryName().toString(),
-                "1*" + Items.TOTEM_OF_UNDYING.getRegistryName().toString(),
-                "1*" + Items.ENCHANTED_GOLDEN_APPLE.getRegistryName().toString(),
-                "5*" + Items.DRAGON_BREATH.getRegistryName().toString(),
-                "10*" + Items.DIAMOND.getRegistryName().toString()
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.NETHERITE_INGOT).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.NETHER_STAR).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.END_CRYSTAL).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.ELYTRA).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.TOTEM_OF_UNDYING).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.ENCHANTED_GOLDEN_APPLE).toString(),
+                "5*" + ForgeRegistries.ITEMS.getKey(Items.DRAGON_BREATH).toString(),
+                "10*" + ForgeRegistries.ITEMS.getKey(Items.DIAMOND).toString()
                 )));
         EPIC_LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the epic loot bag gives the player").defineInRange("epic_loot_bag_item_amount", 1, 1, 10);
         LOOT_BAG_REWARDS = builder.comment("A list with all loot bag rewards [amount*modid:item]").define("loot_bag_rewards", new ArrayList<>(Arrays.asList(
-                "3*" + Items.EMERALD.getRegistryName().toString(),
-                "3*" + Items.DIAMOND.getRegistryName().toString(),
-                "1*" + Items.GOLDEN_APPLE.getRegistryName().toString(),
-                "1*" + Items.ENDER_EYE.getRegistryName().toString()
+                "3*" + ForgeRegistries.ITEMS.getKey(Items.EMERALD).toString(),
+                "3*" + ForgeRegistries.ITEMS.getKey(Items.DIAMOND).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.GOLDEN_APPLE).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.ENDER_EYE).toString()
         )));
         LOOT_BAG_XP = builder.comment("How much xp a player should get when he uses a loot bag").defineInRange("loot_bag_xp", 50, 0, 1000);
         LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the loot bag gives the player").defineInRange("loot_bag_item_amount", 1, 1, 10);
