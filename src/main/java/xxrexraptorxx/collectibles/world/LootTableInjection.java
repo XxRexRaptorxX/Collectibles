@@ -12,6 +12,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import xxrexraptorxx.collectibles.main.Collectibles;
 import xxrexraptorxx.collectibles.main.References;
 
 import javax.annotation.Nonnull;
@@ -70,7 +71,7 @@ public class LootTableInjection {
                     event.getTable().addPool(getInjectPool(file));
                     injected++;
                 } catch (NullPointerException e) {
-                    System.err.println("Loottable {} is broken by some other mod. Cannot add " + References.NAME  + " loot to it. " + name);
+                    Collectibles.LOGGER.error("Loottable {} is broken by some other mod. Cannot add " + References.NAME  + " loot to it. " + name);
                 }
             }
         }

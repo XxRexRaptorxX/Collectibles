@@ -43,7 +43,7 @@ public class ModItems {
     public static final RegistryObject<ItemCollectible> NECRONOMICON_BOOK = ITEMS.register("necronomicon_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> KNOWLEDGE_BOOK = ITEMS.register("knowledge_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> NOTCHS_BOOK = ITEMS.register("notchs_book", ItemCollectible::new);
-    public static final RegistryObject<ItemCollectible> REXS_BOOK = ITEMS.register("rexs_book", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> DARKHOLD_BOOK = ITEMS.register("darkhold_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> MONSTER_BOOK = ITEMS.register("monster_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> GRIMOIRE_BOOK = ITEMS.register("grimoire_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> CURSED_BOOK = ITEMS.register("cursed_book", ItemCollectible::new);

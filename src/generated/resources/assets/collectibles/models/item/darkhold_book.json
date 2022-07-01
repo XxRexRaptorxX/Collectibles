@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "collectibles:item/rexs_book"
+    "layer0": "collectibles:item/darkhold_book"
   }
 }

@@ -10,7 +10,7 @@ public class CreativeTab {
     public static CreativeModeTab MOD_TAB = new CreativeModeTab(References.MODID + "_tab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.LOOT_BAG.get());
+            return new ItemStack(ModItems.EPIC_LOOT_BAG.get());
         }
     };
 }

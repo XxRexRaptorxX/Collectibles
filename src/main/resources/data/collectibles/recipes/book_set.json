@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "collectibles:rexs_book"
+      "item": "collectibles:darkhold_book"
     },
     {
       "item": "collectibles:herobrines_book"

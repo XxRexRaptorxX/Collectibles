@@ -58,7 +58,7 @@ public class CollectibleHelper {
             case FRAGMENT_SET:
                 getRandomFragment();
             default:
-                System.err.println("Unknown Collectible Set!");
+                Collectibles.LOGGER.error("Unknown Collectible Set!");
                 return new ItemStack(Items.AIR);
         }
     }
@@ -130,7 +130,7 @@ public class CollectibleHelper {
             return 3;
         } else if (item == ModItems.NETHERITE_COIN.get() || item == ModItems.RUBY_FRAGMENT.get() || item == ModItems.NOTCHS_BOOK.get()) {
             return 4;
-        } else if (item == ModItems.COPPER_COIN.get() || item == ModItems.SAPPHIRE_FRAGMENT.get() || item == ModItems.REXS_BOOK.get()) {
+        } else if (item == ModItems.COPPER_COIN.get() || item == ModItems.SAPPHIRE_FRAGMENT.get() || item == ModItems.DARKHOLD_BOOK.get()) {
             return 5;
         } else if (item == ModItems.BRONZE_COIN.get() || item == ModItems.TOPAZ_FRAGMENT.get() || item == ModItems.MONSTER_BOOK.get()) {
             return 6;
@@ -141,7 +141,7 @@ public class CollectibleHelper {
         } else if (item == ModItems.STONE_COIN.get() || item == ModItems.TOURMALINE_FRAGMENT.get() || item == ModItems.HEROBRINES_BOOK.get()) {
             return 9;
         } else {
-            System.err.println("Unknown Collectible!");
+            Collectibles.LOGGER.error("Unknown Collectible!");
             return 0;
         }
     }

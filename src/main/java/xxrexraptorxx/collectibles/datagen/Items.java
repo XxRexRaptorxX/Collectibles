@@ -41,7 +41,7 @@ public class Items extends ItemModelProvider {
         itemGenerated(ModItems.TOURMALINE_FRAGMENT);
 
         itemGenerated(ModItems.OLD_BOOK);
-        itemGenerated(ModItems.REXS_BOOK);
+        itemGenerated(ModItems.DARKHOLD_BOOK);
         itemGenerated(ModItems.NOTCHS_BOOK);
         itemGenerated(ModItems.HEROBRINES_BOOK);
         itemGenerated(ModItems.GRIMOIRE_BOOK);
