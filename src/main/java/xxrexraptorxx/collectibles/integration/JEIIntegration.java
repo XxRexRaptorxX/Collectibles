@@ -1,11 +1,11 @@
 package xxrexraptorxx.collectibles.integration;
-/**
+
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.runtime.IIngredientManager;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -33,9 +33,9 @@ public class JEIIntegration implements IModPlugin {
         treasures.add(new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
         treasures.add(new ItemStack(Items.NETHER_STAR));
 
-        registry.addIngredientInfo(treasures, VanillaTypes.ITEM, new TranslatableComponent("message.collectibles.lootbag_entry_jei_desc"));
+        registry.addIngredientInfo(treasures, VanillaTypes.ITEM_STACK, Component.translatable("message.collectibles.lootbag_entry_jei_desc"));
 
-        registry.addIngredientInfo(new ItemStack(ModItems.LOOT_BAG.get()), VanillaTypes.ITEM, new TranslatableComponent("message.collectibles.lootbag_jei_desc"));
+        registry.addIngredientInfo(new ItemStack(ModItems.LOOT_BAG.get()), VanillaTypes.ITEM_STACK, Component.translatable("message.collectibles.lootbag_jei_desc"));
 
     }
-}**/
+}
