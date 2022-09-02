@@ -1,0 +1,45 @@
+{
+	//translated by ragcloud
+    "itemGroup.collectibles_tab": "Collectibles",
+    "message.collectibles.collectible": "Coleccionable",
+    "message.collectibles.set_coins": "Set: Monedas",
+    "message.collectibles.set_fragments": "Set: Fragmentos",
+    "message.collectibles.set_books": "Set: Libros",
+    "message.collectibles.lootbag_jei_desc": "¡Contiene tesoros valiosos! Click derecho para abrir la Bolsa de botin",
+    "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a loot bag!",
+    "message.collectibles.open_bag": "Click derecho para abrir",
+
+    "item.collectibles.loot_bag": "Bolsa de botin de coleccionables",
+    "item.collectibles.epic_loot_bag": "Bolsa de botin de coleccionables epicos",
+
+    "item.collectibles.gold_coin": "Moneda de Oro",
+    "item.collectibles.silver_coin": "Moneda de Plata",
+    "item.collectibles.platinum_coin": "Moneda de Platino",
+    "item.collectibles.copper_coin": "Moneda de Cobre",
+    "item.collectibles.bronze_coin": "Moneda de Bronce",
+    "item.collectibles.iron_coin": "Moneda de Hierro",
+    "item.collectibles.stone_coin": "Moneda de Piedra",
+    "item.collectibles.netherite_coin": "Moneda de Netherita",
+    "item.collectibles.brass_coin": "Moneda de Laton",
+
+    "item.collectibles.diamond_fragment": "Fragmento de Diamante",
+    "item.collectibles.emerald_fragment": "Fragmento de Esmeralda",
+    "item.collectibles.amethyst_fragment": "Fragmento de Amatista",
+    "item.collectibles.ruby_fragment": "Fragmento de Rubi",
+    "item.collectibles.sapphire_fragment": "Fragmento de Safiro",
+    "item.collectibles.topaz_fragment": "Fragmento de Topacio",
+    "item.collectibles.crystal_fragment": "Fragmento de Cristal",
+    "item.collectibles.hematite_fragment": "Fragmento de Hematita",
+    "item.collectibles.tourmaline_fragment": "Fragmento de Turmalina",
+
+    "item.collectibles.necronomicon_book": "Necronomicon",
+    "item.collectibles.rexs_book": "Diario de Rex",
+    "item.collectibles.darkhold_book": "Darkhold",
+    "item.collectibles.notchs_book": "Diario de Notch",
+    "item.collectibles.herobrines_book": "Horrocrux de Herobrine",
+    "item.collectibles.grimoire_book": "Grimorio",
+    "item.collectibles.old_book": "Libro Antiguo",
+    "item.collectibles.cursed_book": "Libro Maldito",
+    "item.collectibles.monster_book": "Libro Monstruo de Monstruos",
+    "item.collectibles.knowledge_book": "Libro de Conocimiento"
+}
