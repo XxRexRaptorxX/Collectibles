@@ -1,5 +1,5 @@
 package xxrexraptorxx.collectibles.datagen;
-
+/**
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -68,3 +68,4 @@ public class Items extends ItemModelProvider {
     }
 
 }
+ **/

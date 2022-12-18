@@ -9,7 +9,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
-import xxrexraptorxx.collectibles.utils.CreativeTab;
 
 import java.util.List;
 
@@ -17,7 +16,6 @@ public class ItemCollectible extends Item {
 
     public ItemCollectible() {
         super(new Properties()
-                .tab(CreativeTab.MOD_TAB)
                 .rarity(Rarity.RARE)
         );
     }
