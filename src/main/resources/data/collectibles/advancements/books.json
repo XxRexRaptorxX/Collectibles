@@ -1,0 +1,71 @@
+{
+  "display": {
+    "icon": {
+      "item": "collectibles:necronomicon_book"
+    },
+    "title": {
+      "translate": "message.collectibles.set_books"
+    },
+    "description": {
+      "translate": "advancements.collectibles.all_books.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "collectibles:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "collectibles:old_book"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:necronomicon_book"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:knowledge_book"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:notchs_book"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:darkhold_book"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:monster_book"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:grimoire_book"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:cursed_book"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:herobrines_book"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "display": {
+    "icon": {
+      "item": "collectibles:diamond_fragment"
+    },
+    "title": {
+      "translate": "message.collectibles.set_fragments"
+    },
+    "description": {
+      "translate": "advancements.collectibles.all_fragments.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "collectibles:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "collectibles:diamond_fragment"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:emerald_fragment"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:amethyst_fragment"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:ruby_fragment"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:sapphire_fragment"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:topaz_fragment"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:crystal_fragment"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:hematite_fragment"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:tourmaline_fragment"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

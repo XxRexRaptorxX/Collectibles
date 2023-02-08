@@ -10,6 +10,15 @@
     "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a loot bag!",
     "message.collectibles.open_bag": "Click derecho para abrir",
 
+    "advancements.collectibles.root.desc": "Find a collectible!",
+    "advancements.collectibles.all_coins.desc": "Find all 9 coins!",
+    "advancements.collectibles.all_fragments.desc": "Find all 9 fragments!",
+    "advancements.collectibles.all_books.desc": "Find all 9 books!",
+    "advancements.collectibles.lootbag": "Get your rewards!",
+    "advancements.collectibles.epic_lootbag": "Get your ultimate rewards!",
+    "advancements.collectibles.lootbag.desc": "Craft a Lootbag from the collectibles!",
+    "advancements.collectibles.epic_lootbag.desc": "Craft a Epic Lootbag from a collectibles set!",
+
     "item.collectibles.loot_bag": "Bolsa de botin de coleccionables",
     "item.collectibles.epic_loot_bag": "Bolsa de botin de coleccionables epicos",
 

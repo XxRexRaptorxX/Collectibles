@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "collectibles:gold_coin"
+    },
+    "title": "Collectibles",
+    "description": {
+      "translate": "advancements.collectibles.root.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/diamond_block.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:collectibles"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

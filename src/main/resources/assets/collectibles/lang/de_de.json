@@ -8,6 +8,15 @@
     "message.collectibles.lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Beutetasche geöffnen wird!",
     "message.collectibles.open_bag": "Rechts klick zum öffnen",
 
+    "advancements.collectibles.root.desc": "Finde ein Sammlerobjekt!",
+    "advancements.collectibles.all_coins.desc": "Finde alle 9 Münzen!",
+    "advancements.collectibles.all_fragments.desc": "Finde alle 9 Fragmente!",
+    "advancements.collectibles.all_books.desc": "Finde alle 9 Bücher!",
+    "advancements.collectibles.lootbag": "Hol dir deine Belohnung!",
+    "advancements.collectibles.epic_lootbag": "Hol dir deine ultimative Belohnung!",
+    "advancements.collectibles.lootbag.desc": "Crafte dir eine Beutetasche aus den Sammlerstücken!",
+    "advancements.collectibles.epic_lootbag.desc": "Crafte dir eine Epische Beutetasche aus einem Sammlerstück-Set!",
+
     "item.collectibles.loot_bag": "Sammlerstück Beutetasche",
     "item.collectibles.epic_loot_bag": "Epische Sammlerstück Beutetasche",
 

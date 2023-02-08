@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "collectibles:epic_loot_bag"
+    },
+    "title": {
+      "translate": "advancements.collectibles.epic_lootbag"
+    },
+    "description": {
+      "translate": "advancements.collectibles.epic_lootbag.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "collectibles:lootbag",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "collectibles:epic_loot_bag"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
