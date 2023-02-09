@@ -96,18 +96,17 @@ public class Events {
                     ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomCoin());
                     level.addFreshEntity(drop);
                 }
-            }
 
 
-        } else if (block.is(BlockTags.BASE_STONE_NETHER)) {
-            if (random.nextInt(Config.FOSSIL_COLLECTIBLE_RARITY.get()) == 1) {
-                level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
+            } else if (block.is(BlockTags.BASE_STONE_NETHER)) {
+                if (random.nextInt(Config.FOSSIL_COLLECTIBLE_RARITY.get()) == 1) {
+                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
 
-                ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFossil());
-                level.addFreshEntity(drop);
+                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFossil());
+                    level.addFreshEntity(drop);
+                }
             }
         }
-
     }
 
 
