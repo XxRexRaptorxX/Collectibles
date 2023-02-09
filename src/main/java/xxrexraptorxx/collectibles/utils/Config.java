@@ -30,6 +30,7 @@ public class Config {
     public static ForgeConfigSpec.IntValue EPIC_LOOT_BAG_ITEM_AMOUNT;
     public static ForgeConfigSpec.IntValue COLLECTIBLES_XP;
     public static ForgeConfigSpec.IntValue FRAGMENT_COLLECTIBLE_RARITY;
+    public static ForgeConfigSpec.IntValue FOSSIL_COLLECTIBLE_RARITY;
     public static ForgeConfigSpec.IntValue COIN_COLLECTIBLE_RARITY;
     public static ForgeConfigSpec.BooleanValue PATREON_REWARDS;
 
@@ -64,6 +65,7 @@ public class Config {
         COLLECTIBLES_XP = builder.comment("How much xp a player should get when he finds a collectible").defineInRange("collectible_xp", 30, 0, 1000);
         COIN_COLLECTIBLE_RARITY = builder.comment("How rarely should coin collectibles drop. higher = rarer [1:X]").defineInRange("coin_collectibles_rarity", 1000, 1, 100000);
         FRAGMENT_COLLECTIBLE_RARITY = builder.comment("How rarely should fragment collectibles drop. higher = rarer [1:X]").defineInRange("fragment_collectibles_rarity", 1000, 1, 100000);
+        FOSSIL_COLLECTIBLE_RARITY = builder.comment("How rarely should fossil collectibles drop. higher = rarer [1:X]").defineInRange("fossil_collectibles_rarity", 1000, 1, 100000);
         builder.pop();
 
 
@@ -89,7 +91,6 @@ public class Config {
         LOOT_BAG_XP = builder.comment("How much xp a player should get when he uses a loot bag").defineInRange("loot_bag_xp", 50, 0, 1000);
         LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the loot bag gives the player").defineInRange("loot_bag_item_amount", 1, 1, 10);
         builder.pop();
-
 
         SERVER_CONFIG = builder.build();
     }
