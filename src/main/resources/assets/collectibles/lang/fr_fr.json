@@ -8,7 +8,8 @@
     "message.collectibles.set_books": "Set: Livres",
     "message.collectibles.set_fossils": "Set: Fossils",
     "message.collectibles.lootbag_jei_desc": "Contient des trésors de valeurs! Clic-droit pour ouvrir le sac de butin",
-    "message.collectibles.lootbag_entry_jei_desc": "Possibilté de l'obtenir en ouvrant un sac de butin!",
+    "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a Collectible Loot Bag!",
+    "message.collectibles.epic_lootbag_entry_jei_desc": "Random chance to get this if you open a Epic Collectible Loot Bag!",
     "message.collectibles.open_bag": "Clic-droit pour ouvrir",
 
     "advancements.collectibles.root.desc": "Find a collectible!",

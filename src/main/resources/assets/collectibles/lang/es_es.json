@@ -8,7 +8,8 @@
     "message.collectibles.set_books": "Set: Libros",
     "message.collectibles.set_fossils": "Set: Fossils",
     "message.collectibles.lootbag_jei_desc": "¡Contiene tesoros valiosos! Click derecho para abrir la Bolsa de botin",
-    "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a loot bag!",
+    "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a Collectible Loot Bag!",
+    "message.collectibles.epic_lootbag_entry_jei_desc": "Random chance to get this if you open a Epic Collectible Loot Bag!",
     "message.collectibles.open_bag": "Click derecho para abrir",
 
     "advancements.collectibles.root.desc": "Find a collectible!",

@@ -8,9 +8,11 @@ import mezz.jei.api.runtime.IIngredientManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraftforge.registries.ForgeRegistries;
+import xxrexraptorxx.collectibles.main.Collectibles;
 import xxrexraptorxx.collectibles.main.ModItems;
 import xxrexraptorxx.collectibles.main.References;
+import xxrexraptorxx.collectibles.utils.Config;
 
 import java.util.ArrayList;
 
@@ -28,14 +30,33 @@ public class JEIIntegration implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registry) {
         IIngredientManager ingredientManager = registry.getIngredientManager();
 
-        //TODO Config compatibility
         ArrayList<ItemStack> treasures = new ArrayList<ItemStack>();
-        treasures.add(new ItemStack(Items.NETHERITE_INGOT));
-        treasures.add(new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
-        treasures.add(new ItemStack(Items.NETHER_STAR));
+        ArrayList<ItemStack> epic_treasures = new ArrayList<ItemStack>();
+
+        for (String item : Config.LOOT_BAG_REWARDS.get()) {
+            try {
+                treasures.add(new ItemStack(ForgeRegistries.ITEMS.getValue(
+                        //                                          get the mod prefix              |        get the item registry name      |         get the item amount
+                        new ResourceLocation(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
+
+            } catch (Exception e) {
+                Collectibles.LOGGER.error("Invalid item entry in the Collectibles 'epic_loot_bag_rewards' config option!");
+            }
+        }
+
+        for (String item : Config.EPIC_LOOT_BAG_REWARDS.get()) {
+            try {
+                epic_treasures.add(new ItemStack(ForgeRegistries.ITEMS.getValue(
+                        //                                          get the mod prefix              |        get the item registry name      |         get the item amount
+                        new ResourceLocation(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
+
+            } catch (Exception e) {
+                Collectibles.LOGGER.error("Invalid item entry in the Collectibles 'epic_loot_bag_rewards' config option!");
+            }
+        }
 
         registry.addIngredientInfo(treasures, VanillaTypes.ITEM_STACK, Component.translatable("message.collectibles.lootbag_entry_jei_desc"));
-
+        registry.addIngredientInfo(epic_treasures, VanillaTypes.ITEM_STACK, Component.translatable("message.collectibles.epic_lootbag_entry_jei_desc"));
         registry.addIngredientInfo(new ItemStack(ModItems.LOOT_BAG.get()), VanillaTypes.ITEM_STACK, Component.translatable("message.collectibles.lootbag_jei_desc"));
 
     }

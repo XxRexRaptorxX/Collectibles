@@ -5,8 +5,9 @@
     "message.collectibles.set_fragments": "Set: Fragments",
     "message.collectibles.set_books": "Set: Books",
     "message.collectibles.set_fossils": "Set: Fossils",
-    "message.collectibles.lootbag_jei_desc": "Contains valuable treasures! Right-click to open the Loot bag",
-    "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a loot bag!",
+    "message.collectibles.lootbag_jei_desc": "Contains valuable treasures! Right-click to open the Loot Bag",
+    "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a Collectible Loot Bag!",
+    "message.collectibles.epic_lootbag_entry_jei_desc": "Random chance to get this if you open a Epic Collectible Loot Bag!",
     "message.collectibles.open_bag": "Right-click to open",
 
     "advancements.collectibles.root.desc": "Find a collectible!",

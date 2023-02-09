@@ -6,7 +6,8 @@
     "message.collectibles.set_books": "Set: Bücher",
     "message.collectibles.set_fossils": "Set: Fossilien",
     "message.collectibles.lootbag_jei_desc": "Enthält wertvolle Schätze! Rechts-klick um den Loot Beutel zu öffnen",
-    "message.collectibles.lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Beutetasche geöffnen wird!",
+    "message.collectibles.lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Sammlerstück Beutetasche geöffnen wird!",
+    "message.collectibles.epic_lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Epische Sammlerstück Beutetasche geöffnen wird!",
     "message.collectibles.open_bag": "Rechts klick zum öffnen",
 
     "advancements.collectibles.root.desc": "Finde ein Sammlerobjekt!",
