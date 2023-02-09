@@ -1,6 +1,6 @@
 package xxrexraptorxx.collectibles.datagen;
-/**
-import net.minecraft.data.DataGenerator;
+
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -8,11 +8,12 @@ import net.minecraftforge.registries.RegistryObject;
 import xxrexraptorxx.collectibles.main.ModItems;
 import xxrexraptorxx.collectibles.main.References;
 
-public class Items extends ItemModelProvider {
+public class ItemModelGen extends ItemModelProvider {
 
-    public Items(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, References.MODID, existingFileHelper);
+    public ItemModelGen(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+        super(packOutput, References.MODID, existingFileHelper);
     }
+
 
     @Override
     protected void registerModels() {
@@ -68,4 +69,3 @@ public class Items extends ItemModelProvider {
     }
 
 }
- **/
