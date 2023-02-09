@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "collectibles:claw_fossil"
+    },
+    {
+      "item": "collectibles:leg_fossil"
+    },
+    {
+      "item": "collectibles:ammonite_fossil"
+    },
+    {
+      "item": "collectibles:crinoid_fossil"
+    },
+    {
+      "item": "collectibles:trilobite_fossil"
+    },
+    {
+      "item": "collectibles:skull_fossil"
+    },
+    {
+      "item": "collectibles:spine_fossil"
+    },
+    {
+      "item": "collectibles:rip_fossil"
+    },
+    {
+      "item": "collectibles:thorax_fossil"
+    }
+  ],
+  "result": {
+    "item": "collectibles:epic_loot_bag"
+  }
+}

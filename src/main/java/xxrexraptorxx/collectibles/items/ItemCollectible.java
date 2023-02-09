@@ -33,6 +33,9 @@ public class ItemCollectible extends Item {
 
         } else if (this.getDescriptionId().contains("collectibles:") && this.getDescriptionId().contains("book")) {
             list.add(Component.translatable("message.collectibles.set_books").withStyle(ChatFormatting.YELLOW));
+
+        } else if (this.getDescriptionId().contains("collectibles:") && this.getDescriptionId().contains("fossils")) {
+            list.add(Component.translatable("message.collectibles.set_fossils").withStyle(ChatFormatting.YELLOW));
         }
 
         list.add(Component.literal(ChatFormatting.YELLOW + "#" + CollectibleHelper.getCollectibleNumber(stack)));

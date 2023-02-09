@@ -50,6 +50,16 @@ public class ItemModelGen extends ItemModelProvider {
         itemGenerated(ModItems.KNOWLEDGE_BOOK);
         itemGenerated(ModItems.CURSED_BOOK);
         itemGenerated(ModItems.NECRONOMICON_BOOK);
+
+        itemGenerated(ModItems.CLAW_FOSSIL);
+        itemGenerated(ModItems.LEG_FOSSIL);
+        itemGenerated(ModItems.AMMONITE_FOSSIL);
+        itemGenerated(ModItems.CRINOID_FOSSIL);
+        itemGenerated(ModItems.TRILOBITE_FOSSIL);
+        itemGenerated(ModItems.SKULL_FOSSIL);
+        itemGenerated(ModItems.SPINE_FOSSIL);
+        itemGenerated(ModItems.RIP_FOSSIL);
+        itemGenerated(ModItems.THORAX_FOSSIL);
     }
 
 

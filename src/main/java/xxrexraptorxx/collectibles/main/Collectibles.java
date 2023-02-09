@@ -45,6 +45,7 @@ public class Collectibles {
                     output.accept(ModItems.BRASS_COIN.get());
                     output.accept(ModItems.IRON_COIN.get());
                     output.accept(ModItems.STONE_COIN.get());
+
                     output.accept(ModItems.DIAMOND_FRAGMENT.get());
                     output.accept(ModItems.EMERALD_FRAGMENT.get());
                     output.accept(ModItems.AMETHYST_FRAGMENT.get());
@@ -54,6 +55,7 @@ public class Collectibles {
                     output.accept(ModItems.CRYSTAL_FRAGMENT.get());
                     output.accept(ModItems.HEMATITE_FRAGMENT.get());
                     output.accept(ModItems.TOURMALINE_FRAGMENT.get());
+
                     output.accept(ModItems.OLD_BOOK.get());
                     output.accept(ModItems.NECRONOMICON_BOOK.get());
                     output.accept(ModItems.KNOWLEDGE_BOOK.get());
@@ -63,6 +65,17 @@ public class Collectibles {
                     output.accept(ModItems.GRIMOIRE_BOOK.get());
                     output.accept(ModItems.CURSED_BOOK.get());
                     output.accept(ModItems.HEROBRINES_BOOK.get());
+
+                    output.accept(ModItems.CLAW_FOSSIL.get());
+                    output.accept(ModItems.LEG_FOSSIL.get());
+                    output.accept(ModItems.AMMONITE_FOSSIL.get());
+                    output.accept(ModItems.CRINOID_FOSSIL.get());
+                    output.accept(ModItems.TRILOBITE_FOSSIL.get());
+                    output.accept(ModItems.SKULL_FOSSIL.get());
+                    output.accept(ModItems.SPINE_FOSSIL.get());
+                    output.accept(ModItems.RIP_FOSSIL.get());
+                    output.accept(ModItems.THORAX_FOSSIL.get());
+
                     output.accept(ModItems.LOOT_BAG.get());
                     output.accept(ModItems.EPIC_LOOT_BAG.get());
                 })

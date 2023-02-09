@@ -47,6 +47,16 @@ public class ModItems {
     public static final RegistryObject<ItemCollectible> GRIMOIRE_BOOK = ITEMS.register("grimoire_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> CURSED_BOOK = ITEMS.register("cursed_book", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> HEROBRINES_BOOK = ITEMS.register("herobrines_book", ItemCollectible::new);
+
+    public static final RegistryObject<ItemCollectible> CLAW_FOSSIL = ITEMS.register("claw_fossil", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> LEG_FOSSIL = ITEMS.register("leg_fossil", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> AMMONITE_FOSSIL = ITEMS.register("ammonite_fossil", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> CRINOID_FOSSIL = ITEMS.register("crinoid_fossil", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> TRILOBITE_FOSSIL = ITEMS.register("trilobite_fossil", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> SKULL_FOSSIL = ITEMS.register("skull_fossil", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> SPINE_FOSSIL = ITEMS.register("spine_fossil", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> RIP_FOSSIL = ITEMS.register("rip_fossil", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> THORAX_FOSSIL = ITEMS.register("thorax_fossil", ItemCollectible::new);
 /**
     public static final RegistryObject<ItemCollectible> ARROW_LEFTOVER = ITEMS.register("arrow_leftover", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> HOE_LEFTOVER = ITEMS.register("hoe_leftover", ItemCollectible::new);

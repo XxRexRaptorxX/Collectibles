@@ -28,6 +28,7 @@ public class JEIIntegration implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registry) {
         IIngredientManager ingredientManager = registry.getIngredientManager();
 
+        //TODO Config compatibility
         ArrayList<ItemStack> treasures = new ArrayList<ItemStack>();
         treasures.add(new ItemStack(Items.NETHERITE_INGOT));
         treasures.add(new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));

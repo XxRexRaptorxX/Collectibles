@@ -1,0 +1,71 @@
+{
+  "display": {
+    "icon": {
+      "item": "collectibles:spine_fossil"
+    },
+    "title": {
+      "translate": "message.collectibles.set_fossils"
+    },
+    "description": {
+      "translate": "advancements.collectibles.all_fossils.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "collectibles:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "collectibles:claw_fossil"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:leg_fossil"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:ammonite_fossil"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:crinoid_fossil"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:trilobite_fossil"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:skull_fossil"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:spine_fossil"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:rip_fossil"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:thorax_fossil"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

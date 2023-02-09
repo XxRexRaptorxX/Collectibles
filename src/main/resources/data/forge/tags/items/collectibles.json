@@ -28,6 +28,15 @@
       "collectibles:old_book",
       "collectibles:knowledge_book",
       "collectibles:grimoire_book",
-      "collectibles:monster_book"
+      "collectibles:monster_book",
+      "collectibles:claw_fossil",
+      "collectibles:leg_fossil",
+      "collectibles:ammonite_fossil",
+      "collectibles:crinoid_fossil",
+      "collectibles:trilobite_fossil",
+      "collectibles:skull_fossil",
+      "collectibles:spine_fossil",
+      "collectibles:rip_fossil",
+      "collectibles:thorax_fossil"
   ]
 }

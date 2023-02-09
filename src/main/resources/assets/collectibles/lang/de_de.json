@@ -4,6 +4,7 @@
     "message.collectibles.set_coins": "Set: Münzen",
     "message.collectibles.set_fragments": "Set: Fragmente",
     "message.collectibles.set_books": "Set: Bücher",
+    "message.collectibles.set_fossils": "Set: Fossilien",
     "message.collectibles.lootbag_jei_desc": "Enthält wertvolle Schätze! Rechts-klick um den Loot Beutel zu öffnen",
     "message.collectibles.lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Beutetasche geöffnen wird!",
     "message.collectibles.open_bag": "Rechts klick zum öffnen",
@@ -12,6 +13,7 @@
     "advancements.collectibles.all_coins.desc": "Finde alle 9 Münzen!",
     "advancements.collectibles.all_fragments.desc": "Finde alle 9 Fragmente!",
     "advancements.collectibles.all_books.desc": "Finde alle 9 Bücher!",
+    "advancements.collectibles.all_fossils.desc": "Finde alle 9 Fossilien!",
     "advancements.collectibles.lootbag": "Hol dir deine Belohnung!",
     "advancements.collectibles.epic_lootbag": "Hol dir deine ultimative Belohnung!",
     "advancements.collectibles.lootbag.desc": "Crafte dir eine Beutetasche aus den Sammlerstücken!",
@@ -49,5 +51,15 @@
     "item.collectibles.old_book": "Altes Buch",
     "item.collectibles.cursed_book": "Verfluchtes Buch",
     "item.collectibles.monster_book": "Monster Buch der Monster",
-    "item.collectibles.knowledge_book": "Wissens Buch"
+    "item.collectibles.knowledge_book": "Wissens Buch",
+
+    "item.collectibles.claw_fossil": "Klauen Fossil",
+    "item.collectibles.leg_fossil": "Bein Fossil",
+    "item.collectibles.ammonite_fossil": "Ammonit Fossil",
+    "item.collectibles.crinoid_fossil": "Crinoid Fossil",
+    "item.collectibles.trilobite_fossil": "Trilobit Fossil",
+    "item.collectibles.skull_fossil": "Schädel Fossil",
+    "item.collectibles.spine_fossil": "Wirbelsäulen Fossil",
+    "item.collectibles.rip_fossil": "Rippen Fossil",
+    "item.collectibles.thorax_fossil": "Brustkorb Fossil"
 }
