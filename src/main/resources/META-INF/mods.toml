@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[44,)"
+loaderVersion="[45,)"
 license="All rights reserved"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/collectibles/issues"
 
 [[mods]]
 modId="collectibles"
-version="1.3.0"
+version="1.3.1"
 displayName="Collectibles"
 itemIcon="collectibles:loot_bag"
 updateJSONURL="https://raw.githubusercontent.com/XxRexRaptorxX/Update-Checker/main/Collectibles.json"
@@ -19,13 +19,13 @@ Every game these days has collectibles in it, this mod adds some to minecraft to
 [[dependencies.collectibles]]
     modId="forge"
     mandatory=true
-    versionRange="[44,)"
+    versionRange="[45,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.collectibles]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.3,1.20)"
+    versionRange="[1.19.4,1.20)"
     ordering="NONE"
     side="BOTH"

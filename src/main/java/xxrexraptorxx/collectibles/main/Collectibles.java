@@ -35,7 +35,7 @@ public class Collectibles {
     @SubscribeEvent
     public static void registerTabs(final CreativeModeTabEvent.Register event) {
         event.registerCreativeModeTab(CREATIVE_TAB, (cf) -> cf.icon(() -> new ItemStack(ModItems.EPIC_LOOT_BAG.get()))
-                .title(Component.translatable("itemGroup." + References.MODID + "_tab")).displayItems((flagSet, output, ifSth) -> {
+                .title(Component.translatable("itemGroup." + References.MODID + "_tab")).displayItems((p_270258_, output) -> {
                     output.accept(ModItems.GOLD_COIN.get());
                     output.accept(ModItems.SILVER_COIN.get());
                     output.accept(ModItems.PLATINUM_COIN.get());
