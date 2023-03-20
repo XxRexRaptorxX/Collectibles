@@ -2,11 +2,11 @@
 
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/YndbKiX8?label=Modrinth&logo=modrinth&style=for-the-badge)][mr_mod] [![Modrinth Game Versions](https://img.shields.io/modrinth/game-versions/YndbKiX8?label=Available%20for&logo=modrinth&style=for-the-badge)][mr_mod]
 
-# Nexus for Minecraft
-
-## 📖 Description
+# Collectibles for Minecraft
 
 ![Logo](https://i.imgur.com/0140CTT.png)
+
+## 📖 Description
 
 Every game these days has collectibles in it, this mod adds some to minecraft too. With a little bonus when you complete a set!
 
