@@ -5,6 +5,7 @@
     "message.collectibles.set_fragments": "Set: Fragmente",
     "message.collectibles.set_books": "Set: Bücher",
     "message.collectibles.set_fossils": "Set: Fossilien",
+    "message.collectibles.set_jewelry": "Set: Schmuck",
     "message.collectibles.lootbag_jei_desc": "Enthält wertvolle Schätze! Rechts-klick um den Loot Beutel zu öffnen",
     "message.collectibles.lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Sammlerstück Beutetasche geöffnen wird!",
     "message.collectibles.epic_lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Epische Sammlerstück Beutetasche geöffnen wird!",
@@ -15,6 +16,7 @@
     "advancements.collectibles.all_fragments.desc": "Finde alle 9 Fragmente!",
     "advancements.collectibles.all_books.desc": "Finde alle 9 Bücher!",
     "advancements.collectibles.all_fossils.desc": "Finde alle 9 Fossilien!",
+    "advancements.collectibles.all_jewelry.desc": "Finde alle 9 Schmuckstücke!",
     "advancements.collectibles.lootbag": "Hol dir deine Belohnung!",
     "advancements.collectibles.epic_lootbag": "Hol dir deine ultimative Belohnung!",
     "advancements.collectibles.lootbag.desc": "Crafte dir eine Beutetasche aus den Sammlerstücken!",
@@ -62,5 +64,15 @@
     "item.collectibles.skull_fossil": "Schädel Fossil",
     "item.collectibles.spine_fossil": "Wirbelsäulen Fossil",
     "item.collectibles.rip_fossil": "Rippen Fossil",
-    "item.collectibles.thorax_fossil": "Brustkorb Fossil"
+    "item.collectibles.thorax_fossil": "Brustkorb Fossil",
+
+    "item.collectibles.amulet_jewelry": "Amulett",
+    "item.collectibles.hairpin_jewelry": "Haarnadel",
+    "item.collectibles.bracelet_jewelry": "Armband",
+    "item.collectibles.brooch_jewelry": "Brosche",
+    "item.collectibles.earring_jewelry": "Ohrstecker",
+    "item.collectibles.diadem_jewelry": "Diadem",
+    "item.collectibles.crown_jewelry": "Krone",
+    "item.collectibles.chain_jewelry": "Halskette",
+    "item.collectibles.ring_jewelry": "Ring"
 }

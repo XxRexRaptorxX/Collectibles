@@ -152,23 +152,23 @@ public class CollectibleHelper {
 
     public static Integer getCollectibleNumber(ItemStack collectible) {
         Item item = collectible.getItem();
-        if        (item == ModItems.GOLD_COIN.get() || item == ModItems.DIAMOND_FRAGMENT.get() || item == ModItems.OLD_BOOK.get() || item == ModItems.CLAW_FOSSIL.get()) {
+        if        (item == ModItems.GOLD_COIN.get() || item == ModItems.DIAMOND_FRAGMENT.get() || item == ModItems.OLD_BOOK.get() || item == ModItems.CLAW_FOSSIL.get() || item == ModItems.AMULET_JEWELRY.get()) {
             return 1;
-        } else if (item == ModItems.SILVER_COIN.get() || item == ModItems.EMERALD_FRAGMENT.get() || item == ModItems.NECRONOMICON_BOOK.get() || item == ModItems.LEG_FOSSIL.get()) {
+        } else if (item == ModItems.SILVER_COIN.get() || item == ModItems.EMERALD_FRAGMENT.get() || item == ModItems.NECRONOMICON_BOOK.get() || item == ModItems.LEG_FOSSIL.get() || item == ModItems.HAIRPIN_JEWELRY.get()) {
             return 2;
-        } else if (item == ModItems.PLATINUM_COIN.get() || item == ModItems.AMETHYST_FRAGMENT.get() || item == ModItems.KNOWLEDGE_BOOK.get() || item == ModItems.AMMONITE_FOSSIL.get()) {
+        } else if (item == ModItems.PLATINUM_COIN.get() || item == ModItems.AMETHYST_FRAGMENT.get() || item == ModItems.KNOWLEDGE_BOOK.get() || item == ModItems.AMMONITE_FOSSIL.get() || item == ModItems.BRACELET_JEWELRY.get()) {
             return 3;
-        } else if (item == ModItems.NETHERITE_COIN.get() || item == ModItems.RUBY_FRAGMENT.get() || item == ModItems.NOTCHS_BOOK.get() || item == ModItems.CRINOID_FOSSIL.get()) {
+        } else if (item == ModItems.NETHERITE_COIN.get() || item == ModItems.RUBY_FRAGMENT.get() || item == ModItems.NOTCHS_BOOK.get() || item == ModItems.CRINOID_FOSSIL.get() || item == ModItems.BROOCH_JEWELRY.get()) {
             return 4;
-        } else if (item == ModItems.COPPER_COIN.get() || item == ModItems.SAPPHIRE_FRAGMENT.get() || item == ModItems.DARKHOLD_BOOK.get() || item == ModItems.TRILOBITE_FOSSIL.get()) {
+        } else if (item == ModItems.COPPER_COIN.get() || item == ModItems.SAPPHIRE_FRAGMENT.get() || item == ModItems.DARKHOLD_BOOK.get() || item == ModItems.TRILOBITE_FOSSIL.get() || item == ModItems.EARRING_JEWELRY.get()) {
             return 5;
-        } else if (item == ModItems.BRONZE_COIN.get() || item == ModItems.TOPAZ_FRAGMENT.get() || item == ModItems.MONSTER_BOOK.get() || item == ModItems.SKULL_FOSSIL.get()) {
+        } else if (item == ModItems.BRONZE_COIN.get() || item == ModItems.TOPAZ_FRAGMENT.get() || item == ModItems.MONSTER_BOOK.get() || item == ModItems.SKULL_FOSSIL.get() || item == ModItems.DIADEM_JEWELRY.get()) {
             return 6;
-        } else if (item == ModItems.BRASS_COIN.get() || item == ModItems.CRYSTAL_FRAGMENT.get() || item == ModItems.GRIMOIRE_BOOK.get() || item == ModItems.SPINE_FOSSIL.get()) {
+        } else if (item == ModItems.BRASS_COIN.get() || item == ModItems.CRYSTAL_FRAGMENT.get() || item == ModItems.GRIMOIRE_BOOK.get() || item == ModItems.SPINE_FOSSIL.get() || item == ModItems.CROWN_JEWELRY.get()) {
             return 7;
-        } else if (item == ModItems.IRON_COIN.get() || item == ModItems.HEMATITE_FRAGMENT.get() || item == ModItems.CURSED_BOOK.get() || item == ModItems.RIP_FOSSIL.get()) {
+        } else if (item == ModItems.IRON_COIN.get() || item == ModItems.HEMATITE_FRAGMENT.get() || item == ModItems.CURSED_BOOK.get() || item == ModItems.RIP_FOSSIL.get() || item == ModItems.CHAIN_JEWELRY.get()) {
             return 8;
-        } else if (item == ModItems.STONE_COIN.get() || item == ModItems.TOURMALINE_FRAGMENT.get() || item == ModItems.HEROBRINES_BOOK.get() || item == ModItems.THORAX_FOSSIL.get()) {
+        } else if (item == ModItems.STONE_COIN.get() || item == ModItems.TOURMALINE_FRAGMENT.get() || item == ModItems.HEROBRINES_BOOK.get() || item == ModItems.THORAX_FOSSIL.get() || item == ModItems.RING_JEWELRY.get()) {
             return 9;
         } else {
             Collectibles.LOGGER.error("Unknown Collectible!");

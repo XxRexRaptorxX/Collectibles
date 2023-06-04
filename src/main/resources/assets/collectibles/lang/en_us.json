@@ -5,6 +5,7 @@
     "message.collectibles.set_fragments": "Set: Fragments",
     "message.collectibles.set_books": "Set: Books",
     "message.collectibles.set_fossils": "Set: Fossils",
+    "message.collectibles.set_jewelry": "Set: Jewelry",
     "message.collectibles.lootbag_jei_desc": "Contains valuable treasures! Right-click to open the Loot Bag",
     "message.collectibles.lootbag_entry_jei_desc": "Random chance to get this if you open a Collectible Loot Bag!",
     "message.collectibles.epic_lootbag_entry_jei_desc": "Random chance to get this if you open a Epic Collectible Loot Bag!",
@@ -15,6 +16,7 @@
     "advancements.collectibles.all_fragments.desc": "Find all 9 fragments!",
     "advancements.collectibles.all_books.desc": "Find all 9 books!",
     "advancements.collectibles.all_fossils.desc": "Find all 9 fossils!",
+    "advancements.collectibles.all_jewelry.desc": "Find all 9 pieces of jewellery!",
     "advancements.collectibles.lootbag": "Get your rewards!",
     "advancements.collectibles.epic_lootbag": "Get your ultimate rewards!",
     "advancements.collectibles.lootbag.desc": "Craft a Lootbag from the collectibles!",
@@ -62,5 +64,15 @@
     "item.collectibles.skull_fossil": "Skull Fossil",
     "item.collectibles.spine_fossil": "Spine Fossil",
     "item.collectibles.rip_fossil": "Rip Fossil",
-    "item.collectibles.thorax_fossil": "Thorax Fossil"
+    "item.collectibles.thorax_fossil": "Thorax Fossil",
+
+    "item.collectibles.amulet_jewelry": "Amulet",
+    "item.collectibles.hairpin_jewelry": "Hairpin",
+    "item.collectibles.bracelet_jewelry": "Bracelet",
+    "item.collectibles.brooch_jewelry": "Brooch",
+    "item.collectibles.earring_jewelry": "Earring",
+    "item.collectibles.diadem_jewelry": "Diadem",
+    "item.collectibles.crown_jewelry": "Crown",
+    "item.collectibles.chain_jewelry": "Chain",
+    "item.collectibles.ring_jewelry": "Ring"
 }

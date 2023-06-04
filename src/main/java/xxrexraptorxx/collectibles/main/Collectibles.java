@@ -76,6 +76,16 @@ public class Collectibles {
                     output.accept(ModItems.RIP_FOSSIL.get());
                     output.accept(ModItems.THORAX_FOSSIL.get());
 
+                    output.accept(ModItems.AMULET_JEWELRY.get());
+                    output.accept(ModItems.HAIRPIN_JEWELRY.get());
+                    output.accept(ModItems.BRACELET_JEWELRY.get());
+                    output.accept(ModItems.BROOCH_JEWELRY.get());
+                    output.accept(ModItems.EARRING_JEWELRY.get());
+                    output.accept(ModItems.DIADEM_JEWELRY.get());
+                    output.accept(ModItems.CROWN_JEWELRY.get());
+                    output.accept(ModItems.CHAIN_JEWELRY.get());
+                    output.accept(ModItems.RING_JEWELRY.get());
+
                     output.accept(ModItems.LOOT_BAG.get());
                     output.accept(ModItems.EPIC_LOOT_BAG.get());
                 })

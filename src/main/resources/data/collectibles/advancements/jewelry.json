@@ -1,0 +1,71 @@
+{
+  "display": {
+    "icon": {
+      "item": "collectibles:crown_jewelry"
+    },
+    "title": {
+      "translate": "message.collectibles.set_jewelry"
+    },
+    "description": {
+      "translate": "advancements.collectibles.all_jewelry.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "collectibles:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "collectibles:amulet_jewelry"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:hairpin_jewelry"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:bracelet_jewelry"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:brooch_jewelry"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:earring_jewelry"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:diadem_jewelry"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:crown_jewelry"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:chain_jewelry"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:ring_jewelry"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

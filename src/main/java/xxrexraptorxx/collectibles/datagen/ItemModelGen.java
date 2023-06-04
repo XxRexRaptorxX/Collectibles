@@ -60,6 +60,16 @@ public class ItemModelGen extends ItemModelProvider {
         itemGenerated(ModItems.SPINE_FOSSIL);
         itemGenerated(ModItems.RIP_FOSSIL);
         itemGenerated(ModItems.THORAX_FOSSIL);
+
+        itemGenerated(ModItems.AMULET_JEWELRY);
+        itemGenerated(ModItems.HAIRPIN_JEWELRY);
+        itemGenerated(ModItems.BRACELET_JEWELRY);
+        itemGenerated(ModItems.BROOCH_JEWELRY);
+        itemGenerated(ModItems.EARRING_JEWELRY);
+        itemGenerated(ModItems.DIADEM_JEWELRY);
+        itemGenerated(ModItems.CROWN_JEWELRY);
+        itemGenerated(ModItems.CHAIN_JEWELRY);
+        itemGenerated(ModItems.RING_JEWELRY);
     }
 
 

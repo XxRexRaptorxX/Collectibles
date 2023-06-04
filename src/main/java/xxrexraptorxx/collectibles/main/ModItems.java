@@ -57,6 +57,16 @@ public class ModItems {
     public static final RegistryObject<ItemCollectible> SPINE_FOSSIL = ITEMS.register("spine_fossil", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> RIP_FOSSIL = ITEMS.register("rip_fossil", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> THORAX_FOSSIL = ITEMS.register("thorax_fossil", ItemCollectible::new);
+
+    public static final RegistryObject<ItemCollectible> AMULET_JEWELRY = ITEMS.register("amulet_jewelry", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> HAIRPIN_JEWELRY = ITEMS.register("hairpin_jewelry", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> BRACELET_JEWELRY = ITEMS.register("bracelet_jewelry", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> BROOCH_JEWELRY = ITEMS.register("brooch_jewelry", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> EARRING_JEWELRY = ITEMS.register("earring_jewelry", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> DIADEM_JEWELRY = ITEMS.register("diadem_jewelry", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> CROWN_JEWELRY = ITEMS.register("crown_jewelry", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> CHAIN_JEWELRY = ITEMS.register("chain_jewelry", ItemCollectible::new);
+    public static final RegistryObject<ItemCollectible> RING_JEWELRY = ITEMS.register("ring_jewelry", ItemCollectible::new);
 /**
     public static final RegistryObject<ItemCollectible> ARROW_LEFTOVER = ITEMS.register("arrow_leftover", ItemCollectible::new);
     public static final RegistryObject<ItemCollectible> HOE_LEFTOVER = ITEMS.register("hoe_leftover", ItemCollectible::new);

@@ -37,6 +37,15 @@
       "collectibles:skull_fossil",
       "collectibles:spine_fossil",
       "collectibles:rip_fossil",
-      "collectibles:thorax_fossil"
+      "collectibles:thorax_fossil",
+      "collectibles:amulet_jewelry",
+      "collectibles:hairpin_jewelry",
+      "collectibles:bracelet_jewelry",
+      "collectibles:brooch_jewelry",
+      "collectibles:earring_jewelry",
+      "collectibles:diadem_jewelry",
+      "collectibles:crown_jewelry",
+      "collectibles:chain_jewelry",
+      "collectibles:ring_jewelry"
   ]
 }
