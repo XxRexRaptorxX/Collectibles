@@ -1,31 +1,32 @@
 modLoader="javafml"
-loaderVersion="[45,)"
-license="All rights reserved"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/collectibles/issues"
 
 [[mods]]
-modId="collectibles"
-version="1.4.0"
-displayName="Collectibles"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
 itemIcon="collectibles:loot_bag"
 updateJSONURL="https://raw.githubusercontent.com/XxRexRaptorxX/Update-Checker/main/Collectibles.json"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/collectibles"
 logoFile="logo.png"
 #credits=""
-authors="XxRexRaptorxX (RexRaptor)"
-description='''
-Every game these days has collectibles in it, this mod adds some to minecraft too. With a little bonus when you complete a set!'''
+authors="${mod_authors}"
+description='''Every game these days has collectibles in it, this mod adds some to minecraft too. With a little bonus when you complete a set!'''
 
-[[dependencies.collectibles]]
-    modId="forge"
-    mandatory=true
-    versionRange="[45,)"
-    ordering="NONE"
-    side="BOTH"
 
-[[dependencies.collectibles]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.19.4,1.20)"
-    ordering="NONE"
-    side="BOTH"
+[[dependencies.${mod_id}]]
+modId="forge"
+mandatory=true
+versionRange="${forge_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="minecraft"
+mandatory=true
+versionRange="${mc_version_range}"
+ordering="NONE"
+side="BOTH"
+

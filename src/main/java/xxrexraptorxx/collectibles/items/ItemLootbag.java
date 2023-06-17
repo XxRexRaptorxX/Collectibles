@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import xxrexraptorxx.collectibles.main.ModItems;
+import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
 

@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ForgeRegistries;
 import xxrexraptorxx.collectibles.main.Collectibles;
-import xxrexraptorxx.collectibles.main.ModItems;
+import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.main.References;
 import xxrexraptorxx.collectibles.utils.Config;
 

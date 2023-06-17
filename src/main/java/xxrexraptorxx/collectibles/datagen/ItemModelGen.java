@@ -5,7 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-import xxrexraptorxx.collectibles.main.ModItems;
+import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.main.References;
 
 public class ItemModelGen extends ItemModelProvider {

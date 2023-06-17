@@ -6,7 +6,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.ForgeRegistries;
 import xxrexraptorxx.collectibles.main.Collectibles;
-import xxrexraptorxx.collectibles.main.ModItems;
+import xxrexraptorxx.collectibles.registry.ModItems;
 
 import java.util.ArrayList;
 import java.util.Random;

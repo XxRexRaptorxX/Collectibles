@@ -1,4 +1,4 @@
-package xxrexraptorxx.collectibles.main;
+package xxrexraptorxx.collectibles.registry;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import xxrexraptorxx.collectibles.items.ItemCollectible;
 import xxrexraptorxx.collectibles.items.ItemLootbag;
+import xxrexraptorxx.collectibles.main.References;
 
 public class ModItems {
 

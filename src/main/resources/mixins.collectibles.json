@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "xxrexraptorxx.collectibles.utils.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.collectibles.refmap.json",
+  "mixins": [
+    "LootTableAccessor"
+  ],
+
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8.5"
+}

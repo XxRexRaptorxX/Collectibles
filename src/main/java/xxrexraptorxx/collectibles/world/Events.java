@@ -74,7 +74,7 @@ public class Events {
     @SubscribeEvent
     public static void onBlockDestroyed(BlockEvent.BreakEvent event) {
         Random random = new Random();
-        Level level = event.getPlayer().level;
+        Level level = event.getPlayer().level();
         BlockState block = event.getState();
         BlockPos pos = event.getPos();
 
@@ -116,7 +116,7 @@ public class Events {
     @SubscribeEvent
     public static void SupporterRewards(PlayerEvent.PlayerLoggedInEvent event) {
         Player player = event.getEntity();
-        Level world = player.getLevel();
+        Level level = player.level();
 
         if (Config.PATREON_REWARDS.get()) {
 
@@ -142,7 +142,7 @@ public class Events {
                             ownerNBT.putString("SkullOwner", player.getName().getString());
                             reward.setTag(ownerNBT);
 
-                            player.getLevel().playSound((Player) null, player.blockPosition(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, world.random.nextFloat() * 0.15F + 0.8F);
+                            level.playSound((Player) null, player.blockPosition(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.8F);
                             player.addItem(reward);
                             player.addItem(certificate);
                         }
@@ -166,6 +166,7 @@ public class Events {
             }
         }
     }
+
 
     /**
      * Tests if a player is a supporter
