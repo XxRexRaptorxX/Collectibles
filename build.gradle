@@ -174,7 +174,7 @@ dependencies {
     //compileOnly fg.deobf("vazkii.patchouli:Patchouli:${mc_version}-${patchouli_version}-FORGE:api")
     //runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${mc_version}-${patchouli_version}-FORGE")
     //JEED
-    //runtimeOnly fg.deobf("curse.maven:jeed-532286:${jeed_version}")
+    runtimeOnly fg.deobf("curse.maven:jeed-532286:${jeed_version}")
 }
 
 // MixinGradle Settings
