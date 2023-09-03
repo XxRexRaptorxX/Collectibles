@@ -41,14 +41,8 @@ public class LootTableInjection {
     public static final ResourceLocation woodland_mansion = registerInject("woodland_mansion");
     public static final ResourceLocation buried_treasure = registerInject("buried_treasure");
 
-    public static final ResourceLocation desert_pyramid = registerInject("desert_pyramid");
-    public static final ResourceLocation desert_well = registerInject("desert_well");
-    public static final ResourceLocation ocean_ruin_warm = registerInject("ocean_ruin_warm");
-    public static final ResourceLocation ocean_ruin_cold = registerInject("ocean_ruin_cold");
-    public static final ResourceLocation trail_ruins_common = registerInject("trail_ruins_common");
-    public static final ResourceLocation trail_ruins_rare = registerInject("trail_ruins_rare");
-
     private static int injected = 0;
+
 
     static @NotNull ResourceLocation registerInject(String resourceName) {
         ResourceLocation registryName = register("inject/" + resourceName);
@@ -56,9 +50,11 @@ public class LootTableInjection {
         return registryName;
     }
 
+
     static @NotNull ResourceLocation register(@NotNull String resourceName) {
         return register(new ResourceLocation(References.MODID, resourceName));
     }
+
 
     static @NotNull ResourceLocation register(@NotNull ResourceLocation resourceLocation) {
         LOOT_TABLES.add(resourceLocation);
@@ -88,28 +84,11 @@ public class LootTableInjection {
     }
 
 
-    @SubscribeEvent
-    public static void onArchaeologyLootLoad(@NotNull LootTableLoadEvent event) {
-        String prefix = "minecraft:archaeology/";
-        String name = event.getName().toString();
-        if (name.startsWith(prefix)) {
-            String file = name.substring(name.indexOf(prefix) + prefix.length());
-            if (INJECTION_TABLES.containsKey(file)) {
-                try {
-                    ((LootTableAccessor) event.getTable()).getPools().add(getInjectPool(file));
-                    injected++;
-                } catch (NullPointerException e) {
-                    Collectibles.LOGGER.error("Loottable {} is broken by some other mod. Cannot add " + References.NAME + " loot to it. " + name);
-                }
-            }
-        }
-    }
-
-
     private static @NotNull LootPool getInjectPool(String entryName) {
         LootPoolEntryContainer.Builder<?> entryBuilder = LootTableReference.lootTableReference(INJECTION_TABLES.get(entryName)).setWeight(1);
         return LootPool.lootPool().setBonusRolls(UniformGenerator.between(0, 1)).setRolls(ConstantValue.exactly(1)).add(entryBuilder).build();
     }
+
 
     /**
      * @return 0 if alright, or the count of not injected loottables
@@ -119,7 +98,6 @@ public class LootTableInjection {
         injected = 0;
         return Math.max(0, INJECTION_TABLES.size() - i); //Sponge loads the loot tables for all worlds at start. Which makes this test not work anyway.
     }
-
 }
 
 //                              TEST command

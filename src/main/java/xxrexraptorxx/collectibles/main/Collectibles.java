@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import xxrexraptorxx.collectibles.registry.CreativeModeTabs;
 import xxrexraptorxx.collectibles.registry.ModItems;
+import xxrexraptorxx.collectibles.registry.ModLootModifiers;
 import xxrexraptorxx.collectibles.utils.Config;
 import xxrexraptorxx.collectibles.world.LootTableInjection;
 
@@ -26,16 +27,17 @@ public class Collectibles {
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        MinecraftForge.EVENT_BUS.register(this);
         modBus.addListener(this::setup);
 
         Config.init();
         ModItems.init();
+        ModLootModifiers.init();
         CreativeModeTabs.init();
     }
 
     private void setup(final @NotNull FMLCommonSetupEvent event) {
         MinecraftForge.EVENT_BUS.addListener(LootTableInjection::onChestLootLoad);
-        MinecraftForge.EVENT_BUS.addListener(LootTableInjection::onArchaeologyLootLoad);
     }
 
 }
