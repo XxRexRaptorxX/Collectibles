@@ -5,6 +5,7 @@
       "#forge:collectibles/coins",
       "#forge:collectibles/books",
       "#forge:collectibles/fossils",
-      "#forge:collectibles/fragments"
+      "#forge:collectibles/fragments",
+      "#forge:collectibles/jewelry"
   ]
 }
