@@ -18,6 +18,7 @@ description='''Every game these days has collectibles in it, this mod adds some 
 
 [[dependencies.${mod_id}]]
 modId="neoforge"
+mandatory=true
 type="required"
 versionRange="${forge_version_range}"
 ordering="NONE"
@@ -25,6 +26,7 @@ side="BOTH"
 
 [[dependencies.${mod_id}]]
 modId="minecraft"
+mandatory=true
 type="required"
 versionRange="${mc_version_range}"
 ordering="NONE"
