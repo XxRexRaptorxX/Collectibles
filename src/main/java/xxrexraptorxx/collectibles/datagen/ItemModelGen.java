@@ -2,11 +2,12 @@ package xxrexraptorxx.collectibles.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
-import xxrexraptorxx.collectibles.registry.ModItems;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 import xxrexraptorxx.collectibles.main.References;
+import xxrexraptorxx.collectibles.registry.ModItems;
 
 public class ItemModelGen extends ItemModelProvider {
 
@@ -74,17 +75,17 @@ public class ItemModelGen extends ItemModelProvider {
 
 
 
-    private void itemGenerated(RegistryObject item) {
+    private void itemGenerated(DeferredItem item) {
         singleTexture(item.getId().getPath(), new ResourceLocation("item/generated"),"layer0", new ResourceLocation(References.MODID, "item/" + item.getId().toString().substring(References.MODID.length() + 1)));
     }
 
 
-    private void itemHandheld(RegistryObject item) {
+    private void itemHandheld(DeferredItem item) {
         singleTexture(item.getId().getPath(), new ResourceLocation("item/handheld"),"layer0", new ResourceLocation(References.MODID, "item/" + item.getId().toString().substring(References.MODID.length() + 1)));
     }
 
 
-    private void itemBlock(RegistryObject item) {
+    private void itemBlock(DeferredBlock item) {
         withExistingParent(item.getId().getPath(), new ResourceLocation(References.MODID, "block/" + item.getId().toString().substring(References.MODID.length() + 1)));
     }
 
