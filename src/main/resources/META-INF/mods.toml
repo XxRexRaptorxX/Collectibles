@@ -8,13 +8,15 @@ modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
 itemIcon="collectibles:loot_bag"
-updateJSONURL="https://raw.githubusercontent.com/XxRexRaptorxX/Update-Checker/main/Collectibles.json"
+updateJSONURL="https://raw.githubusercontent.com/XxRexRaptorxX/Update-Checker/main/Collectibles_NEO.json"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/collectibles"
 logoFile="logo.png"
 #credits=""
 authors="${mod_authors}"
 description='''Every game these days has collectibles in it, this mod adds some to minecraft too. With a little bonus when you complete a set!'''
 
+[[mixins]]
+config="${mod_id}.mixins.json"
 
 [[dependencies.${mod_id}]]
 modId="neoforge"

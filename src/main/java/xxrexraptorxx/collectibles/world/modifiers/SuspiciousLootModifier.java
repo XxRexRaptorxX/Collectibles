@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 public class SuspiciousLootModifier extends LootModifier {
 
     public static final Supplier<Codec<SuspiciousLootModifier>> CODEC = Suppliers.memoize(()
-            -> RecordCodecBuilder.create(inst -> codecStart(inst).and(BuiltInRegistries.ITEM.getCodec()
+            -> RecordCodecBuilder.create(inst -> codecStart(inst).and(BuiltInRegistries.ITEM.byNameCodec()
             .fieldOf("item").forGetter(m -> m.item)).apply(inst, SuspiciousLootModifier::new)));
     private final Item item;
 

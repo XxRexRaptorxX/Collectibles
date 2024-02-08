@@ -2,7 +2,7 @@ package xxrexraptorxx.collectibles.registry;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xxrexraptorxx.collectibles.items.ItemCollectible;
@@ -14,8 +14,8 @@ public class ModItems {
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(References.MODID);
 
 
-    public static void init() {
-        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    public static void init(IEventBus eventBus) {
+        ITEMS.register(eventBus);
     }
 
     public static final DeferredItem<ItemCollectible> GOLD_COIN = ITEMS.register("gold_coin", ItemCollectible::new);

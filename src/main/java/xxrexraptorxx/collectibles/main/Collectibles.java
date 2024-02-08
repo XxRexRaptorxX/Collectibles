@@ -3,7 +3,6 @@ package xxrexraptorxx.collectibles.main;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neoforged.neoforge.common.NeoForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,16 +22,13 @@ public class Collectibles {
 
     public static final Logger LOGGER = LogManager.getLogger();
 
-    public Collectibles() {
-        IEventBus forgeBus = NeoForge.EVENT_BUS;
-        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        modBus.addListener(this::setup);
+    public Collectibles(IEventBus eventBus) {
+        eventBus.addListener(this::setup);
 
         Config.init();
-        ModItems.init();
-        ModLootModifiers.init();
-        CreativeModeTabs.init();
+        ModItems.init(eventBus);
+        ModLootModifiers.init(eventBus);
+        CreativeModeTabs.init(eventBus);
     }
 
     private void setup(final @NotNull FMLCommonSetupEvent event) {

@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 public class ChestLootModifier extends LootModifier {
 
     public static final Supplier<Codec<ChestLootModifier>> CODEC = Suppliers.memoize(()
-            -> RecordCodecBuilder.create(inst -> codecStart(inst).and(BuiltInRegistries.ITEM.getCodec()
+            -> RecordCodecBuilder.create(inst -> codecStart(inst).and(BuiltInRegistries.ITEM.byNameCodec()
             .fieldOf("item").forGetter(m -> m.item)).apply(inst, ChestLootModifier::new)));
     private final Item item;
 
