@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.1.5a'
+version = '1.1.5b'
 group = 'xxrexraptorxx.collectibles.main' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'collectibles'
 
@@ -121,9 +121,19 @@ repositories {
         url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven {
+        // location of the maven that hosts JEI files before January 2023
+        name = "Progwml6's maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        // location of the maven that hosts JEI files since January 2023
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
         // location of a maven mirror for JEI files, as a fallback
         name = "ModMaven"
-        url = "https://modmaven.k-4u.nl"
+        url = "https://modmaven.dev"
     }
 }
 
@@ -131,10 +141,12 @@ dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.2-40.0.3'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
 
-    compileOnly fg.deobf("mezz.jei:jei-1.18.1:9.2.1.69:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18.1:9.2.1.69")
+    compileOnly(fg.deobf("mezz.jei:jei-1.18.2-common-api:10.2.1.1005"))
+    compileOnly(fg.deobf("mezz.jei:jei-1.18.2-forge-api:10.2.1.1005"))
+    // at runtime, use the full JEI jar for Forge
+    runtimeOnly(fg.deobf("mezz.jei:jei-1.18.2-forge:10.2.1.1005"))
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
@@ -143,7 +155,7 @@ jar {
         attributes([
                 "Specification-Title"     : "collectibles",
                 "Specification-Vendor"    : "XxRexRaptorxX",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Specification-Version"   : project.version,
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "XxRexRaptorxX",
@@ -169,4 +181,9 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+}
+
+
+//Dummy task to fix post sync error caused by NeoGradle
+tasks.register("idePostSync") {
 }
