@@ -2,32 +2,8 @@
   "replace": false,
   "values":
   [
-      "collectibles:iron_coin",
-      "collectibles:gold_coin",
-      "collectibles:silver_coin",
-      "collectibles:copper_coin",
-      "collectibles:bronze_coin",
-      "collectibles:platinum_coin",
-      "collectibles:brass_coin",
-      "collectibles:stone_coin",
-      "collectibles:netherite_coin",
-      "collectibles:diamond_fragment",
-      "collectibles:emerald_fragment",
-      "collectibles:sapphire_fragment",
-      "collectibles:ruby_fragment",
-      "collectibles:topaz_fragment",
-      "collectibles:crystal_fragment",
-      "collectibles:amethyst_fragment",
-      "collectibles:tourmaline_fragment",
-      "collectibles:hematite_fragment",
-      "collectibles:darkhold_book",
-      "collectibles:herobrines_book",
-      "collectibles:notchs_book",
-      "collectibles:necronomicon_book",
-      "collectibles:cursed_book",
-      "collectibles:old_book",
-      "collectibles:knowledge_book",
-      "collectibles:grimoire_book",
-      "collectibles:monster_book"
-  ]
+      "#forge:collectibles/coins",
+      "#forge:collectibles/books",
+      "#forge:collectibles/fragments"
+	  ]
 }
