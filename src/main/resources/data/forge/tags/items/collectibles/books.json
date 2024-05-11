@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values":
+  [
+      "collectibles:old_book",
+      "collectibles:necronomicon_book",
+      "collectibles:knowledge_book",
+      "collectibles:notchs_book",
+      "collectibles:rexs_book",
+      "collectibles:monster_book",
+      "collectibles:grimoire_book",
+      "collectibles:cursed_book",
+      "collectibles:herobrines_book"
+  ]
+}
