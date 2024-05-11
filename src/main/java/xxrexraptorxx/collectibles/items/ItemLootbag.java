@@ -79,6 +79,6 @@ public class ItemLootbag extends Item {
             if (level.isClientSide) player.awardStat(Stats.ITEM_USED.get(this));
         }
 
-        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+        return InteractionResultHolder.success(stack);
     }
 }
