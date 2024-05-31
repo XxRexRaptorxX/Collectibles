@@ -5,7 +5,7 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/collectibles/issue
 
 [[mods]]
 modId="collectibles"
-version="1.1.5b"
+version="1.1.5c"
 displayName="Collectibles"
 itemIcon="collectibles:loot_bag"
 updateJSONURL="https://raw.githubusercontent.com/XxRexRaptorxX/Update-Checker/main/Collectibles.json"
