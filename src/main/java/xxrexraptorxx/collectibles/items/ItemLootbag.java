@@ -48,26 +48,25 @@ public class ItemLootbag extends Item {
 
         if(this == ModItems.LOOT_BAG.get() || this == ModItems.EPIC_LOOT_BAG.get()) {
             level.playSound((Player) null, player.getOnPos(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.0F);
-            stack.shrink(1);
 
             if (!level.isClientSide) {
                 if (this == ModItems.EPIC_LOOT_BAG.get()) {
                     player.giveExperiencePoints(Config.EPIC_LOOT_BAG_XP.get());
 
-                    for (int i = 0; i < Config.EPIC_LOOT_BAG_ITEM_AMOUNT.get(); i++ ) {
+                    for (int i = 0; i < Config.EPIC_LOOT_BAG_ITEM_AMOUNT.get(); i++) {
                         player.addItem(CollectibleHelper.getRandomEpicTreasure());
                     }
 
                 } else {
                     player.giveExperiencePoints(Config.LOOT_BAG_XP.get());
 
-                    for (int i = 0; i < Config.LOOT_BAG_ITEM_AMOUNT.get(); i++ ) {
+                    for (int i = 0; i < Config.LOOT_BAG_ITEM_AMOUNT.get(); i++) {
                         player.addItem(CollectibleHelper.getRandomTreasure());
                     }
                 }
-
             }
 
+            stack.shrink(1);
             if (level.isClientSide) player.awardStat(Stats.ITEM_USED.get(this));
         }
 
