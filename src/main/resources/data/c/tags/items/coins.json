@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values":
+  [
+    "#c:coins/gold",
+    "#c:coins/silver",
+    "#c:coins/platinum",
+    "#c:coins/netherite",
+    "#c:coins/copper",
+    "#c:coins/brass",
+    "#c:coins/iron",
+    "#c:coins/stone",
+    "#c:coins/bronze"
+  ]
+}

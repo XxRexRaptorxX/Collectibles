@@ -2,6 +2,6 @@
   "replace": false,
   "values":
   [
-      "#forge:collectibles/books"
+      "#c:collectibles/books"
   ]
 }

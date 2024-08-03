@@ -10,10 +10,10 @@
 
   "key": {
     "#": {
-      "tag": "forge:collectibles"
+      "tag": "c:collectibles"
     }
   },
   "result": {
-    "item": "collectibles:loot_bag"
+    "id": "collectibles:loot_bag"
   }
 }

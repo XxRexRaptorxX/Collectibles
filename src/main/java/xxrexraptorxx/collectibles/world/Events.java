@@ -1,9 +1,12 @@
 package xxrexraptorxx.collectibles.world;
 
+import com.mojang.authlib.GameProfile;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -16,15 +19,18 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.ResolvableProfile;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.VersionChecker;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.event.TickEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import xxrexraptorxx.collectibles.main.Collectibles;
@@ -38,15 +44,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-@Mod.EventBusSubscriber(modid = References.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = References.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class Events {
-
 
     /** Update-Checker **/
     private static boolean hasShownUp = false;
 
     @SubscribeEvent
-    public static void onClientTick(TickEvent.ClientTickEvent event) {
+    public static void onClientTick(ClientTickEvent.Pre event) {
         if (Config.UPDATE_CHECKER.get()) {
             if (!hasShownUp && Minecraft.getInstance().screen == null) {
                 if (VersionChecker.getResult(ModList.get().getModContainerById(References.MODID).get().getModInfo()).status() == VersionChecker.Status.OUTDATED ||
@@ -64,46 +69,6 @@ public class Events {
                     Collectibles.LOGGER.error(References.NAME + "'s version checker failed!");
                     hasShownUp = true;
 
-                }
-            }
-        }
-    }
-
-
-    /** Collectible Drop **/
-    @SubscribeEvent
-    public static void onBlockDestroyed(BlockEvent.BreakEvent event) {
-        Random random = new Random();
-        Level level = event.getPlayer().level();
-        BlockState block = event.getState();
-        BlockPos pos = event.getPos();
-
-        if (!level.isClientSide) {
-
-            if (block.is(BlockTags.BASE_STONE_OVERWORLD) || block.is(Tags.Blocks.STONE)) {
-                if (random.nextInt(Config.FRAGMENT_COLLECTIBLE_RARITY.get()) == 1) {
-                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
-
-                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFragment());
-                    level.addFreshEntity(drop);
-                }
-
-
-            } else if (block.is(BlockTags.DIRT) || block.is(BlockTags.SAND)) {
-                if (random.nextInt(Config.COIN_COLLECTIBLE_RARITY.get()) == 1) {
-                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
-
-                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomCoin());
-                    level.addFreshEntity(drop);
-                }
-
-
-            } else if (block.is(BlockTags.BASE_STONE_NETHER)) {
-                if (random.nextInt(Config.FOSSIL_COLLECTIBLE_RARITY.get()) == 1) {
-                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
-
-                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFossil());
-                    level.addFreshEntity(drop);
                 }
             }
         }
@@ -135,12 +100,12 @@ public class Events {
                         //test if player is supporter
                         if (SupporterCheck(SUPPORTER_URL, player)) {
 
-                            ItemStack certificate = new ItemStack(Items.PAPER).setHoverName((Component.literal("Thank you for supporting me in my work!").withStyle(ChatFormatting.GOLD).append(Component.literal(" - XxRexRaptorxX").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GREEN))));
+                            ItemStack certificate = new ItemStack(Items.PAPER);
+                            certificate.set(DataComponents.CUSTOM_NAME, Component.literal("Thank you for supporting me in my work!").withStyle(ChatFormatting.GOLD).append(Component.literal(" - XxRexRaptorxX").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GREEN)));
 
-                            CompoundTag ownerNBT = new CompoundTag();
                             ItemStack reward = new ItemStack(Items.PLAYER_HEAD);
-                            ownerNBT.putString("SkullOwner", player.getName().getString());
-                            reward.setTag(ownerNBT);
+                            var profile = new GameProfile(player.getUUID(), player.getName().getString());
+                            reward.set(DataComponents.PROFILE, new ResolvableProfile(profile));
 
                             level.playSound((Player) null, player.blockPosition(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.8F);
                             player.addItem(reward);
@@ -149,15 +114,24 @@ public class Events {
 
                         //test if player is premium supporter
                         if (SupporterCheck(PREMIUM_SUPPORTER_URL, player)) {
-                            ItemStack reward = new ItemStack(Items.DIAMOND_SWORD, 1).setHoverName(Component.literal("Rex's Night Sword").withStyle(ChatFormatting.DARK_GRAY));
-                            reward.enchant(Enchantments.MENDING, 1);
-                            reward.enchant(Enchantments.SHARPNESS, 3);
+                            ItemStack reward = new ItemStack(Items.DIAMOND_SWORD, 1);
+                            Registry<Enchantment> enchantmentsRegistry = level.registryAccess().registryOrThrow(Registries.ENCHANTMENT);
+
+                            reward.enchant(enchantmentsRegistry.getHolderOrThrow(Enchantments.MENDING), 1);
+                            reward.enchant(enchantmentsRegistry.getHolderOrThrow(Enchantments.SHARPNESS), 3);
+                            reward.set(DataComponents.ENCHANTMENTS, reward.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY));
+
+                            reward.set(DataComponents.CUSTOM_NAME, Component.literal("Rex's Night Sword").withStyle(ChatFormatting.DARK_GRAY));
+
                             player.addItem(reward);
                         }
 
                         //test if player is elite
                         if (SupporterCheck(ELITE_URL, player)) {
-                            player.addItem(new ItemStack(Items.NETHER_STAR).setHoverName(Component.literal("Elite Star")));
+                            ItemStack star = new ItemStack(Items.NETHER_STAR);
+                            star.set(DataComponents.CUSTOM_NAME, Component.literal("Elite Star"));
+
+                            player.addItem(star);
                         }
                     }
                 }
@@ -199,5 +173,44 @@ public class Events {
         return false;
     }
 
+
+    /** Collectible Drop **/
+    @SubscribeEvent
+    public static void onBlockDestroyed(BlockEvent.BreakEvent event) {
+        Random random = new Random();
+        Level level = event.getPlayer().level();
+        BlockState block = event.getState();
+        BlockPos pos = event.getPos();
+
+        if (!level.isClientSide) {
+
+            if (block.is(BlockTags.BASE_STONE_OVERWORLD) || block.is(Tags.Blocks.STONES)) {
+                if (random.nextInt(Config.FRAGMENT_COLLECTIBLE_RARITY.get()) == 1) {
+                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
+
+                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFragment());
+                    level.addFreshEntity(drop);
+                }
+
+
+            } else if (block.is(BlockTags.DIRT) || block.is(BlockTags.SAND)) {
+                if (random.nextInt(Config.COIN_COLLECTIBLE_RARITY.get()) == 1) {
+                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
+
+                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomCoin());
+                    level.addFreshEntity(drop);
+                }
+
+
+            } else if (block.is(BlockTags.BASE_STONE_NETHER)) {
+                if (random.nextInt(Config.FOSSIL_COLLECTIBLE_RARITY.get()) == 1) {
+                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
+
+                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFossil());
+                    level.addFreshEntity(drop);
+                }
+            }
+        }
+    }
 
 }

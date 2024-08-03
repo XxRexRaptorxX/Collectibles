@@ -13,7 +13,7 @@ displayURL="https://www.curseforge.com/minecraft/mc-mods/collectibles"
 logoFile="logo.png"
 #credits=""
 authors="${mod_authors}"
-description='''Every game these days has collectibles in it, this mod adds some to minecraft too. With a little bonus when you complete a set!'''
+description='''Every game these days has collectibles in it, this mod adds some to Minecraft too. With a little bonus when you complete a set!'''
 
 [[mixins]]
 config="${mod_id}.mixins.json"

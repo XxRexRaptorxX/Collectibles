@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values":
+  [
+    "#c:fragments/amethyst",
+    "#c:fragments/crystal",
+    "#c:fragments/diamond",
+    "#c:fragments/emerald",
+    "#c:fragments/hematite",
+    "#c:fragments/ruby",
+    "#c:fragments/sapphire",
+    "#c:fragments/topaz",
+    "#c:fragments/tourmaline"
+  ]
+}

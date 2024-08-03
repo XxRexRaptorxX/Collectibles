@@ -19,7 +19,7 @@ import java.util.ArrayList;
 @JeiPlugin
 public class JEIIntegration implements IModPlugin {
 
-    private static final ResourceLocation ID = new ResourceLocation(References.MODID, "jei_plugin");
+    private static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(References.MODID, "jei_plugin");
 
     @Override
     public ResourceLocation getPluginUid() {
@@ -37,10 +37,10 @@ public class JEIIntegration implements IModPlugin {
             try {
                 treasures.add(new ItemStack(BuiltInRegistries.ITEM.get(
                         //                                          get the mod prefix              |        get the item registry name      |         get the item amount
-                        new ResourceLocation(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
+                        ResourceLocation.fromNamespaceAndPath(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
 
             } catch (Exception e) {
-                Collectibles.LOGGER.error("Invalid item entry in the Collectibles 'epic_loot_bag_rewards' config option!");
+                Collectibles.LOGGER.error("Invalid item entry in the Collectibles 'loot_bag_rewards' config option!");
             }
         }
 
@@ -48,7 +48,7 @@ public class JEIIntegration implements IModPlugin {
             try {
                 epic_treasures.add(new ItemStack(BuiltInRegistries.ITEM.get(
                         //                                          get the mod prefix              |        get the item registry name      |         get the item amount
-                        new ResourceLocation(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
+                        ResourceLocation.fromNamespaceAndPath(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
 
             } catch (Exception e) {
                 Collectibles.LOGGER.error("Invalid item entry in the Collectibles 'epic_loot_bag_rewards' config option!");

@@ -1,7 +1,7 @@
 package xxrexraptorxx.collectibles.world.modifiers;
 
 import com.google.common.base.Suppliers;
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,9 +17,10 @@ import java.util.function.Supplier;
 
 public class SuspiciousLootModifier extends LootModifier {
 
-    public static final Supplier<Codec<SuspiciousLootModifier>> CODEC = Suppliers.memoize(()
-            -> RecordCodecBuilder.create(inst -> codecStart(inst).and(BuiltInRegistries.ITEM.byNameCodec()
+    public static final Supplier<MapCodec<SuspiciousLootModifier>> CODEC = Suppliers.memoize(()
+            -> RecordCodecBuilder.mapCodec(inst -> codecStart(inst).and(BuiltInRegistries.ITEM.byNameCodec()
             .fieldOf("item").forGetter(m -> m.item)).apply(inst, SuspiciousLootModifier::new)));
+
     private final Item item;
 
     public SuspiciousLootModifier(LootItemCondition[] conditionsIn, Item item) {
@@ -44,7 +45,7 @@ public class SuspiciousLootModifier extends LootModifier {
     }
 
     @Override
-    public Codec<? extends IGlobalLootModifier> codec() {
+    public MapCodec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();
     }
 }

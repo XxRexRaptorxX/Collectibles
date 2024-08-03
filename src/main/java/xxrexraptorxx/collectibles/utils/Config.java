@@ -2,7 +2,7 @@ package xxrexraptorxx.collectibles.utils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Items;
-import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
@@ -32,12 +32,12 @@ public class Config {
     public static ModConfigSpec.IntValue COIN_COLLECTIBLE_RARITY;
     public static ModConfigSpec.BooleanValue PATREON_REWARDS;
 
-    public static void init() {
+    public static void init(ModContainer container) {
         initServer();
         initClient();
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SERVER_CONFIG);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_CONFIG);
+        container.registerConfig(ModConfig.Type.SERVER, SERVER_CONFIG);
+        container.registerConfig(ModConfig.Type.CLIENT, CLIENT_CONFIG);
     }
 
 

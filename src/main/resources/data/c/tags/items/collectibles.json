@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values":
+  [
+      "#c:collectibles/coins",
+      "#c:collectibles/books",
+      "#c:collectibles/fossils",
+      "#c:collectibles/fragments",
+      "#c:collectibles/jewelry"
+  ]
+}
