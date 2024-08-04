@@ -1,9 +1,13 @@
 {
-  "type": "collectibles:add_suspicious_item",
+  "type": "collectibles:add_item",
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
       "loot_table_id": "minecraft:chests/stronghold_library"
+    },
+    {
+      "chance": 0.001,
+      "condition": "minecraft:random_chance"
     }
   ],
   "item": "collectibles:monster_book"

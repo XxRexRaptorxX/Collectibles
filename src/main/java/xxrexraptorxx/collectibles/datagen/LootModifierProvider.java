@@ -5,10 +5,12 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 import xxrexraptorxx.collectibles.main.References;
 import xxrexraptorxx.collectibles.registry.ModItems;
+import xxrexraptorxx.collectibles.world.modifiers.ChestLootModifier;
 import xxrexraptorxx.collectibles.world.modifiers.SuspiciousLootModifier;
 
 import java.util.ArrayList;
@@ -62,28 +64,27 @@ public class LootModifierProvider extends GlobalLootModifierProvider {
             String name = item.toString().replace(References.MODID + ":", "");
 
             add(name + "_from_pyramid_suspicious_blocks", new SuspiciousLootModifier(new LootItemCondition[] {
-                    new LootTableIdCondition.Builder(DESERT_PYRAMID).build() },
+                    new LootTableIdCondition.Builder(DESERT_PYRAMID).build(), LootItemRandomChanceCondition.randomChance(0.1f).build() },
                     item));
 
             add(name + "_from_well_suspicious_blocks", new SuspiciousLootModifier(new LootItemCondition[] {
-                    new LootTableIdCondition.Builder(DESERT_WELL).build() },
+                    new LootTableIdCondition.Builder(DESERT_WELL).build(), LootItemRandomChanceCondition.randomChance(0.1f).build() },
                     item));
-    
 
             add(name + "_from_cold_ocean_ruin_suspicious_blocks", new SuspiciousLootModifier(new LootItemCondition[] {
-                    new LootTableIdCondition.Builder(OCEAN_RUIN_COLD).build() },
+                    new LootTableIdCondition.Builder(OCEAN_RUIN_COLD).build(), LootItemRandomChanceCondition.randomChance(0.1f).build() },
                     item));
 
             add(name + "_from_warm_ocean_ruin_suspicious_blocks", new SuspiciousLootModifier(new LootItemCondition[] {
-                    new LootTableIdCondition.Builder(OCEAN_RUIN_WARM).build() },
+                    new LootTableIdCondition.Builder(OCEAN_RUIN_WARM).build(), LootItemRandomChanceCondition.randomChance(0.1f).build() },
                     item));
 
             add(name + "_from_trail_ruins_suspicious_blocks", new SuspiciousLootModifier(new LootItemCondition[] {
-                    new LootTableIdCondition.Builder(TRAIL_RUINS_RARE).build() },
+                    new LootTableIdCondition.Builder(TRAIL_RUINS_RARE).build(), LootItemRandomChanceCondition.randomChance(0.1f).build() },
                     item));
 
             add(name + "_from_trail_ruins_c_suspicious_blocks", new SuspiciousLootModifier(new LootItemCondition[] {
-                    new LootTableIdCondition.Builder(TRAIL_RUINS_COMMON).build() },
+                    new LootTableIdCondition.Builder(TRAIL_RUINS_COMMON).build(), LootItemRandomChanceCondition.randomChance(0.1f).build() },
                     item));
         }
 
@@ -91,37 +92,36 @@ public class LootModifierProvider extends GlobalLootModifierProvider {
         for (Item item: chest_loot) {
         String name = item.toString().replace(References.MODID + ":", "");
 
-        add(name + "_from_mineshaft", new SuspiciousLootModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(MINESHAFT).build() },
+        add(name + "_from_mineshaft", new ChestLootModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(MINESHAFT).build(), LootItemRandomChanceCondition.randomChance(0.001f).build() },
                 item));
 
-        add(name + "_from_mansion", new SuspiciousLootModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(MANSION).build() },
+        add(name + "_from_mansion", new ChestLootModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(MANSION).build(), LootItemRandomChanceCondition.randomChance(0.001f).build() },
                 item));
 
-
-        add(name + "_from_buried_treasure", new SuspiciousLootModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(BURIED_TREASURE).build() },
+        add(name + "_from_buried_treasure", new ChestLootModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(BURIED_TREASURE).build(), LootItemRandomChanceCondition.randomChance(0.001f).build() },
                 item));
 
-        add(name + "_from_shipwreck", new SuspiciousLootModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(SHIPWRECK_TREASURE).build() },
+        add(name + "_from_shipwreck", new ChestLootModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(SHIPWRECK_TREASURE).build(), LootItemRandomChanceCondition.randomChance(0.001f).build() },
                 item));
 
-        add(name + "_from_bastion", new SuspiciousLootModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(BASTION_TREASURE).build() },
+        add(name + "_from_bastion", new ChestLootModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(BASTION_TREASURE).build(), LootItemRandomChanceCondition.randomChance(0.001f).build() },
                 item));
 
-        add(name + "_from_stronghold", new SuspiciousLootModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(STRONGHOLD).build() },
+        add(name + "_from_stronghold", new ChestLootModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(STRONGHOLD).build(), LootItemRandomChanceCondition.randomChance(0.001f).build() },
                 item));
 
-        add(name + "_from_desert_pyramid", new SuspiciousLootModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(DESERT_TEMPLE).build() },
+        add(name + "_from_desert_pyramid", new ChestLootModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(DESERT_TEMPLE).build(), LootItemRandomChanceCondition.randomChance(0.001f).build() },
                 item));
 
-        add(name + "_from_jungle_temple", new SuspiciousLootModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(JUNGLE_TEMPLE).build() },
+        add(name + "_from_jungle_temple", new ChestLootModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(JUNGLE_TEMPLE).build(), LootItemRandomChanceCondition.randomChance(0.001f).build()},
                 item));
         }
     }

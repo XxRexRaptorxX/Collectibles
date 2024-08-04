@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
+//fill ~ ~ ~ ~30 ~ ~2 suspicious_sand{LootTable:"minecraft:archaeology/trail_ruins_common"} destroy
 public class SuspiciousLootModifier extends LootModifier {
 
     public static final Supplier<MapCodec<SuspiciousLootModifier>> CODEC = Suppliers.memoize(()
@@ -36,11 +37,8 @@ public class SuspiciousLootModifier extends LootModifier {
             }
         }
 
-        if(context.getRandom().nextFloat() < 0.03f) {
-            generatedLoot.clear();
-            generatedLoot.add(new ItemStack(this.item));
-        }
-
+        generatedLoot.clear();
+        generatedLoot.add(new ItemStack(this.item));
         return generatedLoot;
     }
 
