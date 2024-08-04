@@ -15,9 +15,6 @@ logoFile="logo.png"
 authors="${mod_authors}"
 description='''Every game these days has collectibles in it, this mod adds some to Minecraft too. With a little bonus when you complete a set!'''
 
-[[mixins]]
-config="${mod_id}.mixins.json"
-
 [[dependencies.${mod_id}]]
 modId="neoforge"
 mandatory=true

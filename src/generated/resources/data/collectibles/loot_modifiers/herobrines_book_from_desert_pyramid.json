@@ -1,0 +1,10 @@
+{
+  "type": "collectibles:add_suspicious_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/desert_pyramid"
+    }
+  ],
+  "item": "collectibles:herobrines_book"
+}

@@ -22,7 +22,7 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeClient(), new ItemModelGen(packOutput, helper));
-        generator.addProvider(event.includeClient(), new LootModifierProvider(packOutput));
+        generator.addProvider(event.includeClient(), new LootModifierProvider(packOutput, lookupProvider));
 
     }
 }
