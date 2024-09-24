@@ -76,15 +76,27 @@ public class Config {
                 "1*" + BuiltInRegistries.ITEM.getKey(Items.ELYTRA).toString(),
                 "1*" + BuiltInRegistries.ITEM.getKey(Items.TOTEM_OF_UNDYING).toString(),
                 "1*" + BuiltInRegistries.ITEM.getKey(Items.ENCHANTED_GOLDEN_APPLE).toString(),
+                "1*" + BuiltInRegistries.ITEM.getKey(Items.HEAVY_CORE).toString(),
+                "1*" + BuiltInRegistries.ITEM.getKey(Items.HEART_OF_THE_SEA).toString(),
+                "1*" + BuiltInRegistries.ITEM.getKey(Items.OMINOUS_TRIAL_KEY).toString(),
+                "3*" + BuiltInRegistries.ITEM.getKey(Items.NETHERITE_SCRAP).toString(),
+                "4*" + BuiltInRegistries.ITEM.getKey(Items.ECHO_SHARD).toString(),
                 "5*" + BuiltInRegistries.ITEM.getKey(Items.DRAGON_BREATH).toString(),
                 "10*" + BuiltInRegistries.ITEM.getKey(Items.DIAMOND).toString()
         )));
-        EPIC_LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the epic loot bag gives the player").defineInRange("epic_loot_bag_item_amount", 1, 1, 10);
+        EPIC_LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the epic loot bag gives the player").defineInRange("epic_loot_bag_item_amount", 3, 1, 10);
         LOOT_BAG_REWARDS = builder.comment("A list with all loot bag rewards [amount*modid:item]").define("loot_bag_rewards", new ArrayList<>(Arrays.asList(
                 "3*" + BuiltInRegistries.ITEM.getKey(Items.EMERALD).toString(),
                 "3*" + BuiltInRegistries.ITEM.getKey(Items.DIAMOND).toString(),
                 "1*" + BuiltInRegistries.ITEM.getKey(Items.GOLDEN_APPLE).toString(),
-                "1*" + BuiltInRegistries.ITEM.getKey(Items.ENDER_EYE).toString()
+                "1*" + BuiltInRegistries.ITEM.getKey(Items.ENDER_EYE).toString(),
+                "1*" + BuiltInRegistries.ITEM.getKey(Items.ECHO_SHARD).toString(),
+                "1*" + BuiltInRegistries.ITEM.getKey(Items.BREEZE_ROD).toString(),
+                "3*" + BuiltInRegistries.ITEM.getKey(Items.WIND_CHARGE).toString(),
+                "3*" + BuiltInRegistries.ITEM.getKey(Items.FIRE_CHARGE).toString(),
+                "1*" + BuiltInRegistries.ITEM.getKey(Items.BLAZE_ROD).toString(),
+                "3*" + BuiltInRegistries.ITEM.getKey(Items.EXPERIENCE_BOTTLE).toString(),
+                "1*" + BuiltInRegistries.ITEM.getKey(Items.TRIAL_KEY).toString()
         )));
         LOOT_BAG_XP = builder.comment("How much xp a player should get when he uses a loot bag").defineInRange("loot_bag_xp", 50, 0, 1000);
         LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the loot bag gives the player").defineInRange("loot_bag_item_amount", 1, 1, 10);
