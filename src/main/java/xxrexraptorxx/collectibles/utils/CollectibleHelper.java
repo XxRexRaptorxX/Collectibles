@@ -19,7 +19,7 @@ public class CollectibleHelper {
 
             for (String item : Config.LOOT_BAG_REWARDS.get()) {
                 try {
-                    rewards.add(new ItemStack(BuiltInRegistries.ITEM.get(
+                    rewards.add(new ItemStack(BuiltInRegistries.ITEM.getValue(
                             //                                          get the mod prefix              |        get the item registry name      |         get the item amount
                             ResourceLocation.fromNamespaceAndPath(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
 
@@ -38,7 +38,7 @@ public class CollectibleHelper {
 
         for (String item : Config.EPIC_LOOT_BAG_REWARDS.get()) {
             try {
-                rewards.add(new ItemStack(BuiltInRegistries.ITEM.get(
+                rewards.add(new ItemStack(BuiltInRegistries.ITEM.getValue(
                         //                                          get the mod prefix              |        get the item registry name      |         get the item amount
                         ResourceLocation.fromNamespaceAndPath(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
 

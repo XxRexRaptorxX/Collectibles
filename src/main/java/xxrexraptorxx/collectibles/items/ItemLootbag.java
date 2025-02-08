@@ -6,13 +6,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
+import xxrexraptorxx.collectibles.main.References;
 import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
@@ -28,7 +28,7 @@ public class ItemLootbag extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> list, TooltipFlag flag) {
-        list.add(Component.translatable("message.collectibles.open_bag").withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("message." + References.MODID + ".open_bag").withStyle(ChatFormatting.BLUE));
     }
 
 
@@ -43,7 +43,7 @@ public class ItemLootbag extends Item {
 
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
         if(this == ModItems.LOOT_BAG.get() || this == ModItems.EPIC_LOOT_BAG.get()) {
@@ -71,6 +71,6 @@ public class ItemLootbag extends Item {
             if (level.isClientSide) player.awardStat(Stats.ITEM_USED.get(this));
         }
 
-        return InteractionResultHolder.success(stack);
+        return InteractionResult.CONSUME;
     }
 }
