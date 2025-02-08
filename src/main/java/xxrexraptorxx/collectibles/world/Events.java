@@ -66,7 +66,7 @@ public class Events {
 
             if (!hasShownUp && Minecraft.getInstance().screen == null) {
                 var player = Minecraft.getInstance().player;
-                if (player == null) return; // Added null check
+                if (player == null) return;
 
                 var modContainer = ModList.get().getModContainerById(References.MODID).orElse(null);
 

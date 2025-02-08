@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "collectibles:item/bronze_coin"
+  }
+}

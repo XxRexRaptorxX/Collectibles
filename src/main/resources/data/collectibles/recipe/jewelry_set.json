@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "collectibles:amulet_jewelry",
+    "collectibles:hairpin_jewelry",
+    "collectibles:bracelet_jewelry",
+    "collectibles:brooch_jewelry",
+    "collectibles:earring_jewelry",
+    "collectibles:diadem_jewelry",
+    "collectibles:crown_jewelry",
+    "collectibles:chain_jewelry",
+    "collectibles:ring_jewelry"
+  ],
+  "result": {
+    "id": "collectibles:epic_loot_bag"
+  }
+}

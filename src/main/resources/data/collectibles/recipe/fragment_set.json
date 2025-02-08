@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "collectibles:diamond_fragment",
+    "collectibles:emerald_fragment",
+    "collectibles:sapphire_fragment",
+    "collectibles:ruby_fragment",
+    "collectibles:topaz_fragment",
+    "collectibles:crystal_fragment",
+    "collectibles:amethyst_fragment",
+    "collectibles:tourmaline_fragment",
+    "collectibles:hematite_fragment"
+  ],
+
+  "result": {
+    "id": "collectibles:epic_loot_bag"
+  }
+}

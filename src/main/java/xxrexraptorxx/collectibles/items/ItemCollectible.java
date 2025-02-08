@@ -13,8 +13,8 @@ import java.util.List;
 
 public class ItemCollectible extends Item {
 
-    public ItemCollectible() {
-        super(new Properties()
+    public ItemCollectible(Properties properties) {
+        super(properties
                 .rarity(Rarity.RARE)
         );
     }

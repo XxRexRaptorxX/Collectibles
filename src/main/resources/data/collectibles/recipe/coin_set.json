@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "collectibles:iron_coin",
+    "collectibles:gold_coin",
+    "collectibles:silver_coin",
+    "collectibles:copper_coin",
+    "collectibles:bronze_coin",
+    "collectibles:platinum_coin",
+    "collectibles:brass_coin",
+    "collectibles:stone_coin",
+    "collectibles:netherite_coin"
+  ],
+
+  "result": {
+    "id": "collectibles:epic_loot_bag"
+  }
+}

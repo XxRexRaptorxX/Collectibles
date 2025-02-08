@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "collectibles:darkhold_book",
+    "collectibles:herobrines_book",
+    "collectibles:notchs_book",
+    "collectibles:necronomicon_book",
+    "collectibles:cursed_book",
+    "collectibles:old_book",
+    "collectibles:knowledge_book",
+    "collectibles:grimoire_book",
+    "collectibles:monster_book"
+  ],
+
+  "result": {
+    "id": "collectibles:epic_loot_bag"
+  }
+}
