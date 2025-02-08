@@ -33,7 +33,7 @@ public class ItemLootbag extends Item {
 
 
     @Override
-    public boolean isFoil(ItemStack pStack) {
+    public boolean isFoil(ItemStack stack) {
         if (this == ModItems.EPIC_LOOT_BAG.get()) {
             return true;
         } else {
