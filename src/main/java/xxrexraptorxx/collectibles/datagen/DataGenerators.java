@@ -5,7 +5,6 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import xxrexraptorxx.collectibles.main.References;
 
@@ -18,11 +17,11 @@ public class DataGenerators {
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
-        ExistingFileHelper helper = event.getExistingFileHelper();
+        //ExistingFileHelper helper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeClient(), new ItemModelGen(packOutput, helper));
-        generator.addProvider(event.includeClient(), new LootModifierProvider(packOutput, lookupProvider));
+        //generator.addProvider(true, new ItemModelGen(packOutput, helper));
+        generator.addProvider(true, new LootModifierProvider(packOutput, lookupProvider));
 
     }
 }

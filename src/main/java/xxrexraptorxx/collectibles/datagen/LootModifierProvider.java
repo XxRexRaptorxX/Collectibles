@@ -28,6 +28,7 @@ public class LootModifierProvider extends GlobalLootModifierProvider {
     private static final ResourceLocation OCEAN_RUIN_COLD = ResourceLocation.withDefaultNamespace("archaeology/ocean_ruin_cold");
     private static final ResourceLocation TRAIL_RUINS_COMMON = ResourceLocation.withDefaultNamespace("archaeology/trail_ruins_common");
     private static final ResourceLocation TRAIL_RUINS_RARE = ResourceLocation.withDefaultNamespace("archaeology/trail_ruins_rare");
+
     ArrayList<Item> chest_loot = new ArrayList<Item>();
     private static final ResourceLocation MINESHAFT = ResourceLocation.withDefaultNamespace("chests/abandoned_mineshaft");
     private static final ResourceLocation BURIED_TREASURE = ResourceLocation.withDefaultNamespace("chests/buried_treasure");

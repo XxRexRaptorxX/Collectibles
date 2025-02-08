@@ -35,7 +35,7 @@ public class JEIIntegration implements IModPlugin {
 
         for (String item : Config.LOOT_BAG_REWARDS.get()) {
             try {
-                treasures.add(new ItemStack(BuiltInRegistries.ITEM.get(
+                treasures.add(new ItemStack(BuiltInRegistries.ITEM.getValue(
                         //                                          get the mod prefix              |        get the item registry name      |         get the item amount
                         ResourceLocation.fromNamespaceAndPath(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
 
@@ -46,7 +46,7 @@ public class JEIIntegration implements IModPlugin {
 
         for (String item : Config.EPIC_LOOT_BAG_REWARDS.get()) {
             try {
-                epic_treasures.add(new ItemStack(BuiltInRegistries.ITEM.get(
+                epic_treasures.add(new ItemStack(BuiltInRegistries.ITEM.getValue(
                         //                                          get the mod prefix              |        get the item registry name      |         get the item amount
                         ResourceLocation.fromNamespaceAndPath(item.substring(item.indexOf('*') + 1, item.indexOf(':')), item.substring(item.indexOf(':') + 1))), Integer.parseInt(item.substring(0, item.indexOf('*')))));
 
@@ -55,9 +55,9 @@ public class JEIIntegration implements IModPlugin {
             }
         }
 
-        registry.addIngredientInfo(treasures, VanillaTypes.ITEM_STACK, Component.translatable("message.collectibles.lootbag_entry_jei_desc"));
-        registry.addIngredientInfo(epic_treasures, VanillaTypes.ITEM_STACK, Component.translatable("message.collectibles.epic_lootbag_entry_jei_desc"));
-        registry.addIngredientInfo(new ItemStack(ModItems.LOOT_BAG.get()), VanillaTypes.ITEM_STACK, Component.translatable("message.collectibles.lootbag_jei_desc"));
+        registry.addIngredientInfo(treasures, VanillaTypes.ITEM_STACK, Component.translatable("message." + References.MODID + ".lootbag_entry_jei_desc"));
+        registry.addIngredientInfo(epic_treasures, VanillaTypes.ITEM_STACK, Component.translatable("message." + References.MODID + ".epic_lootbag_entry_jei_desc"));
+        registry.addIngredientInfo(new ItemStack(ModItems.LOOT_BAG.get()), VanillaTypes.ITEM_STACK, Component.translatable("message." + References.MODID + ".lootbag_jei_desc"));
 
     }
 }
