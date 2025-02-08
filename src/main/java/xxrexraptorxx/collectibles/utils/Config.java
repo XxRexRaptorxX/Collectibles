@@ -81,7 +81,7 @@ public class Config {
                 "5*" + ForgeRegistries.ITEMS.getKey(Items.DRAGON_BREATH).toString(),
                 "10*" + ForgeRegistries.ITEMS.getKey(Items.DIAMOND).toString()
         )));
-        EPIC_LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the epic loot bag gives the player").defineInRange("epic_loot_bag_item_amount", 1, 1, 10);
+        EPIC_LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the epic loot bag gives the player").defineInRange("epic_loot_bag_item_amount", 3, 1, 10);
         LOOT_BAG_REWARDS = builder.comment("A list with all loot bag rewards [amount*modid:item]").define("loot_bag_rewards", new ArrayList<>(Arrays.asList(
                 "3*" + ForgeRegistries.ITEMS.getKey(Items.EMERALD).toString(),
                 "3*" + ForgeRegistries.ITEMS.getKey(Items.DIAMOND).toString(),
