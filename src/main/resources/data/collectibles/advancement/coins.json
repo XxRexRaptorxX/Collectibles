@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "collectibles:platinum_coin"
+      "id": "collectibles:platinum_coin"
     },
     "title": {
       "translate": "message.collectibles.set_coins"

@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "collectibles:spine_fossil"
+      "id": "collectibles:spine_fossil"
     },
     "title": {
       "translate": "message.collectibles.set_fossils"

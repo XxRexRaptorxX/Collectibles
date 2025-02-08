@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "collectibles:diamond_fragment"
+      "id": "collectibles:diamond_fragment"
     },
     "title": {
       "translate": "message.collectibles.set_fragments"

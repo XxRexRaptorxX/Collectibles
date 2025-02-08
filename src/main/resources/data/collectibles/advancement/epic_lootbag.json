@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "collectibles:epic_loot_bag"
+      "id": "collectibles:epic_loot_bag"
     },
     "title": {
       "translate": "advancements.collectibles.epic_lootbag"

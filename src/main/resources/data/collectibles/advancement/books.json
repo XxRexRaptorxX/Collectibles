@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "collectibles:necronomicon_book"
+      "id": "collectibles:necronomicon_book"
     },
     "title": {
       "translate": "message.collectibles.set_books"

@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "collectibles:crown_jewelry"
+      "id": "collectibles:crown_jewelry"
     },
     "title": {
       "translate": "message.collectibles.set_jewelry"
