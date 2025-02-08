@@ -16,7 +16,7 @@ import xxrexraptorxx.collectibles.world.LootTableInjection;
 
 /**
  * @author XxRexRaptorxX (RexRaptor)
- * @projectPage https://www.curseforge.com/minecraft/mc-mods/collectibles
+ * @projectPage <a href="https://www.curseforge.com/minecraft/mc-mods/collectibles">...</a>
  **/
 @Mod(References.MODID)
 public class Collectibles {
