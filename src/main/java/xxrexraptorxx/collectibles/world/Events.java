@@ -13,22 +13,26 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.VersionChecker;
 import net.minecraftforge.fml.common.Mod;
 import xxrexraptorxx.collectibles.main.Collectibles;
 import xxrexraptorxx.collectibles.main.References;
+import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
 
@@ -107,6 +111,62 @@ public class Events {
                 }
             }
         }
+    }
+
+
+    /** Wandering Trader trades **/
+    @SubscribeEvent
+    public static void addCustomWanderingTrades(WandererTradesEvent event) {
+        List<VillagerTrades.ItemListing> trades = event.getRareTrades();
+        ItemStack reward = new ItemStack(Items.EMERALD, 30);
+
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.GOLD_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.SILVER_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.PLATINUM_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.NETHERITE_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.COPPER_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.BRONZE_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.BRASS_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.IRON_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.STONE_COIN.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.DIAMOND_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.EMERALD_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.AMETHYST_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.RUBY_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.SAPPHIRE_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.TOPAZ_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.CRYSTAL_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.HEMATITE_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.TOURMALINE_FRAGMENT.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.OLD_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.NECRONOMICON_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.KNOWLEDGE_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.NOTCHS_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.DARKHOLD_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.MONSTER_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.GRIMOIRE_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.CURSED_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.HEROBRINES_BOOK.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.CLAW_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.LEG_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.AMMONITE_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.CRINOID_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.TRILOBITE_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.SKULL_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.SPINE_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.RIP_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.THORAX_FOSSIL.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.AMULET_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.HAIRPIN_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.BRACELET_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.BROOCH_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.EARRING_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.DIADEM_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.CROWN_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.CHAIN_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(ModItems.RING_JEWELRY.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 10), new ItemStack(ModItems.LOOT_BAG.get()), 1, 10, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, 60), new ItemStack(ModItems.EPIC_LOOT_BAG.get()), 1, 15, 0.05F)));
     }
 
 
