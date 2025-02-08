@@ -78,6 +78,8 @@ public class Config {
                 "1*" + ForgeRegistries.ITEMS.getKey(Items.ELYTRA).toString(),
                 "1*" + ForgeRegistries.ITEMS.getKey(Items.TOTEM_OF_UNDYING).toString(),
                 "1*" + ForgeRegistries.ITEMS.getKey(Items.ENCHANTED_GOLDEN_APPLE).toString(),
+                "3*" + ForgeRegistries.ITEMS.getKey(Items.NETHERITE_SCRAP).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.HEART_OF_THE_SEA).toString(),
                 "5*" + ForgeRegistries.ITEMS.getKey(Items.DRAGON_BREATH).toString(),
                 "10*" + ForgeRegistries.ITEMS.getKey(Items.DIAMOND).toString()
         )));
@@ -86,7 +88,10 @@ public class Config {
                 "3*" + ForgeRegistries.ITEMS.getKey(Items.EMERALD).toString(),
                 "3*" + ForgeRegistries.ITEMS.getKey(Items.DIAMOND).toString(),
                 "1*" + ForgeRegistries.ITEMS.getKey(Items.GOLDEN_APPLE).toString(),
-                "1*" + ForgeRegistries.ITEMS.getKey(Items.ENDER_EYE).toString()
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.ENDER_EYE).toString(),
+                "3*" + ForgeRegistries.ITEMS.getKey(Items.FIRE_CHARGE).toString(),
+                "1*" + ForgeRegistries.ITEMS.getKey(Items.BLAZE_ROD).toString(),
+                "3*" + ForgeRegistries.ITEMS.getKey(Items.EXPERIENCE_BOTTLE).toString()
         )));
         LOOT_BAG_XP = builder.comment("How much xp a player should get when he uses a loot bag").defineInRange("loot_bag_xp", 50, 0, 1000);
         LOOT_BAG_ITEM_AMOUNT = builder.comment("How many item entries the loot bag gives the player").defineInRange("loot_bag_item_amount", 1, 1, 10);
