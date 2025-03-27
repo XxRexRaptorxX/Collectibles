@@ -11,13 +11,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import xxrexraptorxx.collectibles.main.References;
 import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 public class ItemLootbag extends Item {
 
@@ -27,8 +28,8 @@ public class ItemLootbag extends Item {
 
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> list, TooltipFlag flag) {
-        list.add(Component.translatable("message." + References.MODID + ".open_bag").withStyle(ChatFormatting.BLUE));
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
+        list.accept(Component.translatable("message." + References.MODID + ".open_bag").withStyle(ChatFormatting.BLUE));
     }
 
 
