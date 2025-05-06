@@ -24,7 +24,6 @@ public class Collectibles {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public Collectibles() {
-        IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         MinecraftForge.EVENT_BUS.register(this);
