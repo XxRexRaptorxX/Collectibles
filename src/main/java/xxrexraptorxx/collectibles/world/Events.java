@@ -42,15 +42,17 @@ import java.util.Scanner;
 public class Events {
 
 
-    /** Update-Checker **/
+    /**
+     * Update-Checker
+     **/
     private static boolean hasShownUp = false;
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
-        if (Config.UPDATE_CHECKER.get()) {
+        if (Config.UPDATE_CHECKER.get() != null && Config.UPDATE_CHECKER.get()) {
             if (!hasShownUp && Minecraft.getInstance().screen == null) {
                 if (VersionChecker.getResult(ModList.get().getModContainerById(References.MODID).get().getModInfo()).status() == VersionChecker.Status.OUTDATED ||
-                        VersionChecker.getResult(ModList.get().getModContainerById(References.MODID).get().getModInfo()).status() == VersionChecker.Status.BETA_OUTDATED ) {
+                        VersionChecker.getResult(ModList.get().getModContainerById(References.MODID).get().getModInfo()).status() == VersionChecker.Status.BETA_OUTDATED) {
 
                     MutableComponent url = Component.literal(ChatFormatting.GREEN + "Click here to update!");
                     url.withStyle(url.getStyle().withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, References.URL)));
@@ -63,14 +65,15 @@ public class Events {
                 } else if (VersionChecker.getResult(ModList.get().getModContainerById(References.MODID).get().getModInfo()).status() == VersionChecker.Status.FAILED) {
                     Collectibles.LOGGER.error(References.NAME + "'s version checker failed!");
                     hasShownUp = true;
-
                 }
             }
         }
     }
 
 
-    /** Collectible Drop **/
+    /**
+     * Collectible Drop
+     **/
     @SubscribeEvent
     public static void onBlockDestroyed(BlockEvent.BreakEvent event) {
         Random random = new Random();
@@ -118,8 +121,7 @@ public class Events {
         Player player = event.getEntity();
         Level level = player.level();
 
-        if (Config.PATREON_REWARDS.get()) {
-
+        if (Config.PATREON_REWARDS.get() != null && Config.PATREON_REWARDS.get()) {
             try {
                 URL SUPPORTER_URL = new URL("https://raw.githubusercontent.com/XxRexRaptorxX/Patreons/main/Supporter");
                 URL PREMIUM_SUPPORTER_URL = new URL("https://raw.githubusercontent.com/XxRexRaptorxX/Patreons/main/Premium%20Supporter");
@@ -171,7 +173,7 @@ public class Events {
     /**
      * Tests if a player is a supporter
      *
-     * @param url url to a file that contains the supporter names
+     * @param url    url to a file that contains the supporter names
      * @param player ingame player
      * @return true/false
      */
@@ -180,7 +182,7 @@ public class Events {
             Scanner scanner = new Scanner(url.openStream());
             List<String> supporterList = scanner.tokens().toList();
 
-            for (String name: supporterList) {
+            for (String name : supporterList) {
                 //test if player is in supporter list
                 if (player.getName().getString().equals(name)) {
                     return true;
@@ -198,6 +200,5 @@ public class Events {
 
         return false;
     }
-
 
 }
