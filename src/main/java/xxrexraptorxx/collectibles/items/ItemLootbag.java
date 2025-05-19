@@ -13,10 +13,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
-import xxrexraptorxx.collectibles.main.References;
 import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
+import xxrexraptorxx.magmacore.utils.FormattingHelper;
 
 import java.util.function.Consumer;
 
@@ -29,7 +29,7 @@ public class ItemLootbag extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
-        list.accept(Component.translatable("message." + References.MODID + ".open_bag").withStyle(ChatFormatting.BLUE));
+        list.accept(FormattingHelper.setModLangComponent("message", "open_bag").withStyle(ChatFormatting.BLUE));
     }
 
 
@@ -52,16 +52,16 @@ public class ItemLootbag extends Item {
 
             if (!level.isClientSide) {
                 if (this == ModItems.EPIC_LOOT_BAG.get()) {
-                    player.giveExperiencePoints(Config.EPIC_LOOT_BAG_XP.get());
+                    player.giveExperiencePoints(Config.getEpicLootBagXp());
 
-                    for (int i = 0; i < Config.EPIC_LOOT_BAG_ITEM_AMOUNT.get(); i++ ) {
+                    for (int i = 0; i < Config.getEpicLootBagItemAmount(); i++ ) {
                         player.addItem(CollectibleHelper.getRandomEpicTreasure());
                     }
 
                 } else {
-                    player.giveExperiencePoints(Config.LOOT_BAG_XP.get());
+                    player.giveExperiencePoints(Config.getLootBagXp());
 
-                    for (int i = 0; i < Config.LOOT_BAG_ITEM_AMOUNT.get(); i++ ) {
+                    for (int i = 0; i < Config.getLootBagItemAmount(); i++ ) {
                         player.addItem(CollectibleHelper.getRandomTreasure());
                     }
                 }

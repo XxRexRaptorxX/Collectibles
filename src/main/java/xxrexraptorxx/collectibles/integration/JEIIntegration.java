@@ -33,7 +33,7 @@ public class JEIIntegration implements IModPlugin {
         ArrayList<ItemStack> treasures = new ArrayList<ItemStack>();
         ArrayList<ItemStack> epic_treasures = new ArrayList<ItemStack>();
 
-        for (String item : Config.LOOT_BAG_REWARDS.get()) {
+        for (String item : Config.getLootBagRewards()) {
             try {
                 treasures.add(new ItemStack(BuiltInRegistries.ITEM.getValue(
                         //                                          get the mod prefix              |        get the item registry name      |         get the item amount
@@ -44,7 +44,7 @@ public class JEIIntegration implements IModPlugin {
             }
         }
 
-        for (String item : Config.EPIC_LOOT_BAG_REWARDS.get()) {
+        for (String item : Config.getEpicLootBagRewards()) {
             try {
                 epic_treasures.add(new ItemStack(BuiltInRegistries.ITEM.getValue(
                         //                                          get the mod prefix              |        get the item registry name      |         get the item amount

@@ -6,6 +6,17 @@
 
 ![Logo](https://i.imgur.com/0140CTT.png)
 
+-----
+
+## 🗃️ Dependencies
+
+- **Magma Core**
+    - [CurseForge][cf_magmacore] | [Modrinth][mr_magmacore]
+- **Just Enough Items (JEI)** *[optional]*
+    - [CurseForge][cf_jei] | [Modrinth][mr_jei]
+
+-----
+
 ## 📖 Description
 
 Every game these days has collectibles in it, this mod adds some to minecraft too. With a little bonus when you complete a set!
@@ -28,5 +39,10 @@ The drop rarity (1:1000) and xp rewards (30XP) are changeable in the config file
 All rights reserved.
 
 [cf_mod]: https://www.curseforge.com/minecraft/mc-mods/collectibles
-
 [mr_mod]: https://modrinth.com/mod/collectibles
+
+[cf_magmacore]: https://www.curseforge.com/minecraft/mc-mods/magma-core
+[mr_magmacore]: https://modrinth.com/mod/magma-core
+
+[cf_jei]: https://www.curseforge.com/minecraft/mc-mods/jei
+[mr_jei]: https://modrinth.com/mod/jei

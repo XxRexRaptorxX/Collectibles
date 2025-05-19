@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 
 public class LootModifierProvider extends GlobalLootModifierProvider {
+
     public LootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, References.MODID);
     }
@@ -38,6 +39,7 @@ public class LootModifierProvider extends GlobalLootModifierProvider {
     private static final ResourceLocation JUNGLE_TEMPLE = ResourceLocation.withDefaultNamespace("chests/jungle_temple");
     private static final ResourceLocation DESERT_TEMPLE = ResourceLocation.withDefaultNamespace("chests/desert_pyramid");
     private static final ResourceLocation MANSION = ResourceLocation.withDefaultNamespace("chests/woodland_mansion");
+
 
     @Override
     protected void start() {

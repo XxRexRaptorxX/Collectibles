@@ -17,7 +17,7 @@ public class CollectibleHelper {
         ArrayList<ItemStack> rewards = new ArrayList<>();
         Random random = new Random();
 
-            for (String item : Config.LOOT_BAG_REWARDS.get()) {
+            for (String item : Config.getLootBagRewards()) {
                 try {
                     rewards.add(new ItemStack(BuiltInRegistries.ITEM.getValue(
                             //                                          get the mod prefix              |        get the item registry name      |         get the item amount
@@ -36,7 +36,7 @@ public class CollectibleHelper {
         ArrayList<ItemStack> rewards = new ArrayList<>();
         Random random = new Random();
 
-        for (String item : Config.EPIC_LOOT_BAG_REWARDS.get()) {
+        for (String item : Config.getEpicLootBagRewards()) {
             try {
                 rewards.add(new ItemStack(BuiltInRegistries.ITEM.getValue(
                         //                                          get the mod prefix              |        get the item registry name      |         get the item amount

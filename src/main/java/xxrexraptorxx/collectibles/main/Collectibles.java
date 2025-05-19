@@ -1,5 +1,6 @@
 package xxrexraptorxx.collectibles.main;
 
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -9,6 +10,8 @@ import xxrexraptorxx.collectibles.registry.CreativeModeTabs;
 import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.registry.ModLootModifiers;
 import xxrexraptorxx.collectibles.utils.Config;
+import xxrexraptorxx.magmacore.config.ConfigHelper;
+import xxrexraptorxx.magmacore.main.ModRegistry;
 
 /**
  * @author XxRexRaptorxX (RexRaptor)
@@ -20,9 +23,20 @@ public class Collectibles {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public Collectibles(IEventBus eventBus, ModContainer container) {
-        Config.init(container);
+        ConfigHelper.registerConfigs(container, References.MODID, false, Config.SERVER_CONFIG, null);
         ModItems.init(eventBus);
         ModLootModifiers.init(eventBus);
         CreativeModeTabs.init(eventBus);
+
+        ModRegistry.register(References.MODID, References.NAME, References.URL);
+    }
+
+
+    @Mod(value = References.MODID, dist = Dist.CLIENT)
+    public static class CollectiblesClient {
+
+        public CollectiblesClient(ModContainer container) {
+            ConfigHelper.registerIngameConfig(container);
+        }
     }
 }

@@ -15,6 +15,9 @@ logoFile="logo.png"
 authors="${mod_authors}"
 description='''Every game these days has collectibles in it, this mod adds some to Minecraft too. With a little bonus when you complete a set!'''
 
+[modproperties.${mod_id}]
+configuredBackground="minecraft:textures/block/diamond_block.png"
+
 [[dependencies.${mod_id}]]
 modId="neoforge"
 mandatory=true
@@ -30,4 +33,13 @@ type="required"
 versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="magmacore"
+mandatory=true
+type="required"
+versionRange="${magmacore_version_range}"
+ordering="NONE"
+side="BOTH"
+
 
