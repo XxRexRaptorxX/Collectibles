@@ -1,12 +1,8 @@
 package xxrexraptorxx.collectibles.world;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
@@ -41,28 +37,19 @@ public class Events {
 
             if (block.is(BlockTags.BASE_STONE_OVERWORLD) || block.is(Tags.Blocks.STONES)) {
                 if (random.nextInt(Config.getFragmentCollectibleRarity()) == 1) {
-                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
-
-                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFragment());
-                    level.addFreshEntity(drop);
+                    CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomFragment());
                 }
 
 
             } else if (block.is(BlockTags.DIRT) || block.is(BlockTags.SAND)) {
                 if (random.nextInt(Config.getCoinCollectibleRarity()) == 1) {
-                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
-
-                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomCoin());
-                    level.addFreshEntity(drop);
+                    CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomCoin());
                 }
 
 
             } else if (block.is(BlockTags.BASE_STONE_NETHER)) {
                 if (random.nextInt(Config.getFossilCollectibleRarity()) == 1) {
-                    level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
-
-                    ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, CollectibleHelper.getRandomFossil());
-                    level.addFreshEntity(drop);
+                    CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomFossil());
                 }
             }
         }

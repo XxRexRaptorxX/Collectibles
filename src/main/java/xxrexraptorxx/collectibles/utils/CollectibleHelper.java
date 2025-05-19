@@ -1,10 +1,18 @@
 package xxrexraptorxx.collectibles.utils;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import xxrexraptorxx.collectibles.main.Collectibles;
 import xxrexraptorxx.collectibles.registry.ModItems;
 
@@ -174,6 +182,15 @@ public class CollectibleHelper {
             Collectibles.LOGGER.error("Unknown Collectible!");
             return 0;
         }
+    }
+
+
+    public static void dropCollectible(Level level, BlockPos pos, ItemStack collectible) {
+        level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
+        ExperienceOrb.award((ServerLevel)level, pos.getCenter(), Config.getCollectiblesXp());
+
+        ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, collectible);
+        level.addFreshEntity(drop);
     }
 
 
