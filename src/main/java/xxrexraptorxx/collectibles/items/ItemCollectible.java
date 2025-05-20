@@ -9,6 +9,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import xxrexraptorxx.collectibles.main.References;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
+import xxrexraptorxx.magmacore.utils.FormattingHelper;
 
 import java.util.function.Consumer;
 
@@ -23,21 +24,21 @@ public class ItemCollectible extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
-        list.accept(Component.translatable("message." + References.MODID + ".collectible").withStyle(ChatFormatting.GOLD));
+        list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "collectible").withStyle(ChatFormatting.GOLD));
         if (this.getDescriptionId().contains(References.MODID) && this.getDescriptionId().contains("fragment")) {
-            list.accept(Component.translatable("message." + References.MODID + ".set_fragments").withStyle(ChatFormatting.YELLOW));
+            list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "set_fragments").withStyle(ChatFormatting.YELLOW));
 
         } else if (this.getDescriptionId().contains(References.MODID) && this.getDescriptionId().contains("coin")) {
-            list.accept(Component.translatable("message." + References.MODID + ".set_coins").withStyle(ChatFormatting.YELLOW));
+            list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "set_coins").withStyle(ChatFormatting.YELLOW));
 
         } else if (this.getDescriptionId().contains(References.MODID) && this.getDescriptionId().contains("book")) {
-            list.accept(Component.translatable("message." + References.MODID + ".set_books").withStyle(ChatFormatting.YELLOW));
+            list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "set_books").withStyle(ChatFormatting.YELLOW));
 
         } else if (this.getDescriptionId().contains(References.MODID) && this.getDescriptionId().contains("fossil")) {
-            list.accept(Component.translatable("message." + References.MODID + ".set_fossils").withStyle(ChatFormatting.YELLOW));
+            list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "set_fossils").withStyle(ChatFormatting.YELLOW));
 
         } else if (this.getDescriptionId().contains(References.MODID) && this.getDescriptionId().contains("jewelry")) {
-            list.accept(Component.translatable("message." + References.MODID + ".set_jewelry").withStyle(ChatFormatting.YELLOW));
+            list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "set_jewelry").withStyle(ChatFormatting.YELLOW));
         }
 
         list.accept(Component.literal(ChatFormatting.YELLOW + "#" + CollectibleHelper.getCollectibleNumber(stack)));

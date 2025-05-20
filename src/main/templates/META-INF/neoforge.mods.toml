@@ -39,7 +39,7 @@ modId="magmacore"
 mandatory=true
 type="required"
 versionRange="${magmacore_version_range}"
-ordering="NONE"
+ordering="AFTER"
 side="BOTH"
 
 

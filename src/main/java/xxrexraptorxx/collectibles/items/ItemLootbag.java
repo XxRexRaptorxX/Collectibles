@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
+import xxrexraptorxx.collectibles.main.References;
 import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
@@ -29,7 +30,7 @@ public class ItemLootbag extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
-        list.accept(FormattingHelper.setModLangComponent("message", "open_bag").withStyle(ChatFormatting.BLUE));
+        list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "open_bag").withStyle(ChatFormatting.BLUE));
     }
 
 

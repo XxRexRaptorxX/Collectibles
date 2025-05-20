@@ -14,16 +14,16 @@ public class Config {
     private static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
     public static ModConfigSpec SERVER_CONFIG;
 
-    private static ModConfigSpec.IntValue LOOT_BAG_XP;
-    private static ModConfigSpec.IntValue EPIC_LOOT_BAG_XP;
-    private static ModConfigSpec.ConfigValue<List<String>> LOOT_BAG_REWARDS;
-    private static ModConfigSpec.ConfigValue<List<String>> EPIC_LOOT_BAG_REWARDS;
-    private static ModConfigSpec.IntValue LOOT_BAG_ITEM_AMOUNT;
-    private static ModConfigSpec.IntValue EPIC_LOOT_BAG_ITEM_AMOUNT;
-    private static ModConfigSpec.IntValue COLLECTIBLES_XP;
-    private static ModConfigSpec.IntValue FRAGMENT_COLLECTIBLE_RARITY;
-    private static ModConfigSpec.IntValue FOSSIL_COLLECTIBLE_RARITY;
-    private static ModConfigSpec.IntValue COIN_COLLECTIBLE_RARITY;
+    private static final ModConfigSpec.IntValue LOOT_BAG_XP;
+    private static final ModConfigSpec.IntValue EPIC_LOOT_BAG_XP;
+    private static final ModConfigSpec.ConfigValue<List<String>> LOOT_BAG_REWARDS;
+    private static final ModConfigSpec.ConfigValue<List<String>> EPIC_LOOT_BAG_REWARDS;
+    private static final ModConfigSpec.IntValue LOOT_BAG_ITEM_AMOUNT;
+    private static final ModConfigSpec.IntValue EPIC_LOOT_BAG_ITEM_AMOUNT;
+    private static final ModConfigSpec.IntValue COLLECTIBLES_XP;
+    private static final ModConfigSpec.IntValue FRAGMENT_COLLECTIBLE_RARITY;
+    private static final ModConfigSpec.IntValue FOSSIL_COLLECTIBLE_RARITY;
+    private static final ModConfigSpec.IntValue COIN_COLLECTIBLE_RARITY;
 
 
     static {

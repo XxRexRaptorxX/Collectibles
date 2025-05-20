@@ -23,11 +23,11 @@ public class Collectibles {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public Collectibles(IEventBus eventBus, ModContainer container) {
-        ConfigHelper.registerConfigs(container, References.MODID, false, Config.SERVER_CONFIG, null);
         ModItems.init(eventBus);
         ModLootModifiers.init(eventBus);
         CreativeModeTabs.init(eventBus);
 
+        ConfigHelper.registerConfigs(container, References.MODID, false, Config.SERVER_CONFIG, null);
         ModRegistry.register(References.MODID, References.NAME, References.URL);
     }
 
