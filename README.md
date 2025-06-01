@@ -14,6 +14,8 @@
     - [CurseForge][cf_magmacore] | [Modrinth][mr_magmacore]
 - **Just Enough Items (JEI)** *[optional]*
     - [CurseForge][cf_jei] | [Modrinth][mr_jei]
+- **Curios** *[optional]*
+  - [CurseForge][cf_curios] | [Modrinth][mr_curios]
 
 -----
 
@@ -46,3 +48,6 @@ All rights reserved.
 
 [cf_jei]: https://www.curseforge.com/minecraft/mc-mods/jei
 [mr_jei]: https://modrinth.com/mod/jei
+
+[cf_curios]: https://www.curseforge.com/minecraft/mc-mods/curios
+[mr_curios]: https://modrinth.com/mod/curios/versions
