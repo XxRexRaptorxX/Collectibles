@@ -1,0 +1,13 @@
+{
+  "entities": [
+    "minecraft:player",
+    "minecraft:armor_stand"
+  ],
+  "slots": [
+    "bracelet",
+    "charm",
+    "head",
+    "necklace",
+    "ring"
+  ]
+}

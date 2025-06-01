@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "collectibles:hairpin_jewelry",
+    "collectibles:crown_jewelry",
+    "collectibles:diadem_jewelry"
+  ]
+}
