@@ -194,4 +194,24 @@ public class CollectibleHelper {
     }
 
 
+    public static ItemStack parseItemEntry(String entry) {
+        String[] parts = entry.split("\\*", 2);
+        if (parts.length != 2) {
+            throw new IllegalArgumentException("Invalid format: " + entry);
+        }
+
+        int amount = Integer.parseInt(parts[0]);
+        String itemId = parts[1];
+
+        ResourceLocation location = ResourceLocation.parse(itemId);
+        Item item = BuiltInRegistries.ITEM.getValue(location);
+
+        if (item == null) {
+            throw new IllegalArgumentException("Unknown item: " + itemId);
+        }
+
+        return new ItemStack(item, amount);
+    }
+
+
 }
