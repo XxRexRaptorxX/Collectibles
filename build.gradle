@@ -130,17 +130,20 @@ repositories {
         name = "TerraformersMC"
         url = "https://maven.terraformersmc.com/"
     }
+    maven { // Curios
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
+    }
 }
 
 dependencies {
     //JEI
-    //compileOnly ("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
-    compileOnly("mezz.jei:jei-1.21.1-common-api:${jei_version}")
-    compileOnly("mezz.jei:jei-1.21.1-neoforge-api:${jei_version}")
+    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+    //runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
     //REI
-    runtimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
     compileOnly "me.shedaniel:RoughlyEnoughItems-api-neoforge:${rei_version}"
     compileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-neoforge:${rei_version}"
+    runtimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
     //EMI
     compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
     //runtimeOnly "dev.emi:emi-neoforge:${emi_version}"
@@ -150,6 +153,9 @@ dependencies {
     runtimeOnly "curse.maven:jade-324717:${jade_version}"
     //BlockDetective
     runtimeOnly "curse.maven:blockdetective-662628:${blockdetective_version}"
+    //Curios
+    compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}:api"
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
