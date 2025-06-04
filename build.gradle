@@ -1,9 +1,12 @@
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
+
 plugins {
     id 'java-library'
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.78'
     id 'idea'
-    id "com.modrinth.minotaur" version "2.+"
+    id "com.modrinth.minotaur" version "2.+" //Modrinth
+    id 'net.darkhax.curseforgegradle' version '1.1.26' //Curseforge
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -220,14 +223,17 @@ idea {
     }
 }
 
-//Game version transformator for Modrinth
-def rawGameVersions = project.findProperty("game_versions")?.toString() ?: ""
+//MODRINTH
+def rawGameVersions = project.findProperty("game_versions")?.toString() ?: "" //Game version transformator for Modrinth
 def parsedGameVersions = rawGameVersions.split(",").collect { it.trim() }
-
+def modrinthToken = project.findProperty("modrinthToken")?.toString() //token getter
+if (modrinthToken == null) {
+    throw new GradleException("Missing token in ~/.gradle/gradle.properties => 'modrinthToken'")
+}
 modrinth {
-    token = "mrp_sG1GxBkaW0LQTKmHcu5AClWs1TtPs04FPoFYifzF30I9RcZGobri0Gw48wYN"
+    token = modrinthToken
     projectId = mod_id
-    versionType = "release" //can be `release`, `beta` or `alpha`
+    versionType = release_type //can be `release`, `beta` or `alpha`
     uploadFile = jar
     gameVersions = parsedGameVersions
     changelog = change_log
@@ -244,3 +250,23 @@ modrinth {
 //tasks.modrinth.dependsOn(tasks.modrinthSyncBody) //auto readme sync
 tasks.modrinth.wasUploadSuccessful()
 tasks.modrinth.uploadInfo
+
+
+//CURSEFORGE
+def cfToken = project.findProperty("curseforgeToken")?.toString()
+if (cfToken == null) {
+    throw new GradleException("Missing token in ~/.gradle/gradle.properties => 'curseforgeToken'")
+}
+def cfId = project.findProperty("cf_id")?.toString()
+
+task publishCurseForge(type: TaskPublishCurseForge) {
+    apiToken = cfToken
+
+    // Tells CurseForgeGradle to publish the output of the jar task. This will
+    // return a UploadArtifact object that can be used to further configure the
+    // file.
+    def mainFile = upload(cfId as Integer, jar)
+    mainFile.releaseType   = release_type
+    mainFile.changelog     = change_log
+    mainFile.changelogType = 'markdown'
+}
