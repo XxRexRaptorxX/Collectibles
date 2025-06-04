@@ -279,8 +279,8 @@ public class Events {
         trades.add(((trader, random) -> new MerchantOffer(new ItemCost(ModItems.CHAIN_JEWELRY.get()), reward, 1, 5, 0.05F)));
         trades.add(((trader, random) -> new MerchantOffer(new ItemCost(ModItems.RING_JEWELRY.get()), reward, 1, 5, 0.05F)));
 
-        trades.add(((trader, random) -> new MerchantOffer(new ItemCost(Items.EMERALD, 10), new ItemStack(ModItems.LOOT_BAG.get()), 1, 10, 0.05F)));
-        trades.add(((trader, random) -> new MerchantOffer(new ItemCost(Items.EMERALD, 60), new ItemStack(ModItems.EPIC_LOOT_BAG.get()), 1, 15, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemCost(Items.EMERALD, 30), new ItemStack(ModItems.LOOT_BAG.get()), 1, 10, 0.05F)));
+        trades.add(((trader, random) -> new MerchantOffer(new ItemCost(Items.EMERALD_BLOCK, 10), new ItemStack(ModItems.EPIC_LOOT_BAG.get()), 1, 15, 0.05F)));
     }
 
 
