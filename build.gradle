@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.78'
     id 'idea'
+    id "com.modrinth.minotaur" version "2.+"
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -218,3 +219,28 @@ idea {
         downloadJavadoc = true
     }
 }
+
+//Game version transformator for Modrinth
+def rawGameVersions = project.findProperty("game_versions")?.toString() ?: ""
+def parsedGameVersions = rawGameVersions.split(",").collect { it.trim() }
+
+modrinth {
+    token = "mrp_sG1GxBkaW0LQTKmHcu5AClWs1TtPs04FPoFYifzF30I9RcZGobri0Gw48wYN"
+    projectId = mod_id
+    versionType = "release" //can be `release`, `beta` or `alpha`
+    uploadFile = jar
+    gameVersions = parsedGameVersions
+    changelog = change_log
+    failSilently = true
+    syncBodyFrom = rootProject.file("README.md").text
+    dependencies {
+        // The scope can be `required`, `optional`, `incompatible`, or `embedded`
+        // The type can either be `project` or `version`
+        required.project "magma-core"
+        optional.project "jei"
+        optional.project "curios"
+    }
+}
+//tasks.modrinth.dependsOn(tasks.modrinthSyncBody) //auto readme sync
+tasks.modrinth.wasUploadSuccessful()
+tasks.modrinth.uploadInfo
