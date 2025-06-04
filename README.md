@@ -89,7 +89,12 @@ Collectibles drops very, very rare when you mine specific blocks. If you complet
 </p>
 
 <p align="center">
-<br><br>
+<br>
+  <a href="https://discord.com/invite/ycRJJk8EXV"><img src="https://github.com/XxRexRaptorxX/General/blob/main/page_decorations/message.png?raw=true" alt="message"/></a>
+</p>
+
+
+<p align="center">
   <a href="https://github.com/XxRexRaptorxX"><img src="https://github.com/XxRexRaptorxX/General/blob/main/icons/github_icon_bg.png?raw=true" alt="Github" width="70"/></a>
   <a href="https://ko-fi.com/xxrexraptorxx"><img src="https://github.com/XxRexRaptorxX/General/blob/main/icons/kofi_icon_bg.png?raw=true" alt="Ko-Fi" width="70"/></a>
   <a href="https://www.patreon.com/bePatron?u=75131568"><img src="https://github.com/XxRexRaptorxX/General/blob/main/icons/patreon_icon_bg.png?raw=true" alt="Patreon" width="70"/></a>
