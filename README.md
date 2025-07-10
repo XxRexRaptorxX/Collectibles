@@ -15,10 +15,10 @@
 
 Every game these days has collectibles in it, this mod adds some to minecraft too. With a little bonus when you complete a set!
 
-Collectibles drops very, very rare when you mine specific blocks. If you complete one set of collectibles, craft a loot bag with it and use it, as a reward you will receive very valuable items (like a netherite ingot) and xp!
+Collectibles drop very, very rare when you mine specific blocks. If you complete one set of collectibles, craft a loot bag with it and use it, as a reward, you will receive very valuable items (like a netherite ingot) and xp!
 
 <p align="center">
-  <img src="https://i.imgur.com/tbzgesI.png" alt="line"/> <br>
+  <img src="https://github.com/XxRexRaptorxX/Collectibles/blob/main/src/main/resources/assets/collectibles/textures/mod_desc.png?raw=true" alt="line"/> <br>
   The drop rarity (1:1000) and xp rewards (30XP) are changeable in the config file
 </p>
 
