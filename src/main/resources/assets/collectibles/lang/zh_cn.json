@@ -34,8 +34,13 @@
     "collectibles.configuration.loot_bag_rewards.tooltip": "Loot bag rewards [amount*modid:item]",
     "collectibles.configuration.fossil_collectibles_rarity": "Fossil Collectibles rarity",
     "collectibles.configuration.fossil_collectibles_rarity.tooltip": "How rarely fossil collectibles drop. Higher = rarer [1:X]",
+    "collectibles.configuration.luck_for_collectibles": "Luck for Collectibles",
+    "collectibles.configuration.luck_for_collectibles.tooltip": "Should you get the Luck effect when you find a collectible?",
+    "collectibles.configuration.collectibles_directly_into_inventory": "Collectibles directly into inventory",
+    "collectibles.configuration.collectibles_directly_into_inventory.tooltip": "Should you get the collectible directly into your inventory when you find it instead of it dropping?",
 
     "itemGroup.collectibles_tab": "收藏品",
+
     "message.collectibles.collectible": "收藏品",
     "message.collectibles.set_coins": "金币辉煌",
     "message.collectibles.set_fragments": "支离破碎",

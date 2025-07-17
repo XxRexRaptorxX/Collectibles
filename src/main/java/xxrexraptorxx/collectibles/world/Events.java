@@ -2,6 +2,7 @@ package xxrexraptorxx.collectibles.world;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
@@ -31,22 +32,23 @@ public class Events {
         Level level = event.getPlayer().level();
         BlockState block = event.getState();
         BlockPos pos = event.getPos();
+        Player player = event.getPlayer();
 
         if (!level.isClientSide) {
 
             if (block.is(ModTags.DROPS_FRAGMENTS)) {
                 if (random.nextInt(Config.getFragmentCollectibleRarity()) == 1) {
-                    CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomFragment());
+                    CollectibleHelper.dropCollectible(level, player, pos, CollectibleHelper.getRandomFragment());
                 }
 
             } else if (block.is(ModTags.DROPS_COINS)) {
                 if (random.nextInt(Config.getCoinCollectibleRarity()) == 1) {
-                    CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomCoin());
+                    CollectibleHelper.dropCollectible(level, player, pos, CollectibleHelper.getRandomCoin());
                 }
 
             } else if (block.is(ModTags.DROPS_FOSSILS)) {
                 if (random.nextInt(Config.getFossilCollectibleRarity()) == 1) {
-                    CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomFossil());
+                    CollectibleHelper.dropCollectible(level, player, pos, CollectibleHelper.getRandomFossil());
                 }
             }
         }

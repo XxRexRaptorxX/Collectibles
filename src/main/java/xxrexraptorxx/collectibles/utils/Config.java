@@ -24,11 +24,15 @@ public class Config {
     private static final ModConfigSpec.IntValue FRAGMENT_COLLECTIBLE_RARITY;
     private static final ModConfigSpec.IntValue FOSSIL_COLLECTIBLE_RARITY;
     private static final ModConfigSpec.IntValue COIN_COLLECTIBLE_RARITY;
+    private static final ModConfigSpec.BooleanValue LUCK_FOR_COLLECTIBLES;
+    private static final ModConfigSpec.BooleanValue COLLECTIBLES_DIRECTLY_INTO_INVENTORY;
 
 
     static {
         ConfigHelper.setCategory(SERVER_BUILDER, "collectibles");
         COLLECTIBLES_XP = SERVER_BUILDER.comment("How much XP a player should get when finding a collectible").defineInRange("collectible_xp", 30, 0, 1000);
+        LUCK_FOR_COLLECTIBLES = SERVER_BUILDER.comment("Should you get the Luck effect when you find a collectible?").define("luck_for_collectibles", true);
+        COLLECTIBLES_DIRECTLY_INTO_INVENTORY = SERVER_BUILDER.comment("Should you get the collectible directly into your inventory when you find it instead of it dropping?").define("collectibles_directly_into_inventory", false);
         COIN_COLLECTIBLE_RARITY = SERVER_BUILDER.comment("How rarely coin collectibles drop. Higher = rarer [1:X]").defineInRange("coin_collectibles_rarity", 1000, 1, 100000);
         FRAGMENT_COLLECTIBLE_RARITY = SERVER_BUILDER.comment("How rarely fragment collectibles drop. Higher = rarer [1:X]").defineInRange("fragment_collectibles_rarity", 1000, 1, 100000);
         FOSSIL_COLLECTIBLE_RARITY = SERVER_BUILDER.comment("How rarely fossil collectibles drop. Higher = rarer [1:X]").defineInRange("fossil_collectibles_rarity", 1000, 1, 100000);
@@ -79,16 +83,18 @@ public class Config {
     }
 
 
-    public static int getCollectiblesXp()                  { return COLLECTIBLES_XP.get(); }
-    public static int getCoinCollectibleRarity()           { return COIN_COLLECTIBLE_RARITY.get(); }
-    public static int getFragmentCollectibleRarity()       { return FRAGMENT_COLLECTIBLE_RARITY.get(); }
-    public static int getFossilCollectibleRarity()         { return FOSSIL_COLLECTIBLE_RARITY.get(); }
-    public static int getLootBagXp()                       { return LOOT_BAG_XP.get(); }
-    public static int getEpicLootBagXp()                   { return EPIC_LOOT_BAG_XP.get(); }
-    public static int getLootBagItemAmount()               { return LOOT_BAG_ITEM_AMOUNT.get(); }
-    public static int getEpicLootBagItemAmount()           { return EPIC_LOOT_BAG_ITEM_AMOUNT.get(); }
-    public static List<String> getLootBagRewards()         { return (List<String>) LOOT_BAG_REWARDS.get(); }
-    public static List<String> getEpicLootBagRewards()     { return (List<String>) EPIC_LOOT_BAG_REWARDS.get(); }
+    public static int getCollectiblesXp()                        { return COLLECTIBLES_XP.get(); }
+    public static int getCoinCollectibleRarity()                 { return COIN_COLLECTIBLE_RARITY.get(); }
+    public static int getFragmentCollectibleRarity()             { return FRAGMENT_COLLECTIBLE_RARITY.get(); }
+    public static int getFossilCollectibleRarity()               { return FOSSIL_COLLECTIBLE_RARITY.get(); }
+    public static int getLootBagXp()                             { return LOOT_BAG_XP.get(); }
+    public static int getEpicLootBagXp()                         { return EPIC_LOOT_BAG_XP.get(); }
+    public static int getLootBagItemAmount()                     { return LOOT_BAG_ITEM_AMOUNT.get(); }
+    public static int getEpicLootBagItemAmount()                 { return EPIC_LOOT_BAG_ITEM_AMOUNT.get(); }
+    public static boolean getLuckForCollectibles()               { return LUCK_FOR_COLLECTIBLES.get(); }
+    public static boolean getCollectiblesDirectlyIntoInventory() { return COLLECTIBLES_DIRECTLY_INTO_INVENTORY.get(); }
+    public static List<String> getLootBagRewards()               { return (List<String>) LOOT_BAG_REWARDS.get(); }
+    public static List<String> getEpicLootBagRewards()           { return (List<String>) EPIC_LOOT_BAG_REWARDS.get(); }
 
 
     /**

@@ -6,6 +6,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -15,6 +18,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import xxrexraptorxx.collectibles.main.Collectibles;
 import xxrexraptorxx.collectibles.registry.ModItems;
+import xxrexraptorxx.collectibles.registry.ModStats;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -185,12 +189,19 @@ public class CollectibleHelper {
     }
 
 
-    public static void dropCollectible(Level level, BlockPos pos, ItemStack collectible) {
+    public static void dropCollectible(Level level, Player player, BlockPos pos, ItemStack collectible) {
         level.playSound((Player) null, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.15F + 0.F);
         ExperienceOrb.award((ServerLevel)level, pos.getCenter(), Config.getCollectiblesXp());
+        player.awardStat(Stats.CUSTOM.get(ModStats.COLLECTIBLES_FOUND.get()));
 
-        ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, collectible);
-        level.addFreshEntity(drop);
+        if (Config.getLuckForCollectibles()) player.addEffect(new MobEffectInstance(MobEffects.LUCK, 6000, 0));
+        if (Config.getCollectiblesDirectlyIntoInventory()) {
+            player.addItem(collectible);
+
+        } else {
+            ItemEntity drop = new ItemEntity(level, (double) pos.getX() + 0.5D, (double) pos.getY() + 1.5D, (double) pos.getZ() + 0.5D, collectible);
+            level.addFreshEntity(drop);
+        }
     }
 
 
