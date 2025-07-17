@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import xxrexraptorxx.collectibles.registry.CreativeModeTabs;
 import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.registry.ModLootModifiers;
+import xxrexraptorxx.collectibles.registry.ModStats;
 import xxrexraptorxx.collectibles.utils.Config;
 import xxrexraptorxx.magmacore.config.ConfigHelper;
 import xxrexraptorxx.magmacore.main.ModRegistry;
@@ -24,6 +25,7 @@ public class Collectibles {
 
     public Collectibles(IEventBus eventBus, ModContainer container) {
         ModItems.init(eventBus);
+        ModStats.init(eventBus);
         ModLootModifiers.init(eventBus);
         CreativeModeTabs.init(eventBus);
 

@@ -1,6 +1,8 @@
 {
     "_comment": "translated by junshengxie",
 
+    "stat.collectibles.found_collectibles": "Found Collectibles",
+
     "collectibles.configuration.title": "Collectibles Configuration",
     "collectibles.configuration.section.collectibles.server.toml": "Server Settings",
     "collectibles.configuration.section.collectibles.server.toml.title": "Server Options",

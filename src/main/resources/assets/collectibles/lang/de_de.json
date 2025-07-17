@@ -1,6 +1,8 @@
 ﻿{
     "itemGroup.collectibles_tab": "Collectibles",
 
+    "stat.collectibles.found_collectibles": "Gefundene Collectibles",
+
     "collectibles.configuration.title": "Collectibles Configuration",
     "collectibles.configuration.section.collectibles.server.toml": "Server Settings",
     "collectibles.configuration.section.collectibles.server.toml.title": "Server Options",
