@@ -1,7 +1,7 @@
 ﻿{
     "itemGroup.collectibles_tab": "Collectibles",
 
-    "stat.collectibles.found_collectibles": "Gefundene Collectibles",
+    "stat.collectibles.found_collectibles": "Gefundene Sammlerstücke",
 
     "collectibles.configuration.title": "Collectibles Configuration",
     "collectibles.configuration.section.collectibles.server.toml": "Server Settings",
@@ -34,8 +34,13 @@
     "collectibles.configuration.loot_bag_rewards.tooltip": "Loot bag rewards [amount*modid:item]",
     "collectibles.configuration.fossil_collectibles_rarity": "Fossil Collectibles rarity",
     "collectibles.configuration.fossil_collectibles_rarity.tooltip": "How rarely fossil collectibles drop. Higher = rarer [1:X]",
+    "collectibles.configuration.luck_for_collectibles": "Luck for Collectibles",
+    "collectibles.configuration.luck_for_collectibles.tooltip": "Should you get the Luck effect when you find a collectible?",
+    "collectibles.configuration.collectibles_directly_into_inventory": "Collectibles directly into inventory",
+    "collectibles.configuration.collectibles_directly_into_inventory.tooltip": "Should you get the collectible directly into your inventory when you find it instead of it dropping?",
 
     "message.collectibles.collectible": "Sammlerstück",
+
     "message.collectibles.set_coins": "Set: Münzen",
     "message.collectibles.set_fragments": "Set: Fragmente",
     "message.collectibles.set_books": "Set: Bücher",
@@ -46,7 +51,7 @@
     "message.collectibles.epic_lootbag_entry_jei_desc": "Zufällige Chance, dies zu erhalten, wenn eine Epische Sammlerstück Beutetasche geöffnen wird!",
     "message.collectibles.open_bag": "Rechts klick zum öffnen",
 
-    "advancements.collectibles.root.desc": "Finde ein Sammlerobjekt!",
+    "advancements.collectibles.root.desc": "Finde ein Sammlerstück!",
     "advancements.collectibles.all_coins.desc": "Finde alle 9 Münzen!",
     "advancements.collectibles.all_fragments.desc": "Finde alle 9 Fragmente!",
     "advancements.collectibles.all_books.desc": "Finde alle 9 Bücher!",
