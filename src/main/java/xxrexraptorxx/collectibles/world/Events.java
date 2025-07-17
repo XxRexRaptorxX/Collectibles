@@ -1,7 +1,6 @@
 package xxrexraptorxx.collectibles.world;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -11,11 +10,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import xxrexraptorxx.collectibles.main.References;
 import xxrexraptorxx.collectibles.registry.ModItems;
+import xxrexraptorxx.collectibles.registry.ModTags;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
 
@@ -35,19 +34,17 @@ public class Events {
 
         if (!level.isClientSide) {
 
-            if (block.is(BlockTags.BASE_STONE_OVERWORLD) || block.is(Tags.Blocks.STONES)) {
+            if (block.is(ModTags.DROPS_FRAGMENTS)) {
                 if (random.nextInt(Config.getFragmentCollectibleRarity()) == 1) {
                     CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomFragment());
                 }
 
-
-            } else if (block.is(BlockTags.DIRT) || block.is(BlockTags.SAND)) {
+            } else if (block.is(ModTags.DROPS_COINS)) {
                 if (random.nextInt(Config.getCoinCollectibleRarity()) == 1) {
                     CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomCoin());
                 }
 
-
-            } else if (block.is(BlockTags.BASE_STONE_NETHER)) {
+            } else if (block.is(ModTags.DROPS_FOSSILS)) {
                 if (random.nextInt(Config.getFossilCollectibleRarity()) == 1) {
                     CollectibleHelper.dropCollectible(level, pos, CollectibleHelper.getRandomFossil());
                 }
