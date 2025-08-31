@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "collectibles:deliciosa_leave",
+    "collectibles:aurea_leave",
+    "collectibles:obliqua_leave",
+    "collectibles:subpinnata_leave",
+    "collectibles:frydek_leave",
+    "collectibles:jacklyn_leave",
+    "collectibles:sabrina_leave",
+    "collectibles:florida_leave",
+    "collectibles:billietiae_leave"
+  ],
+  "result": {
+    "id": "collectibles:epic_loot_bag"
+  }
+}

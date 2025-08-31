@@ -1,0 +1,71 @@
+{
+  "display": {
+    "icon": {
+      "id": "collectibles:deliciosa_leave"
+    },
+    "title": {
+      "translate": "message.collectibles.set_leaves"
+    },
+    "description": {
+      "translate": "advancements.collectibles.all_leaves.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "collectibles:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "collectibles:deliciosa_leave"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:aurea_leave"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:obliqua_leave"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:subpinnata_leave"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:frydek_leave"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:jacklyn_leave"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:sabrina_leave"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:florida_leave"
+            ]
+          },
+          {
+            "items": [
+              "collectibles:billietiae_leave"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

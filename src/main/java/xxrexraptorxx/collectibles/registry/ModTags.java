@@ -13,4 +13,6 @@ public class ModTags {
             TagHelper.createBlockTag(References.MODID, "drops_collectibles/fragments");
     public static final TagKey<Block> DROPS_FOSSILS =
             TagHelper.createBlockTag(References.MODID, "drops_collectibles/fossils");
+    public static final TagKey<Block> DROPS_LEAVES =
+            TagHelper.createBlockTag(References.MODID, "drops_collectibles/leaves");
 }

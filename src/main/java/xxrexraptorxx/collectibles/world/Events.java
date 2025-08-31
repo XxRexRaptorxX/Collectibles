@@ -49,6 +49,11 @@ public class Events {
                 if (random.nextInt(Config.getFossilCollectibleRarity()) == 1) {
                     CollectibleHelper.dropCollectible(level, player, pos, CollectibleHelper.getRandomFossil());
                 }
+
+            } else if (block.is(ModTags.DROPS_LEAVES)) {
+                if (random.nextInt(Config.getFossilCollectibleRarity()) == 1) {
+                    CollectibleHelper.dropCollectible(level, player, pos, CollectibleHelper.getRandomLeave());
+                }
             }
         }
     }

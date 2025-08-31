@@ -5,5 +5,6 @@ public enum CollectibleSet {
     FRAGMENT_SET,
     BOOK_SET,
     FOSSIL_SET,
-    JEWELRY_SET
+    JEWELRY_SET,
+    LEAVES_SET
 }

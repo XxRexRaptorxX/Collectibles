@@ -116,6 +116,25 @@ public class ModItems {
     public static final DeferredItem<ItemCollectible> RING_JEWELRY = ITEMS.register(
             "ring_jewelry", () -> new ItemCollectible(new Item.Properties().setId(itemId("ring_jewelry"))));
 
+    public static final DeferredItem<ItemCollectible> DELICIOSA_LEAVE = ITEMS.register(
+            "deliciosa_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("deliciosa_leave"))));
+    public static final DeferredItem<ItemCollectible> AUREA_LEAVE = ITEMS.register(
+            "aurea_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("aurea_leave"))));
+    public static final DeferredItem<ItemCollectible> OBLIQUA_LEAVE = ITEMS.register(
+            "obliqua_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("obliqua_leave"))));
+    public static final DeferredItem<ItemCollectible> SUBPINNATA_LEAVE = ITEMS.register(
+            "subpinnata_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("subpinnata_leave"))));
+    public static final DeferredItem<ItemCollectible> FRYDEK_LEAVE = ITEMS.register(
+            "frydek_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("frydek_leave"))));
+    public static final DeferredItem<ItemCollectible> JACKLYN_LEAVE = ITEMS.register(
+            "jacklyn_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("jacklyn_leave"))));
+    public static final DeferredItem<ItemCollectible> SABRINA_LEAVE = ITEMS.register(
+            "sabrina_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("sabrina_leave"))));
+    public static final DeferredItem<ItemCollectible> FLORIDA_LEAVE = ITEMS.register(
+            "florida_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("florida_leave"))));
+    public static final DeferredItem<ItemCollectible> BILLIETIAE_LEAVE = ITEMS.register(
+            "billietiae_leave", () -> new ItemCollectible(new Item.Properties().setId(itemId("billietiae_leave"))));
+
     public static final DeferredItem<ItemLootbag> LOOT_BAG = ITEMS.register(
             "loot_bag",
             () -> new ItemLootbag(new Item.Properties()

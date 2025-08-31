@@ -22,6 +22,7 @@ public class Config {
     private static final ModConfigSpec.IntValue COLLECTIBLES_XP;
     private static final ModConfigSpec.IntValue FRAGMENT_COLLECTIBLE_RARITY;
     private static final ModConfigSpec.IntValue FOSSIL_COLLECTIBLE_RARITY;
+    private static final ModConfigSpec.IntValue LEAF_COLLECTIBLE_RARITY;
     private static final ModConfigSpec.IntValue COIN_COLLECTIBLE_RARITY;
     private static final ModConfigSpec.BooleanValue LUCK_FOR_COLLECTIBLES;
     private static final ModConfigSpec.BooleanValue COLLECTIBLES_DIRECTLY_INTO_INVENTORY;
@@ -47,6 +48,9 @@ public class Config {
         FOSSIL_COLLECTIBLE_RARITY = SERVER_BUILDER
                 .comment("How rarely fossil collectibles drop. Higher = rarer [1:X]")
                 .defineInRange("fossil_collectibles_rarity", 1000, 1, 100000);
+        LEAF_COLLECTIBLE_RARITY = SERVER_BUILDER
+                .comment("How rarely leaf collectibles drop. Higher = rarer [1:X]")
+                .defineInRange("leaf_collectibles_rarity", 1000, 1, 100000);
         SERVER_BUILDER.pop();
 
         ConfigHelper.setCategory(SERVER_BUILDER, "loot_bags");
@@ -75,7 +79,7 @@ public class Config {
                                 "5*" + BuiltInRegistries.ITEM.getKey(Items.DRAGON_BREATH),
                                 "10*" + BuiltInRegistries.ITEM.getKey(Items.DIAMOND)),
                         () -> "amount*modid:item",
-                        obj -> obj instanceof String string && isValidLootEntry(string));
+                        obj -> obj instanceof String string && ConfigListHelper.isValidItemWithCount(string));
         LOOT_BAG_XP = SERVER_BUILDER
                 .comment("How much XP a player gets from a loot bag")
                 .defineInRange("loot_bag_xp", 50, 0, 1000);
@@ -99,7 +103,7 @@ public class Config {
                                 "3*" + BuiltInRegistries.ITEM.getKey(Items.EXPERIENCE_BOTTLE),
                                 "1*" + BuiltInRegistries.ITEM.getKey(Items.TRIAL_KEY)),
                         () -> "amount*modid:item",
-                        obj -> obj instanceof String string && isValidLootEntry(string));
+                        obj -> obj instanceof String string && ConfigListHelper.isValidItemWithCount(string));
         SERVER_BUILDER.pop();
 
         SERVER_CONFIG = SERVER_BUILDER.build();
@@ -119,6 +123,10 @@ public class Config {
 
     public static int getFossilCollectibleRarity() {
         return FOSSIL_COLLECTIBLE_RARITY.get();
+    }
+
+    public static int getLeafCollectibleRarity() {
+        return LEAF_COLLECTIBLE_RARITY.get();
     }
 
     public static int getLootBagXp() {
@@ -151,41 +159,5 @@ public class Config {
 
     public static List<String> getEpicLootBagRewards() {
         return (List<String>) EPIC_LOOT_BAG_REWARDS.get();
-    }
-
-    /**
-     * Validates loot entry format: "amount*namespace:item"
-     *
-     * @param lootString The loot string to validate (e.g. "3*minecraft:diamond")
-     * @return true if valid, false otherwise
-     */
-    public static boolean isValidLootEntry(String lootString) {
-        if (lootString == null || lootString.trim().isEmpty() || !lootString.contains("*")) {
-            return false;
-        }
-
-        try {
-            String trimmed = lootString.trim();
-            int starIndex = trimmed.indexOf("*");
-
-            if (starIndex <= 0 || starIndex >= trimmed.length() - 1) {
-                return false;
-            }
-
-            String amountPart = trimmed.substring(0, starIndex);
-            String itemPart = trimmed.substring(starIndex + 1);
-
-            // Validate amount is positive integer
-            int amount = Integer.parseInt(amountPart);
-            if (amount <= 0) {
-                return false;
-            }
-
-            // Validate item exists
-            return ConfigListHelper.isValidItem(itemPart);
-
-        } catch (Exception e) {
-            return false;
-        }
     }
 }

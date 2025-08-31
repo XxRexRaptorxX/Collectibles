@@ -51,6 +51,11 @@ public class ItemCollectible extends Item {
                 && this.getDescriptionId().contains("jewelry")) {
             list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "set_jewelry")
                     .withStyle(ChatFormatting.YELLOW));
+
+        } else if (this.getDescriptionId().contains(References.MODID)
+                && this.getDescriptionId().contains("leave")) {
+            list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "set_leaves")
+                    .withStyle(ChatFormatting.YELLOW));
         }
 
         list.accept(Component.literal(ChatFormatting.YELLOW + "#" + CollectibleHelper.getCollectibleNumber(stack)));

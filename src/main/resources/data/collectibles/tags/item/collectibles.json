@@ -5,6 +5,7 @@
     "#collectibles:collectibles/books",
     "#collectibles:collectibles/fossils",
     "#collectibles:collectibles/fragments",
-    "#collectibles:collectibles/jewelry"
+    "#collectibles:collectibles/jewelry",
+    "#collectibles:collectibles/leaves"
   ]
 }

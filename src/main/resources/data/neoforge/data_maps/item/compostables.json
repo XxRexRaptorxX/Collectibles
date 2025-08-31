@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": {
+    "collectibles:deliciosa_leave": {
+      "chance": 1.0
+    },
+    "collectibles:aurea_leave": {
+      "chance": 1.0
+    },
+    "collectibles:obliqua_leave": {
+      "chance": 1.0
+    },
+    "collectibles:subpinnata_leave": {
+      "chance": 1.0
+    },
+    "collectibles:frydek_leave": {
+      "chance": 1.0
+    },
+    "collectibles:jacklyn_leave": {
+      "chance": 1.0
+    },
+    "collectibles:sabrina_leave": {
+      "chance": 1.0
+    },
+    "collectibles:florida_leave": {
+      "chance": 1.0
+    },
+    "collectibles:billietiae_leave": {
+      "chance": 1.0
+    }
+  }
+}

@@ -1,12 +1,13 @@
 package xxrexraptorxx.collectibles.datagen;
 
-import java.util.function.BiConsumer;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.model.ModelInstance;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.resources.ResourceLocation;
 import xxrexraptorxx.collectibles.registry.ModItems;
+
+import java.util.function.BiConsumer;
 
 public class ItemModelGen extends ItemModelGenerators {
 
@@ -69,5 +70,15 @@ public class ItemModelGen extends ItemModelGenerators {
         this.generateFlatItem(ModItems.CROWN_JEWELRY.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.CHAIN_JEWELRY.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.RING_JEWELRY.get(), ModelTemplates.FLAT_ITEM);
+
+        this.generateFlatItem(ModItems.DELICIOSA_LEAVE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.AUREA_LEAVE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.OBLIQUA_LEAVE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.SUBPINNATA_LEAVE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.FRYDEK_LEAVE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.JACKLYN_LEAVE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.SABRINA_LEAVE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.FLORIDA_LEAVE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(ModItems.BILLIETIAE_LEAVE.get(), ModelTemplates.FLAT_ITEM);
     }
 }
