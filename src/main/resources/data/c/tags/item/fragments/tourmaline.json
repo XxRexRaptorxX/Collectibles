@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:tourmaline_fragment"
+  "values": [
+    "collectibles:tourmaline_fragment"
   ]
 }

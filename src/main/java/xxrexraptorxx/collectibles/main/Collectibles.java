@@ -33,7 +33,6 @@ public class Collectibles {
         ModRegistry.register(References.MODID, References.NAME, References.URL);
     }
 
-
     @Mod(value = References.MODID, dist = Dist.CLIENT)
     public static class CollectiblesClient {
 

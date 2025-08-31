@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:crystal_fragment"
+  "values": [
+    "collectibles:crystal_fragment"
   ]
 }

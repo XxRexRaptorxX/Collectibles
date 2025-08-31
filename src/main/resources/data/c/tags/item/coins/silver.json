@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:silver_coin"
+  "values": [
+    "collectibles:silver_coin"
   ]
 }

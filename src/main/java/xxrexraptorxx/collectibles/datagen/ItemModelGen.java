@@ -1,5 +1,6 @@
 package xxrexraptorxx.collectibles.datagen;
 
+import java.util.function.BiConsumer;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.model.ModelInstance;
@@ -7,14 +8,11 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.resources.ResourceLocation;
 import xxrexraptorxx.collectibles.registry.ModItems;
 
-import java.util.function.BiConsumer;
-
 public class ItemModelGen extends ItemModelGenerators {
 
     public ItemModelGen(ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
         super(itemModelOutput, modelOutput);
     }
-
 
     @Override
     public void run() {
@@ -72,5 +70,4 @@ public class ItemModelGen extends ItemModelGenerators {
         this.generateFlatItem(ModItems.CHAIN_JEWELRY.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(ModItems.RING_JEWELRY.get(), ModelTemplates.FLAT_ITEM);
     }
-
 }

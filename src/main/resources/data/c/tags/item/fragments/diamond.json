@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:diamond_fragment"
+  "values": [
+    "collectibles:diamond_fragment"
   ]
 }

@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:ruby_fragment"
+  "values": [
+    "collectibles:ruby_fragment"
   ]
 }

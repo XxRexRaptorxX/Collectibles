@@ -4,7 +4,6 @@
   "ingredients": [
     "#collectibles:collectibles/fossils"
   ],
-
   "result": {
     "id": "minecraft:bone",
     "count": 9

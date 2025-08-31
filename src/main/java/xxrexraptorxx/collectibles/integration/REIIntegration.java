@@ -1,5 +1,6 @@
 package xxrexraptorxx.collectibles.integration;
 
+import java.util.ArrayList;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
@@ -16,8 +17,6 @@ import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
 import xxrexraptorxx.magmacore.utils.FormattingHelper;
 
-import java.util.ArrayList;
-
 @REIPluginClient
 public class REIIntegration implements REIClientPlugin {
 
@@ -32,14 +31,16 @@ public class REIIntegration implements REIClientPlugin {
             try {
                 epic_treasures.add(EntryStacks.of(CollectibleHelper.parseItemEntry(item)));
             } catch (Exception e) {
-                Collectibles.LOGGER.error("Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
+                Collectibles.LOGGER.error(
+                        "Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
             }
         }
         for (String item : Config.getLootBagRewards()) {
             try {
                 treasures.add(EntryStacks.of(CollectibleHelper.parseItemEntry(item)));
             } catch (Exception e) {
-                Collectibles.LOGGER.error("Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
+                Collectibles.LOGGER.error(
+                        "Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
             }
         }
 
@@ -60,6 +61,4 @@ public class REIIntegration implements REIClientPlugin {
             return list;
         });
     }
-
 }
-

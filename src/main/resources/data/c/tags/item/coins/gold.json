@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:gold_coin"
+  "values": [
+    "collectibles:gold_coin"
   ]
 }

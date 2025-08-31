@@ -1,5 +1,6 @@
 package xxrexraptorxx.collectibles.items;
 
+import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -19,20 +20,22 @@ import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
 import xxrexraptorxx.magmacore.utils.FormattingHelper;
 
-import java.util.function.Consumer;
-
 public class ItemLootbag extends Item {
 
     public ItemLootbag(Properties properties) {
         super(properties);
     }
 
-
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
-        list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "open_bag").withStyle(ChatFormatting.BLUE));
+    public void appendHoverText(
+            ItemStack stack,
+            TooltipContext context,
+            TooltipDisplay display,
+            Consumer<Component> list,
+            TooltipFlag flag) {
+        list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "open_bag")
+                .withStyle(ChatFormatting.BLUE));
     }
-
 
     @Override
     public boolean isFoil(ItemStack stack) {
@@ -43,30 +46,34 @@ public class ItemLootbag extends Item {
         }
     }
 
-
     @Override
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
-        if(this == ModItems.LOOT_BAG.get() || this == ModItems.EPIC_LOOT_BAG.get()) {
-            level.playSound((Player) null, player.getOnPos(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.0F);
+        if (this == ModItems.LOOT_BAG.get() || this == ModItems.EPIC_LOOT_BAG.get()) {
+            level.playSound(
+                    (Player) null,
+                    player.getOnPos(),
+                    SoundEvents.PLAYER_LEVELUP,
+                    SoundSource.PLAYERS,
+                    0.5F,
+                    level.random.nextFloat() * 0.15F + 0.0F);
 
             if (!level.isClientSide) {
                 if (this == ModItems.EPIC_LOOT_BAG.get()) {
                     player.giveExperiencePoints(Config.getEpicLootBagXp());
 
-                    for (int i = 0; i < Config.getEpicLootBagItemAmount(); i++ ) {
+                    for (int i = 0; i < Config.getEpicLootBagItemAmount(); i++) {
                         player.addItem(CollectibleHelper.getRandomEpicTreasure());
                     }
 
                 } else {
                     player.giveExperiencePoints(Config.getLootBagXp());
 
-                    for (int i = 0; i < Config.getLootBagItemAmount(); i++ ) {
+                    for (int i = 0; i < Config.getLootBagItemAmount(); i++) {
                         player.addItem(CollectibleHelper.getRandomTreasure());
                     }
                 }
-
             }
 
             stack.shrink(1);

@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:platinum_coin"
+  "values": [
+    "collectibles:platinum_coin"
   ]
 }

@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:brass_coin"
+  "values": [
+    "collectibles:brass_coin"
   ]
 }

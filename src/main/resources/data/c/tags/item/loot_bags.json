@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
+  "values": [
     "collectibles:loot_bag",
     "collectibles:epic_loot_bag"
   ]

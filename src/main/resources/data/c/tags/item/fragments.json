@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
+  "values": [
     "#c:fragments/amethyst",
     "#c:fragments/crystal",
     "#c:fragments/diamond",

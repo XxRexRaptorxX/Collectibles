@@ -12,7 +12,6 @@
     "collectibles:stone_coin",
     "collectibles:netherite_coin"
   ],
-
   "result": {
     "id": "collectibles:epic_loot_bag"
   }

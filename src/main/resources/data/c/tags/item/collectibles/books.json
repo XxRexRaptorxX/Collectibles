@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "#collectibles:collectibles/books"
+  "values": [
+    "#collectibles:collectibles/books"
   ]
 }

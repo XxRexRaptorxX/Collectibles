@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:sapphire_fragment"
+  "values": [
+    "collectibles:sapphire_fragment"
   ]
 }

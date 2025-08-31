@@ -7,7 +7,10 @@ import xxrexraptorxx.magmacore.content.TagHelper;
 
 public class ModTags {
 
-    public static final TagKey<Block> DROPS_COINS = TagHelper.createBlockTag(References.MODID, "drops_collectibles/coins");
-    public static final TagKey<Block> DROPS_FRAGMENTS = TagHelper.createBlockTag(References.MODID, "drops_collectibles/fragments");
-    public static final TagKey<Block> DROPS_FOSSILS = TagHelper.createBlockTag(References.MODID, "drops_collectibles/fossils");
+    public static final TagKey<Block> DROPS_COINS =
+            TagHelper.createBlockTag(References.MODID, "drops_collectibles/coins");
+    public static final TagKey<Block> DROPS_FRAGMENTS =
+            TagHelper.createBlockTag(References.MODID, "drops_collectibles/fragments");
+    public static final TagKey<Block> DROPS_FOSSILS =
+            TagHelper.createBlockTag(References.MODID, "drops_collectibles/fossils");
 }

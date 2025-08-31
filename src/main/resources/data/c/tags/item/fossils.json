@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "#c:collectibles/fossils"
+  "values": [
+    "#c:collectibles/fossils"
   ]
 }

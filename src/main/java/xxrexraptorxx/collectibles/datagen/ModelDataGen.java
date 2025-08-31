@@ -2,6 +2,17 @@ package xxrexraptorxx.collectibles.datagen;
 
 import com.google.common.collect.Maps;
 import com.google.gson.JsonElement;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
@@ -24,19 +35,8 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import xxrexraptorxx.collectibles.main.References;
 
-import java.nio.file.Path;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
-
-//code from TofuCraftReloaded (https://github.com/baguchi/TofuCraftReload-Recode/blob/1.21.x/src/main/java/baguchi/tofucraft/data/generator/TofuModelData.java)
+// code from TofuCraftReloaded
+// (https://github.com/baguchi/TofuCraftReload-Recode/blob/1.21.x/src/main/java/baguchi/tofucraft/data/generator/TofuModelData.java)
 public class ModelDataGen extends ModelProvider {
 
     private final PackOutput.PathProvider blockStatePathProvider;
@@ -53,7 +53,7 @@ public class ModelDataGen extends ModelProvider {
     public CompletableFuture<?> run(CachedOutput output) {
         ItemInfoCollector itemModelOutput = new ItemInfoCollector(this::getKnownItems) {
             @Override
-            public void finalizeAndValidate() { //todo temporary
+            public void finalizeAndValidate() { // todo temporary
                 try {
                     super.finalizeAndValidate();
                 } catch (IllegalStateException ignore) {
@@ -61,21 +61,27 @@ public class ModelDataGen extends ModelProvider {
                 }
             }
         };
-        BlockModelDefinitionGeneratorCollector blockModelOutput = new BlockModelDefinitionGeneratorCollector(this::getKnownBlocks) {
-            @Override
-            public void validate() { //todo temporary
-                try {
-                    super.validate();
-                } catch (IllegalStateException ignore) {
+        BlockModelDefinitionGeneratorCollector blockModelOutput =
+                new BlockModelDefinitionGeneratorCollector(this::getKnownBlocks) {
+                    @Override
+                    public void validate() { // todo temporary
+                        try {
+                            super.validate();
+                        } catch (IllegalStateException ignore) {
 
-                }
-            }
-        };
+                        }
+                    }
+                };
         SimpleModelCollector modelOutput = new SimpleModelCollector();
-        this.registerModels(new BlockModelGen(blockModelOutput, itemModelOutput, modelOutput), new ItemModelGen(itemModelOutput, modelOutput));
+        this.registerModels(
+                new BlockModelGen(blockModelOutput, itemModelOutput, modelOutput),
+                new ItemModelGen(itemModelOutput, modelOutput));
         blockModelOutput.validate();
         itemModelOutput.finalizeAndValidate();
-        return CompletableFuture.allOf(blockModelOutput.save(output, this.blockStatePathProvider), modelOutput.save(output, this.modelPathProvider), itemModelOutput.save(output, this.itemInfoPathProvider));
+        return CompletableFuture.allOf(
+                blockModelOutput.save(output, this.blockStatePathProvider),
+                modelOutput.save(output, this.modelPathProvider),
+                itemModelOutput.save(output, this.itemInfoPathProvider));
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -89,7 +95,6 @@ public class ModelDataGen extends ModelProvider {
             this.copies = new HashMap();
             this.knownItems = knownItems;
         }
-
 
         public void accept(Item item, ItemModel.Unbaked model) {
             this.register(item, new ClientItem(model, ClientItem.Properties.DEFAULT));
@@ -114,7 +119,6 @@ public class ModelDataGen extends ModelProvider {
                         this.accept(blockitem, ItemModelUtils.plainModel(resourcelocation));
                     }
                 }
-
             });
             this.copies.forEach((item, item2) -> {
                 ClientItem clientitem = (ClientItem) this.itemInfos.get(item2);
@@ -125,14 +129,22 @@ public class ModelDataGen extends ModelProvider {
                     this.register(item, clientitem);
                 }
             });
-            List<ResourceLocation> list = (this.knownItems.get()).filter((p_388636_) -> !this.itemInfos.containsKey(p_388636_.value())).map((p_388278_) -> ((ResourceKey) p_388278_.unwrapKey().orElseThrow()).location()).toList();
+            List<ResourceLocation> list = (this.knownItems.get())
+                    .filter((p_388636_) -> !this.itemInfos.containsKey(p_388636_.value()))
+                    .map((p_388278_) -> ((ResourceKey) p_388278_.unwrapKey().orElseThrow()).location())
+                    .toList();
             if (!list.isEmpty()) {
                 throw new IllegalStateException("Missing item model definitions for: " + String.valueOf(list));
             }
         }
 
         public CompletableFuture<?> save(CachedOutput output, PackOutput.PathProvider provider) {
-            return DataProvider.saveAll(output, ClientItem.CODEC, (p_388594_) -> provider.json(p_388594_.builtInRegistryHolder().key().location()), this.itemInfos);
+            return DataProvider.saveAll(
+                    output,
+                    ClientItem.CODEC,
+                    (p_388594_) -> provider.json(
+                            p_388594_.builtInRegistryHolder().key().location()),
+                    this.itemInfos);
         }
     }
 
@@ -140,8 +152,7 @@ public class ModelDataGen extends ModelProvider {
     static class SimpleModelCollector implements BiConsumer<ResourceLocation, ModelInstance> {
         private final Map<ResourceLocation, ModelInstance> models = new HashMap();
 
-        SimpleModelCollector() {
-        }
+        SimpleModelCollector() {}
 
         public void accept(ResourceLocation location, ModelInstance instance) {
             Supplier<JsonElement> supplier = (Supplier) this.models.put(location, instance);
@@ -155,7 +166,8 @@ public class ModelDataGen extends ModelProvider {
             return saveAll(output, provider::json, this.models);
         }
 
-        static <T> CompletableFuture<?> saveAll(CachedOutput output, Function<T, Path> pathFunction, Map<T, ? extends Supplier<JsonElement>> supplier) {
+        static <T> CompletableFuture<?> saveAll(
+                CachedOutput output, Function<T, Path> pathFunction, Map<T, ? extends Supplier<JsonElement>> supplier) {
             return DataProvider.saveAll(output, Supplier::get, pathFunction, supplier);
         }
     }
@@ -169,7 +181,6 @@ public class ModelDataGen extends ModelProvider {
             this.generators = new HashMap();
             this.knownBlocks = knownBlocks;
         }
-
 
         public void accept(BlockModelDefinitionGenerator generator) {
             Block block = generator.block();
@@ -190,8 +201,10 @@ public class ModelDataGen extends ModelProvider {
         }
 
         public CompletableFuture<?> save(CachedOutput output, PackOutput.PathProvider provider) {
-            Map<Block, BlockModelDefinition> map = Maps.transformValues(this.generators, BlockModelDefinitionGenerator::create);
-            Function<Block, Path> function = p_387598_ -> provider.json(p_387598_.builtInRegistryHolder().key().location());
+            Map<Block, BlockModelDefinition> map =
+                    Maps.transformValues(this.generators, BlockModelDefinitionGenerator::create);
+            Function<Block, Path> function = p_387598_ ->
+                    provider.json(p_387598_.builtInRegistryHolder().key().location());
             return DataProvider.saveAll(output, BlockModelDefinition.CODEC, function, map);
         }
     }

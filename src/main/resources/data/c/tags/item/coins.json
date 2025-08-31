@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
+  "values": [
     "#c:coins/gold",
     "#c:coins/silver",
     "#c:coins/platinum",

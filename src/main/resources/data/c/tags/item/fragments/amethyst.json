@@ -1,7 +1,6 @@
 {
   "replace": false,
-  "values":
-  [
-      "collectibles:amethyst_fragment"
+  "values": [
+    "collectibles:amethyst_fragment"
   ]
 }

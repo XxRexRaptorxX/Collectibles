@@ -1,9 +1,8 @@
 {
   "replace": false,
-  "values":
-  [
+  "values": [
     "#collectibles:drops_collectibles/coins",
     "#collectibles:drops_collectibles/fragments",
     "#collectibles:drops_collectibles/fossils"
-    ]
+  ]
 }

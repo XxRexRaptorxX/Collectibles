@@ -12,7 +12,6 @@
     "collectibles:grimoire_book",
     "collectibles:monster_book"
   ],
-
   "result": {
     "id": "collectibles:epic_loot_bag"
   }
