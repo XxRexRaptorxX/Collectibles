@@ -1,5 +1,7 @@
 package xxrexraptorxx.collectibles.world;
 
+import java.util.List;
+import java.util.Random;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
@@ -18,9 +20,6 @@ import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.registry.ModTags;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
-
-import java.util.List;
-import java.util.Random;
 
 @EventBusSubscriber(modid = References.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class Events {
