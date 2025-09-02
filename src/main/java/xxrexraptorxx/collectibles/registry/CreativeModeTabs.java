@@ -72,6 +72,16 @@ public class CreativeModeTabs {
                         output.accept(ModItems.CHAIN_JEWELRY.get());
                         output.accept(ModItems.RING_JEWELRY.get());
 
+                        output.accept(ModItems.DELICIOSA_LEAVE.get());
+                        output.accept(ModItems.AUREA_LEAVE.get());
+                        output.accept(ModItems.OBLIQUA_LEAVE.get());
+                        output.accept(ModItems.SUBPINNATA_LEAVE.get());
+                        output.accept(ModItems.FRYDEK_LEAVE.get());
+                        output.accept(ModItems.JACKLYN_LEAVE.get());
+                        output.accept(ModItems.SABRINA_LEAVE.get());
+                        output.accept(ModItems.FLORIDA_LEAVE.get());
+                        output.accept(ModItems.BILLIETIAE_LEAVE.get());
+
                         output.accept(ModItems.LOOT_BAG.get());
                         output.accept(ModItems.EPIC_LOOT_BAG.get());
                     })

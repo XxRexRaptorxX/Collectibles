@@ -1,7 +1,5 @@
 package xxrexraptorxx.collectibles.world;
 
-import java.util.List;
-import java.util.Random;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
@@ -20,6 +18,9 @@ import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.registry.ModTags;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
+
+import java.util.List;
+import java.util.Random;
 
 @EventBusSubscriber(modid = References.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class Events {
@@ -51,7 +52,7 @@ public class Events {
                 }
 
             } else if (block.is(ModTags.DROPS_LEAVES)) {
-                if (random.nextInt(Config.getFossilCollectibleRarity()) == 1) {
+                if (random.nextInt(Config.getLeafCollectibleRarity()) == 1) {
                     CollectibleHelper.dropCollectible(level, player, pos, CollectibleHelper.getRandomLeave());
                 }
             }
@@ -157,6 +158,25 @@ public class Events {
                 new MerchantOffer(new ItemCost(ModItems.CHAIN_JEWELRY.get()), reward, 1, 5, 0.05F)));
         trades.add(((trader, random) ->
                 new MerchantOffer(new ItemCost(ModItems.RING_JEWELRY.get()), reward, 1, 5, 0.05F)));
+
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.DELICIOSA_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.AUREA_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.OBLIQUA_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.SUBPINNATA_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.FRYDEK_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.JACKLYN_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.SABRINA_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.FLORIDA_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(((trader, random) ->
+                new MerchantOffer(new ItemCost(ModItems.BILLIETIAE_LEAVE.get()), reward, 1, 5, 0.05F)));
 
         trades.add(((trader, random) -> new MerchantOffer(
                 new ItemCost(Items.EMERALD, 30), new ItemStack(ModItems.LOOT_BAG.get()), 1, 10, 0.05F)));
