@@ -7,9 +7,7 @@ import groovy.json.JsonOutput
 tasks.register('initProjectFromScript', Exec) {
     group = "initialization"
     description = "Initializes the project (runs init script)"
-    if (!file("init-project.sh").exists()) {
-        //throw new GradleException("❌ No 'init-project.sh'-file in your mod's root directory.")
-    } else {
+    if (file("init-project.sh").exists()) {
         println "✅ Initialization script found"
         commandLine "bash", "./init-project.sh"
     }
@@ -64,7 +62,7 @@ tasks.register('checkGradleProperties') {
         if (propsFile.exists()) {
             propsFile.withInputStream { stream -> props.load(stream) }
         } else {
-            println "No gradle.properties found — a new one will be created if you choose to add properties."
+            println "⚠️ No gradle.properties found — a new one will be created if you choose to add properties."
         }
 
         def missing = requiredProps.keySet().findAll { !props.containsKey(it) }
@@ -73,48 +71,12 @@ tasks.register('checkGradleProperties') {
             return
         }
 
-        println "Missing properties: ${missing.join(', ')}"
-
-        def nonInteractive = project.hasProperty('nonInteractive')
-        def stdin = new BufferedReader(new InputStreamReader(System.in))
-
-        def askLine = { prompt ->
-            try {
-                if (System.console()) {
-                    System.console().readLine(prompt)
-                } else {
-                    print prompt
-                    stdin.readLine()
-                }
-            } catch (Exception e) {
-                null
-            }
-        }
-
-        def addAll
-        if (nonInteractive) {
-            println "nonInteractive: missing properties will be added with defaults."
-            addAll = true
-        } else {
-            def ans = askLine("Add all missing properties? (y/n) ") ?: "n"
-            addAll = ans.trim().toLowerCase().startsWith('y')
-        }
-
-        if (!addAll) {
-            println "No changes made."
-            return
-        }
+        println "⚠️ Missing properties: ${missing.join(', ')}"
 
         missing.each { key ->
             def defaultVal = requiredProps[key]
-            def value
-            if (nonInteractive) {
-                value = defaultVal
-            } else {
-                def prompt = "Value for '${key}' (press Enter to use default '${defaultVal}'): "
-                def v = askLine(prompt)
-                value = (v == null || v.trim() == '') ? defaultVal : v
-            }
+            def value = defaultVal
+
             props.setProperty(key, value)
             println "-> set: ${key}=${value}"
         }
@@ -170,14 +132,9 @@ def restoreOrCreateFile = { fileName, envVar ->
             println "✅ Restored $fileName from git HEAD"
             exec { commandLine 'git', 'add', fileName }
         } catch (Exception e) {
-            def createFlag = System.getenv(envVar) ?: "Y"
-            if (createFlag.toUpperCase() in ["Y", "YES", "1"]) {
                 f.text = ""
                 exec { commandLine 'git', 'add', fileName }
                 println "✅ Created $fileName"
-            } else {
-                throw new GradleException("❌ $fileName missing. Set $envVar=1 to auto-create.")
-            }
         }
     }
 }
@@ -221,6 +178,7 @@ tasks.register('setupVersionsJson') {
     description = "Creates versions.json if it does not exist"
     doLast {
         def versionsFile = file("versions.json")
+
         if (!versionsFile.exists()) {
             def modVersion = project.findProperty("mod_version") ?: "1.0.0"
             def mcVersion = project.findProperty("minecraft_version") ?: "1.20.1"
@@ -264,7 +222,7 @@ tasks.register('createGitTag') {
             }
 
             if (pushed.exitValue == 0) {
-                println "🏷️ Created and pushed git tag ${tagName}"
+                println "✅️ Created and pushed git tag ${tagName}"
             } else {
                 println "❌ Created tag ${tagName} but pushing failed (exit ${pushed.exitValue})."
             }
@@ -280,44 +238,14 @@ tasks.register('createReadme') {
     description = 'Checks if README.md exists, asks to create it with default template if missing, optionally deletes README.txt.'
     doLast {
         def readmeFile = file('README.md')
-        def oldReadmeTxt = file('README.txt')
-
-        // check, is README.txt exists
-        if (oldReadmeTxt.exists()) {
-            def deleteTxt = true
-            if (System.console() != null) {
-                println 'README.txt found. Delete it? [Y/n]'
-                def input = System.console().readLine()?.trim()?.toLowerCase()
-                deleteTxt = input == null || input == '' || input == 'y'
-            } else {
-                deleteTxt = System.getenv('DELETE_README_TXT') == '1'
-            }
-
-            if (deleteTxt) {
-                oldReadmeTxt.delete()
-                println '✅ Deleted README.txt'
-            } else {
-                println '⚠️  README.txt was not deleted'
-            }
-        }
 
         // check if readme file already exists
         if (!readmeFile.exists()) {
-            def createReadme = true
-            if (System.console() != null) {
-                println 'README.md not found. Create one now? [Y/n]'
-                def input = System.console().readLine()?.trim()?.toLowerCase()
-                createReadme = input == null || input == '' || input == 'y'
-            } else {
-                createReadme = System.getenv('CREATE_README') == '1'
-            }
-
-            if (createReadme) {
-                def modID = project.hasProperty('mod_id') ? project.property('mod_id') : '#MOD_ID#'
-                def cfID = project.hasProperty('cf_id') ? project.property('cf_id') : '#CF_ID#'
-                def mrID = project.hasProperty('mr_id') ? project.property('mr_id') : '#MR_ID#'
-                def desc = project.hasProperty('description') ? project.property('description') : 'Helloworld!'
-                def readmeContent = """\
+            def modID = project.hasProperty('mod_id') ? project.property('mod_id') : '#MOD_ID#'
+            def cfID = project.hasProperty('cf_id') ? project.property('cf_id') : '#CF_ID#'
+            def mrID = project.hasProperty('mr_id') ? project.property('mr_id') : '#MR_ID#'
+            def desc = project.hasProperty('description') ? project.property('description') : 'Helloworld!'
+            def readmeContent = """\
         <p align="center">
   <a href="https://www.curseforge.com/minecraft/mc-mods/${mod_id}"><img src="http://cf.way2muchnoise.eu/short_${cf_id}.svg?badge_style=flat" alt="Curseforge"></a>
   <a href="https://modrinth.com/mod/${mod_id}"><img src="https://img.shields.io/modrinth/dt/${mr_id}?logo=modrinth&label=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth"></a>
@@ -418,11 +346,8 @@ tasks.register('createReadme') {
 [mr_jei]: https://modrinth.com/mod/jei
 """
 
-                readmeFile.text = readmeContent
-                println '✅ Created README.md'
-            } else {
-                println '❌ README.md missing. Set CREATE_README=1 to auto-create in CI.'
-            }
+            readmeFile.text = readmeContent
+            println '✅ Created README.md'
         } else {
             println '✅ README.md already exists'
         }
@@ -549,7 +474,7 @@ exit 0
         hooks.each { h ->
             def target = new File(srcDir, h.name)
             if (target.exists() && !force) {
-                logger.lifecycle("${h.name} already exists (use -PforceHooks=true to overwrite).")
+                logger.lifecycle("⚠️ ${h.name} already exists (use -PforceHooks=true to overwrite).")
             } else {
                 target.withWriter('UTF-8') { w -> w << h.content }
                 logger.lifecycle("Generated: ${target}")
@@ -561,7 +486,7 @@ exit 0
             exec { commandLine 'git','config','core.hooksPath','.githooks' }
             logger.lifecycle("git core.hooksPath set to .githooks")
         } catch (Exception e) {
-            logger.warn("git not found or git config failed: ${e.message}")
+            logger.warn("❌ git not found or git config failed: ${e.message}")
         }
 
         // OS detection via JVM property (stable across Gradle versions)
@@ -573,7 +498,7 @@ exit 0
                 exec { commandLine 'bash','-lc',"for f in .githooks/*; do sed -i 's/\\r\$//' \"\$f\" || true; done" }
                 logger.lifecycle("Removed CRLF from hooks (via bash/sed)")
             } catch (Exception e) {
-                logger.warn("No bash/sed available: skipped CRLF conversion")
+                logger.warn("❌ No bash/sed available: skipped CRLF conversion")
             }
             srcDir.eachFile { f ->
                 try {
@@ -598,7 +523,7 @@ exit 0
                         logger.lifecycle("Added and set executable via git add --chmod=+x on ${f.name}")
                     }
                 } catch (Exception e) {
-                    logger.warn("Failed to set executable permission for ${f.name}: ${e.message}")
+                    logger.warn("❌ Failed to set executable permission for ${f.name}: ${e.message}")
                 }
             }
         } else {
@@ -607,7 +532,7 @@ exit 0
                     exec { commandLine 'chmod','+x', f.path }
                     logger.lifecycle("chmod +x ${f.name}")
                 } catch (Exception e) {
-                    logger.warn("chmod failed for ${f.name}: ${e.message}")
+                    logger.warn("❌ chmod failed for ${f.name}: ${e.message}")
                 }
             }
         }
@@ -630,19 +555,11 @@ tasks.register("setupGithubWorkflow") {
         def workflowFile = new File(workflowDir, "create_releases.yml")
 
         if (workflowFile.exists()) {
-            println("The workflow file '.github/workflows/create_releases.yml' already exists. No action taken.")
+            println("✅ The workflow file '.github/workflows/create_releases.yml' already exists. No action taken.")
             return
         }
 
-        println("The workflow file '.github/workflows/create_releases.yml' does not exist.")
-        println("Do you want to generate it now? [y/N]")
-
-        def userInput = System.console()?.readLine()?.trim()?.toLowerCase() ?: "n"
-
-        if (userInput != "y") {
-            println("Aborted: Workflow file not generated.")
-            return
-        }
+        println("⚠️ The workflow file '.github/workflows/create_releases.yml' does not exist.")
 
         workflowFile.text = '''\
 name: Create previous-version Dev release
