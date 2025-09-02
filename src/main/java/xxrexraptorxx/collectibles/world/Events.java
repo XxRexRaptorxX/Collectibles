@@ -161,8 +161,8 @@ public class Events {
 
         trades.add(((trader, random) ->
                 new MerchantOffer(new ItemCost(ModItems.DELICIOSA_LEAVE.get()), reward, 1, 5, 0.05F)));
-        trades.add(((trader, random) ->
-                new MerchantOffer(new ItemCost(ModItems.AUREA_LEAVE.get()), reward, 1, 5, 0.05F)));
+        trades.add(
+                ((trader, random) -> new MerchantOffer(new ItemCost(ModItems.AUREA_LEAVE.get()), reward, 1, 5, 0.05F)));
         trades.add(((trader, random) ->
                 new MerchantOffer(new ItemCost(ModItems.OBLIQUA_LEAVE.get()), reward, 1, 5, 0.05F)));
         trades.add(((trader, random) ->
