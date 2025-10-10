@@ -9,7 +9,7 @@ tasks.register("#publishNewVersion") {
     group = "publishing"
     description = "Publish to both Modrinth and CurseForge"
 
-    dependsOn "build", "modrinth", "publishCurseForge", "updateVersionsJson"
+    dependsOn "build", "modrinth", "publishCurseForge", "archiveChangelog", "updateVersionsJson" //,"publishToMavenLocal"
 
     doLast {
         println "=== Publish Completed ==="
@@ -24,7 +24,7 @@ tasks.register("#publishModrinthOnly") {
     group = "publishing"
     description = "Publish only to Modrinth"
 
-    dependsOn "build", "publishCurseForge", "updateVersionsJson"
+    dependsOn "build", "modrinth", "updateVersionsJson"
 
     doLast {
         println "=== Modrinth Publish Completed ==="

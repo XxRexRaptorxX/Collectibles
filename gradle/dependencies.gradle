@@ -38,20 +38,32 @@ repositories {
 }
 
 dependencies {
+    // MagamCore
+    implementation "xxrexraptorxx:magmacore:${magma_core_version}"
+    //implementation "curse.maven:MagmaCore-1267885:${magma_core_version}"
+
     // JEI
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+
     // REI
     compileOnly "me.shedaniel:RoughlyEnoughItems-api-neoforge:${rei_version}"
     compileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-neoforge:${rei_version}"
-    runtimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
+    //runtimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
+
     // EMI
     compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
+
     // JADE
     runtimeOnly "curse.maven:jade-324717:${jade_version}"
-    // MagmaCore
-    implementation "curse.maven:magmacore-1267885:${magmacore_version}"
-    // other
-    runtimeOnly "curse.maven:curios-309927:${curios_version}"
 
+    // Curios
+    compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+1.21.5:api"
+    //runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
 
+    // Continuity
+    //runtimeOnly "curse.maven:continuity-531351:${continuity_version}"
+
+    // JEED
+    //runtimeOnly "curse.maven:continuity-532286:${jeed_version}"
 }
