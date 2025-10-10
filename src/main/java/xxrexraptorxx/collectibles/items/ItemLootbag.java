@@ -1,6 +1,5 @@
 package xxrexraptorxx.collectibles.items;
 
-import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -19,6 +18,8 @@ import xxrexraptorxx.collectibles.registry.ModItems;
 import xxrexraptorxx.collectibles.utils.CollectibleHelper;
 import xxrexraptorxx.collectibles.utils.Config;
 import xxrexraptorxx.magmacore.utils.FormattingHelper;
+
+import java.util.function.Consumer;
 
 public class ItemLootbag extends Item {
 
@@ -50,7 +51,7 @@ public class ItemLootbag extends Item {
         if (this == ModItems.LOOT_BAG.get() || this == ModItems.EPIC_LOOT_BAG.get()) {
             level.playSound((Player) null, player.getOnPos(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.0F);
 
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 if (this == ModItems.EPIC_LOOT_BAG.get()) {
                     player.giveExperiencePoints(Config.getEpicLootBagXp());
 
@@ -68,7 +69,7 @@ public class ItemLootbag extends Item {
             }
 
             stack.shrink(1);
-            if (level.isClientSide) player.awardStat(Stats.ITEM_USED.get(this));
+            if (level.isClientSide()) player.awardStat(Stats.ITEM_USED.get(this));
         }
 
         return InteractionResult.CONSUME;
