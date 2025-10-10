@@ -31,16 +31,14 @@ public class REIIntegration implements REIClientPlugin {
             try {
                 epic_treasures.add(EntryStacks.of(CollectibleHelper.parseItemEntry(item)));
             } catch (Exception e) {
-                Collectibles.LOGGER.error(
-                        "Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
+                Collectibles.LOGGER.error("Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
             }
         }
         for (String item : Config.getLootBagRewards()) {
             try {
                 treasures.add(EntryStacks.of(CollectibleHelper.parseItemEntry(item)));
             } catch (Exception e) {
-                Collectibles.LOGGER.error(
-                        "Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
+                Collectibles.LOGGER.error("Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
             }
         }
 

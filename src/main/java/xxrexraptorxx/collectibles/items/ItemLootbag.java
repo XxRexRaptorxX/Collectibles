@@ -26,16 +26,12 @@ public class ItemLootbag extends Item {
         super(properties);
     }
 
+
     @Override
-    public void appendHoverText(
-            ItemStack stack,
-            TooltipContext context,
-            TooltipDisplay display,
-            Consumer<Component> list,
-            TooltipFlag flag) {
-        list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "open_bag")
-                .withStyle(ChatFormatting.BLUE));
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
+        list.accept(FormattingHelper.setModLangComponent("message", References.MODID, "open_bag").withStyle(ChatFormatting.BLUE));
     }
+
 
     @Override
     public boolean isFoil(ItemStack stack) {
@@ -46,18 +42,13 @@ public class ItemLootbag extends Item {
         }
     }
 
+
     @Override
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
         if (this == ModItems.LOOT_BAG.get() || this == ModItems.EPIC_LOOT_BAG.get()) {
-            level.playSound(
-                    (Player) null,
-                    player.getOnPos(),
-                    SoundEvents.PLAYER_LEVELUP,
-                    SoundSource.PLAYERS,
-                    0.5F,
-                    level.random.nextFloat() * 0.15F + 0.0F);
+            level.playSound((Player) null, player.getOnPos(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 0.5F, level.random.nextFloat() * 0.15F + 0.0F);
 
             if (!level.isClientSide) {
                 if (this == ModItems.EPIC_LOOT_BAG.get()) {

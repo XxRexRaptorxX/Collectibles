@@ -10,12 +10,10 @@ import net.minecraft.resources.ResourceLocation;
 
 public class BlockModelGen extends BlockModelGenerators {
 
-    public BlockModelGen(
-            Consumer<BlockModelDefinitionGenerator> blockstateOutput,
-            ItemModelOutput itemModelOutput,
-            BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
+    public BlockModelGen(Consumer<BlockModelDefinitionGenerator> blockstateOutput, ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
         super(blockstateOutput, itemModelOutput, modelOutput);
     }
+
 
     @Override
     public void run() {

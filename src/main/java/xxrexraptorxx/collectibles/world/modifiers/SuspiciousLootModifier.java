@@ -17,10 +17,8 @@ import org.jetbrains.annotations.NotNull;
 // fill ~ ~ ~ ~30 ~ ~2 suspicious_sand{LootTable:"minecraft:archaeology/trail_ruins_common"} destroy
 public class SuspiciousLootModifier extends LootModifier {
 
-    public static final Supplier<MapCodec<SuspiciousLootModifier>> CODEC =
-            Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(inst -> codecStart(inst)
-                    .and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(m -> m.item))
-                    .apply(inst, SuspiciousLootModifier::new)));
+    public static final Supplier<MapCodec<SuspiciousLootModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder
+            .mapCodec(inst -> codecStart(inst).and(BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(m -> m.item)).apply(inst, SuspiciousLootModifier::new)));
 
     private final Item item;
 
@@ -29,9 +27,9 @@ public class SuspiciousLootModifier extends LootModifier {
         this.item = item;
     }
 
+
     @Override
-    protected @NotNull ObjectArrayList<ItemStack> doApply(
-            ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         for (LootItemCondition condition : this.conditions) {
             if (!condition.test(context)) {
                 return generatedLoot;
@@ -42,6 +40,7 @@ public class SuspiciousLootModifier extends LootModifier {
         generatedLoot.add(new ItemStack(this.item));
         return generatedLoot;
     }
+
 
     @Override
     public MapCodec<? extends IGlobalLootModifier> codec() {

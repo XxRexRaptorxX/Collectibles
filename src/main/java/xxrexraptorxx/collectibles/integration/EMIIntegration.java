@@ -28,29 +28,22 @@ public class EMIIntegration implements EmiPlugin {
             try {
                 epic_treasures.add(EmiStack.of(CollectibleHelper.parseItemEntry(item)));
             } catch (Exception e) {
-                Collectibles.LOGGER.error(
-                        "Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
+                Collectibles.LOGGER.error("Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
             }
         }
         for (String item : Config.getLootBagRewards()) {
             try {
                 epic_treasures.add(EmiStack.of(CollectibleHelper.parseItemEntry(item)));
             } catch (Exception e) {
-                Collectibles.LOGGER.error(
-                        "Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
+                Collectibles.LOGGER.error("Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
             }
         }
 
-        registry.addRecipe(new EmiInfoRecipe(
-                treasures,
-                List.of(FormattingHelper.setModLangComponent("message", References.MODID, "lootbag_jei_desc")),
+        registry.addRecipe(new EmiInfoRecipe(treasures, List.of(FormattingHelper.setModLangComponent("message", References.MODID, "lootbag_jei_desc")),
                 ResourceLocation.fromNamespaceAndPath(References.MODID, "info/lootbag_treasures")));
-        registry.addRecipe(new EmiInfoRecipe(
-                epic_treasures,
-                List.of(FormattingHelper.setModLangComponent("message", References.MODID, "epic_lootbag_jei_desc")),
+        registry.addRecipe(new EmiInfoRecipe(epic_treasures, List.of(FormattingHelper.setModLangComponent("message", References.MODID, "epic_lootbag_jei_desc")),
                 ResourceLocation.fromNamespaceAndPath(References.MODID, "info/epic_lootbag_treasures")));
-        registry.addRecipe(new EmiInfoRecipe(
-                List.of(EmiStack.of(ModItems.LOOT_BAG), EmiStack.of(ModItems.EPIC_LOOT_BAG)),
+        registry.addRecipe(new EmiInfoRecipe(List.of(EmiStack.of(ModItems.LOOT_BAG), EmiStack.of(ModItems.EPIC_LOOT_BAG)),
                 List.of(FormattingHelper.setModLangComponent("message", References.MODID, "lootbag_jei_desc")),
                 ResourceLocation.fromNamespaceAndPath(References.MODID, "info/bag")));
     }

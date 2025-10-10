@@ -9,11 +9,10 @@ import xxrexraptorxx.collectibles.main.References;
 
 public class ModStats {
 
-    public static final DeferredRegister<ResourceLocation> CUSTOM_STATS =
-            DeferredRegister.create(BuiltInRegistries.CUSTOM_STAT, References.MODID);
+    public static final DeferredRegister<ResourceLocation> CUSTOM_STATS = DeferredRegister.create(BuiltInRegistries.CUSTOM_STAT, References.MODID);
 
-    public static final Supplier<ResourceLocation> COLLECTIBLES_FOUND = CUSTOM_STATS.register(
-            "found_collectibles", () -> ResourceLocation.fromNamespaceAndPath(References.MODID, "found_collectibles"));
+    public static final Supplier<ResourceLocation> COLLECTIBLES_FOUND = CUSTOM_STATS.register("found_collectibles",
+            () -> ResourceLocation.fromNamespaceAndPath(References.MODID, "found_collectibles"));
 
     public static void init(IEventBus eventBus) {
         CUSTOM_STATS.register(eventBus);

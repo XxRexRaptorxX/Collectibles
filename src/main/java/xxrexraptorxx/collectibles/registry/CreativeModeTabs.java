@@ -10,17 +10,14 @@ import xxrexraptorxx.collectibles.main.References;
 
 public class CreativeModeTabs {
 
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, References.MODID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, References.MODID);
 
     public static void init(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN_TAB =
-            CREATIVE_MODE_TABS.register(References.MODID, () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup." + References.MODID + "_tab"))
-                    .icon(() -> ModItems.EPIC_LOOT_BAG.get().getDefaultInstance())
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN_TAB = CREATIVE_MODE_TABS.register(References.MODID,
+            () -> CreativeModeTab.builder().title(Component.translatable("itemGroup." + References.MODID + "_tab")).icon(() -> ModItems.EPIC_LOOT_BAG.get().getDefaultInstance())
                     .displayItems((params, output) -> {
                         output.accept(ModItems.GOLD_COIN.get());
                         output.accept(ModItems.SILVER_COIN.get());
@@ -84,6 +81,5 @@ public class CreativeModeTabs {
 
                         output.accept(ModItems.LOOT_BAG.get());
                         output.accept(ModItems.EPIC_LOOT_BAG.get());
-                    })
-                    .build());
+                    }).build());
 }

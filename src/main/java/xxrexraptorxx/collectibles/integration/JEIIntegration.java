@@ -24,6 +24,7 @@ public class JEIIntegration implements IModPlugin {
         return ID;
     }
 
+
     @Override
     public void registerRecipes(IRecipeRegistration registry) {
         ArrayList<ItemStack> treasures = new ArrayList<ItemStack>();
@@ -33,34 +34,22 @@ public class JEIIntegration implements IModPlugin {
             try {
                 epic_treasures.add(CollectibleHelper.parseItemEntry(item));
             } catch (Exception e) {
-                Collectibles.LOGGER.error(
-                        "Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
+                Collectibles.LOGGER.error("Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
             }
         }
         for (String item : Config.getLootBagRewards()) {
             try {
                 treasures.add(CollectibleHelper.parseItemEntry(item));
             } catch (Exception e) {
-                Collectibles.LOGGER.error(
-                        "Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
+                Collectibles.LOGGER.error("Invalid item entry '{}' in epic_loot_bag_rewards config: {}", item, e.getMessage());
             }
         }
 
-        registry.addIngredientInfo(
-                treasures,
-                VanillaTypes.ITEM_STACK,
-                FormattingHelper.setModLangComponent("message", References.MODID, "lootbag_entry_jei_desc"));
-        registry.addIngredientInfo(
-                epic_treasures,
-                VanillaTypes.ITEM_STACK,
-                FormattingHelper.setModLangComponent("message", References.MODID, "epic_lootbag_entry_jei_desc"));
-        registry.addIngredientInfo(
-                new ItemStack(ModItems.LOOT_BAG.get()),
-                VanillaTypes.ITEM_STACK,
+        registry.addIngredientInfo(treasures, VanillaTypes.ITEM_STACK, FormattingHelper.setModLangComponent("message", References.MODID, "lootbag_entry_jei_desc"));
+        registry.addIngredientInfo(epic_treasures, VanillaTypes.ITEM_STACK, FormattingHelper.setModLangComponent("message", References.MODID, "epic_lootbag_entry_jei_desc"));
+        registry.addIngredientInfo(new ItemStack(ModItems.LOOT_BAG.get()), VanillaTypes.ITEM_STACK,
                 FormattingHelper.setModLangComponent("message", References.MODID, "lootbag_jei_desc"));
-        registry.addIngredientInfo(
-                new ItemStack(ModItems.EPIC_LOOT_BAG.get()),
-                VanillaTypes.ITEM_STACK,
+        registry.addIngredientInfo(new ItemStack(ModItems.EPIC_LOOT_BAG.get()), VanillaTypes.ITEM_STACK,
                 FormattingHelper.setModLangComponent("message", References.MODID, "lootbag_jei_desc"));
     }
 }
